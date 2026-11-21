@@ -12629,6 +12629,7 @@ export const proto = $root.proto = (() => {
          * Properties of a AIRichResponseUnifiedResponse.
          * @typedef {Object} proto.AIRichResponseUnifiedResponse.$Properties
          * @property {Uint8Array|null} [data] AIRichResponseUnifiedResponse data
+         * @property {Uint8Array|null} [gzipData] AIRichResponseUnifiedResponse gzipData
          * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
 
@@ -12668,12 +12669,26 @@ export const proto = $root.proto = (() => {
          */
         AIRichResponseUnifiedResponse.prototype.data = null;
 
+        /**
+         * AIRichResponseUnifiedResponse gzipData.
+         * @member {Uint8Array|null|undefined} gzipData
+         * @memberof proto.AIRichResponseUnifiedResponse
+         * @instance
+         */
+        AIRichResponseUnifiedResponse.prototype.gzipData = null;
+
         // OneOf field names bound to virtual getters and setters
         let $oneOfFields;
 
         // Virtual OneOf for proto3 optional field
         $Object.defineProperty(AIRichResponseUnifiedResponse.prototype, "_data", {
             get: $util.oneOfGetter($oneOfFields = ["data"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(AIRichResponseUnifiedResponse.prototype, "_gzipData", {
+            get: $util.oneOfGetter($oneOfFields = ["gzipData"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -12711,6 +12726,8 @@ export const proto = $root.proto = (() => {
                 throw $Error("max depth exceeded");
             if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
                 writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.data);
+            if (message.gzipData != null && $Object.hasOwnProperty.call(message, "gzipData"))
+                writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.gzipData);
             if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                 for (let i = 0; i < message.$unknowns.length; ++i)
                     writer.raw(message.$unknowns[i]);
@@ -12775,6 +12792,13 @@ export const proto = $root.proto = (() => {
                         message._data = "data";
                         continue;
                     }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.gzipData = reader.bytes();
+                        message._gzipData = "gzipData";
+                        continue;
+                    }
                 }
                 reader.skipType(wireType, _depth, tag);
                 if (!reader.discardUnknown) {
@@ -12829,6 +12853,11 @@ export const proto = $root.proto = (() => {
                 if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
                     return "data: buffer expected";
             }
+            if (message.gzipData != null && $Object.hasOwnProperty.call(message, "gzipData")) {
+                properties._gzipData = 1;
+                if (!(message.gzipData && typeof message.gzipData.length === "number" || $util.isString(message.gzipData)))
+                    return "gzipData: buffer expected";
+            }
             return null;
         };
 
@@ -12855,6 +12884,11 @@ export const proto = $root.proto = (() => {
                     $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
                 else if (object.data.length >= 0)
                     message.data = object.data;
+            if (object.gzipData != null)
+                if (typeof object.gzipData === "string")
+                    $util.base64.decode(object.gzipData, message.gzipData = $util.newBuffer($util.base64.length(object.gzipData)), 0);
+                else if (object.gzipData.length >= 0)
+                    message.gzipData = object.gzipData;
             return message;
         };
 
@@ -12877,6 +12911,8 @@ export const proto = $root.proto = (() => {
             let object = {};
             if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
                 object.data = options.bytes === $String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.data) : message.data;
+            if (message.gzipData != null && $Object.hasOwnProperty.call(message, "gzipData"))
+                object.gzipData = options.bytes === $String ? $util.base64.encode(message.gzipData, 0, message.gzipData.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.gzipData) : message.gzipData;
             return object;
         };
 
@@ -20030,6 +20066,10 @@ export const proto = $root.proto = (() => {
                     case 91:
                         message.capabilities[message.capabilities.length] = 91;
                         break;
+                    case "AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED":
+                    case 93:
+                        message.capabilities[message.capabilities.length] = 93;
+                        break;
                     default:
                         if (typeof object.capabilities[i] === "number" && (object.capabilities[i] | 0) === object.capabilities[i])
                             message.capabilities[message.capabilities.length] = object.capabilities[i];
@@ -20186,6 +20226,7 @@ export const proto = $root.proto = (() => {
          * @property {number} RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH=89 RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH value
          * @property {number} AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED=90 AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED value
          * @property {number} AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED=91 AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED value
+         * @property {number} AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED=93 AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED value
          */
         BotCapabilityMetadata.BotCapabilityType = (function() {
             const valuesById = $Object.create(null), values = $Object.create(valuesById);
@@ -20281,6 +20322,7 @@ export const proto = $root.proto = (() => {
             values[valuesById[89] = "RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH"] = 89;
             values[valuesById[90] = "AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED"] = 90;
             values[valuesById[91] = "AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED"] = 91;
+            values[valuesById[93] = "AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED"] = 93;
             return values;
         })();
 
@@ -71785,6 +71827,7 @@ export const proto = $root.proto = (() => {
          * @property {proto.DeviceCapabilities.BizAiWebOnboarding.$Properties|null} [bizAiWebOnboarding] DeviceCapabilities bizAiWebOnboarding
          * @property {proto.DeviceCapabilities.PhoneNumberSharing.$Properties|null} [phoneNumberSharing] DeviceCapabilities phoneNumberSharing
          * @property {proto.DeviceCapabilities.RecentConversationsOnDemand.$Properties|null} [recentConversationsOnDemand] DeviceCapabilities recentConversationsOnDemand
+         * @property {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties|null} [aiMuseJarvisGzip] DeviceCapabilities aiMuseJarvisGzip
          * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
 
@@ -71936,6 +71979,14 @@ export const proto = $root.proto = (() => {
          */
         DeviceCapabilities.prototype.recentConversationsOnDemand = null;
 
+        /**
+         * DeviceCapabilities aiMuseJarvisGzip.
+         * @member {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties|null|undefined} aiMuseJarvisGzip
+         * @memberof proto.DeviceCapabilities
+         * @instance
+         */
+        DeviceCapabilities.prototype.aiMuseJarvisGzip = null;
+
         // OneOf field names bound to virtual getters and setters
         let $oneOfFields;
 
@@ -72029,6 +72080,12 @@ export const proto = $root.proto = (() => {
             set: $util.oneOfSetter($oneOfFields)
         });
 
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DeviceCapabilities.prototype, "_aiMuseJarvisGzip", {
+            get: $util.oneOfGetter($oneOfFields = ["aiMuseJarvisGzip"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
         /**
          * Creates a new DeviceCapabilities instance using the specified properties.
          * @function create
@@ -72091,6 +72148,8 @@ export const proto = $root.proto = (() => {
                 $root.proto.DeviceCapabilities.PhoneNumberSharing.encode(message.phoneNumberSharing, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
             if (message.recentConversationsOnDemand != null && $Object.hasOwnProperty.call(message, "recentConversationsOnDemand"))
                 $root.proto.DeviceCapabilities.RecentConversationsOnDemand.encode(message.recentConversationsOnDemand, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
+            if (message.aiMuseJarvisGzip != null && $Object.hasOwnProperty.call(message, "aiMuseJarvisGzip"))
+                $root.proto.DeviceCapabilities.AiMuseJarvisGzip.encode(message.aiMuseJarvisGzip, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
             if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                 for (let i = 0; i < message.$unknowns.length; ++i)
                     writer.raw(message.$unknowns[i]);
@@ -72251,6 +72310,13 @@ export const proto = $root.proto = (() => {
                             break;
                         message.recentConversationsOnDemand = $root.proto.DeviceCapabilities.RecentConversationsOnDemand.decode(reader, reader.size(), $undefined, _depth + 1, message.recentConversationsOnDemand);
                         message._recentConversationsOnDemand = "recentConversationsOnDemand";
+                        continue;
+                    }
+                case 16: {
+                        if (wireType !== 2)
+                            break;
+                        message.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.decode(reader, reader.size(), $undefined, _depth + 1, message.aiMuseJarvisGzip);
+                        message._aiMuseJarvisGzip = "aiMuseJarvisGzip";
                         continue;
                     }
                 }
@@ -72416,6 +72482,14 @@ export const proto = $root.proto = (() => {
                         return "recentConversationsOnDemand." + error;
                 }
             }
+            if (message.aiMuseJarvisGzip != null && $Object.hasOwnProperty.call(message, "aiMuseJarvisGzip")) {
+                properties._aiMuseJarvisGzip = 1;
+                {
+                    let error = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.verify(message.aiMuseJarvisGzip, _depth + 1);
+                    if (error)
+                        return "aiMuseJarvisGzip." + error;
+                }
+            }
             return null;
         };
 
@@ -72536,6 +72610,11 @@ export const proto = $root.proto = (() => {
                     throw $TypeError(".proto.DeviceCapabilities.recentConversationsOnDemand: object expected");
                 message.recentConversationsOnDemand = $root.proto.DeviceCapabilities.RecentConversationsOnDemand.fromObject(object.recentConversationsOnDemand, _depth + 1);
             }
+            if (object.aiMuseJarvisGzip != null) {
+                if (!$util.isObject(object.aiMuseJarvisGzip))
+                    throw $TypeError(".proto.DeviceCapabilities.aiMuseJarvisGzip: object expected");
+                message.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.fromObject(object.aiMuseJarvisGzip, _depth + 1);
+            }
             return message;
         };
 
@@ -72586,6 +72665,8 @@ export const proto = $root.proto = (() => {
                 object.phoneNumberSharing = $root.proto.DeviceCapabilities.PhoneNumberSharing.toObject(message.phoneNumberSharing, options, _depth + 1);
             if (message.recentConversationsOnDemand != null && $Object.hasOwnProperty.call(message, "recentConversationsOnDemand"))
                 object.recentConversationsOnDemand = $root.proto.DeviceCapabilities.RecentConversationsOnDemand.toObject(message.recentConversationsOnDemand, options, _depth + 1);
+            if (message.aiMuseJarvisGzip != null && $Object.hasOwnProperty.call(message, "aiMuseJarvisGzip"))
+                object.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.toObject(message.aiMuseJarvisGzip, options, _depth + 1);
             return object;
         };
 
@@ -72939,6 +73020,288 @@ export const proto = $root.proto = (() => {
             };
 
             return AiFbidMigration;
+        })();
+
+        DeviceCapabilities.AiMuseJarvisGzip = (function() {
+
+            /**
+             * Properties of an AiMuseJarvisGzip.
+             * @typedef {Object} proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties
+             * @property {number|null} [supportVersion] AiMuseJarvisGzip supportVersion
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of an AiMuseJarvisGzip.
+             * @memberof proto.DeviceCapabilities
+             * @interface IAiMuseJarvisGzip
+             * @augments proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties
+             * @deprecated Use proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties instead.
+             */
+
+            /**
+             * Shape of an AiMuseJarvisGzip.
+             * @typedef {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties} proto.DeviceCapabilities.AiMuseJarvisGzip.$Shape
+             */
+
+            /**
+             * Constructs a new AiMuseJarvisGzip.
+             * @memberof proto.DeviceCapabilities
+             * @classdesc Represents an AiMuseJarvisGzip.
+             * @constructor
+             * @param {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+            const AiMuseJarvisGzip = function (properties) {
+                if (properties)
+                    for (let keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                            this[keys[i]] = properties[keys[i]];
+            };
+
+            /**
+             * AiMuseJarvisGzip supportVersion.
+             * @member {number|null|undefined} supportVersion
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @instance
+             */
+            AiMuseJarvisGzip.prototype.supportVersion = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(AiMuseJarvisGzip.prototype, "_supportVersion", {
+                get: $util.oneOfGetter($oneOfFields = ["supportVersion"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new AiMuseJarvisGzip instance using the specified properties.
+             * @function create
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties=} [properties] Properties to set
+             * @returns {proto.DeviceCapabilities.AiMuseJarvisGzip} AiMuseJarvisGzip instance
+             * @type {{
+             *   (properties: proto.DeviceCapabilities.AiMuseJarvisGzip.$Shape): proto.DeviceCapabilities.AiMuseJarvisGzip & proto.DeviceCapabilities.AiMuseJarvisGzip.$Shape;
+             *   (properties?: proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties): proto.DeviceCapabilities.AiMuseJarvisGzip;
+             * }}
+             */
+            AiMuseJarvisGzip.create = function(properties) {
+                return new AiMuseJarvisGzip(properties);
+            };
+
+            /**
+             * Encodes the specified AiMuseJarvisGzip message. Does not implicitly {@link proto.DeviceCapabilities.AiMuseJarvisGzip.verify|verify} messages.
+             * @function encode
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties} message AiMuseJarvisGzip message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AiMuseJarvisGzip.encode = function (message, writer, _depth) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.supportVersion != null && $Object.hasOwnProperty.call(message, "supportVersion"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.supportVersion);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (let i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified AiMuseJarvisGzip message, length delimited. Does not implicitly {@link proto.DeviceCapabilities.AiMuseJarvisGzip.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties} message AiMuseJarvisGzip message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AiMuseJarvisGzip.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
+            };
+
+            /**
+             * Decodes an AiMuseJarvisGzip message from the specified reader or buffer.
+             * @function decode
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {proto.DeviceCapabilities.AiMuseJarvisGzip & proto.DeviceCapabilities.AiMuseJarvisGzip.$Shape} AiMuseJarvisGzip
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AiMuseJarvisGzip.decode = function (reader, length, _end, _depth, _target) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.proto.DeviceCapabilities.AiMuseJarvisGzip();
+                while (reader.pos < end) {
+                    let start = reader.pos;
+                    let tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
+                        break;
+                    }
+                    let wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportVersion = reader.uint32();
+                            message._supportVersion = "supportVersion";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
+                }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
+                return message;
+            };
+
+            /**
+             * Decodes an AiMuseJarvisGzip message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {proto.DeviceCapabilities.AiMuseJarvisGzip & proto.DeviceCapabilities.AiMuseJarvisGzip.$Shape} AiMuseJarvisGzip
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AiMuseJarvisGzip.decodeDelimited = function(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.size());
+            };
+
+            /**
+             * Verifies an AiMuseJarvisGzip message.
+             * @function verify
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AiMuseJarvisGzip.verify = function (message, _depth) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
+                let properties = {};
+                if (message.supportVersion != null && $Object.hasOwnProperty.call(message, "supportVersion")) {
+                    properties._supportVersion = 1;
+                    if (!$util.isInteger(message.supportVersion))
+                        return "supportVersion: integer expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates an AiMuseJarvisGzip message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {proto.DeviceCapabilities.AiMuseJarvisGzip} AiMuseJarvisGzip
+             */
+            AiMuseJarvisGzip.fromObject = function (object, _depth) {
+                if (object instanceof $root.proto.DeviceCapabilities.AiMuseJarvisGzip)
+                    return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".proto.DeviceCapabilities.AiMuseJarvisGzip: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let message = new $root.proto.DeviceCapabilities.AiMuseJarvisGzip();
+                if (object.supportVersion != null)
+                    message.supportVersion = object.supportVersion >>> 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an AiMuseJarvisGzip message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {proto.DeviceCapabilities.AiMuseJarvisGzip} message AiMuseJarvisGzip
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            AiMuseJarvisGzip.toObject = function (message, options, _depth) {
+                if (!options)
+                    options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let object = {};
+                if (message.supportVersion != null && $Object.hasOwnProperty.call(message, "supportVersion"))
+                    object.supportVersion = message.supportVersion;
+                return object;
+            };
+
+            /**
+             * Converts this AiMuseJarvisGzip to JSON.
+             * @function toJSON
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            AiMuseJarvisGzip.prototype.toJSON = function() {
+                return AiMuseJarvisGzip.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the type url for AiMuseJarvisGzip
+             * @function getTypeUrl
+             * @memberof proto.DeviceCapabilities.AiMuseJarvisGzip
+             * @static
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
+             */
+            AiMuseJarvisGzip.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/proto.DeviceCapabilities.AiMuseJarvisGzip";
+            };
+
+            return AiMuseJarvisGzip;
         })();
 
         DeviceCapabilities.AiThread = (function() {
