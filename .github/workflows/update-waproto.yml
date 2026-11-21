@@ -1,0 +1,67 @@
+name: update-waproto
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # check upstream every hour
+  workflow_dispatch:       # can be run manually from the Actions tab
+    inputs:
+      force:
+        description: "Rebuild even if there are no new commits"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-waproto
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Cek commit terbaru upstream
+        id: check
+        run: |
+          LATEST=$(curl -fsSL \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/wppconnect-team/wa-proto/commits/main | jq -r .sha)
+          OLD=$(cat .waproto-sha 2>/dev/null || echo none)
+          echo "latest=$LATEST" >> "$GITHUB_OUTPUT"
+          if [ "$LATEST" != "$OLD" ] || [ "${{ inputs.force }}" = "true" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build WAProto
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          npm install --no-save protobufjs protobufjs-cli
+          OUT_DIR=WAProto ZIP_NAME=waproto-build.zip bash update.sh
+          echo "${{ steps.check.outputs.latest }}" > .waproto-sha
+
+      - name: Upload zip hasil build
+        if: steps.check.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: waproto-build
+          path: WAProto/waproto-build.zip
+
+      - name: Commit hasil build
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add WAProto/index.js WAProto/index.d.ts WAProto/WAProto.proto .waproto-sha
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan untuk di-commit"
+          else
+            git commit -m "chore: update WAProto (${{ steps.check.outputs.latest }})"
+            git push
+          fi
