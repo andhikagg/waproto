@@ -1,60 +1,124 @@
-// fix-protobuf.js - samakan protobufjs di dalam module <TARGET> dengan versi terbaru
-// Pakai:  curl -fsSL <url-raw> | TARGET="baileys" node -
-// Env:    TARGET        nama paket di node_modules (default: baileys)
-//         SKIP_INSTALL  isi 1 untuk melewati npm install (kalau sudah terpasang)
+// fix.js - make the protobufjs inside node_modules/<TARGET> match the latest version
+// Use:  curl -fsSL <url-raw> | TARGET="baileys" node -
+// Env:    TARGET               package name in node_modules (default: baileys)
+//         SKIP_INSTALL         set to 1 to skip npm install (if already installed)
+//         PROTOBUFJS_VERSION   protobufjs version or range (default: latest), e.g. ^7
+//         RESET_LOCK           set to 1 to delete package-lock.json (default: keep it)
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const TARGET = process.env.TARGET || 'baileys';
-const root = process.cwd();
 const fail = (m) => { console.error('!! ' + m); process.exit(1); };
-const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const warn = (m) => console.warn('?? ' + m);
+const readJson = (p) => {
+  try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
+  catch (e) { return fail(`failed to read ${p}: ${e.message}`); }
+};
 
-const targetDir = path.join(root, 'node_modules', TARGET);
-if (!fs.existsSync(targetDir)) fail(`"${TARGET}" tidak ada di ${path.join(root, 'node_modules')}. Jalankan dari root proyek.`);
+// Node 18+ (fs.cpSync, fs.rmSync)
+if (Number(process.versions.node.split('.')[0]) < 18) {
+  fail(`Node.js 18 or newer is required (current: ${process.versions.node})`);
+}
 
-// 1. hapus package-lock.json
+const TARGET = (process.env.TARGET || 'baileys').trim();
+const VERSION = (process.env.PROTOBUFJS_VERSION || 'latest').trim();
+const root = process.cwd();
+
+// a package name only (scoped names like @whiskeysockets/baileys are fine), not a path
+if (!TARGET || TARGET.includes('..') || path.isAbsolute(TARGET) || TARGET.includes('\\')) {
+  fail(`invalid TARGET: "${TARGET}"`);
+}
+
+const nodeModules = path.join(root, 'node_modules');
+const targetDir = path.join(nodeModules, TARGET);
+if (!fs.existsSync(targetDir)) {
+  fail(`"${TARGET}" not found in ${nodeModules}. Run from the project root and check the TARGET name.`);
+}
+
+// 1. package-lock.json (optional, kept by default)
 const lock = path.join(root, 'package-lock.json');
-if (fs.existsSync(lock)) { fs.rmSync(lock); console.log('1. package-lock.json dihapus'); }
-else console.log('1. package-lock.json tidak ada, lewati');
+if (process.env.RESET_LOCK === '1') {
+  if (fs.existsSync(lock)) { fs.rmSync(lock); console.log('1. package-lock.json removed (RESET_LOCK=1)'); }
+  else console.log('1. package-lock.json not found, skipping');
+} else {
+  console.log('1. package-lock.json kept (use RESET_LOCK=1 to delete it)');
+}
 
-// 2. rewrite package.json milik module target
+// 2. rewrite package.json of the target module
 const pkgPath = path.join(targetDir, 'package.json');
+if (!fs.existsSync(pkgPath)) fail(`${path.relative(root, pkgPath)} not found`);
 const pkg = readJson(pkgPath);
+
+let found = false;
 let changed = false;
 for (const field of ['dependencies', 'peerDependencies', 'optionalDependencies']) {
-  if (pkg[field] && pkg[field].protobufjs && pkg[field].protobufjs !== 'latest') {
-    console.log(`2. ${TARGET}/package.json ${field}.protobufjs: ${pkg[field].protobufjs} -> latest`);
-    pkg[field].protobufjs = 'latest';
-    changed = true;
+  const deps = pkg[field];
+  if (deps && deps.protobufjs !== undefined) {
+    found = true;
+    if (deps.protobufjs !== VERSION) {
+      console.log(`2. ${TARGET}/package.json ${field}.protobufjs: ${deps.protobufjs} -> ${VERSION}`);
+      deps.protobufjs = VERSION;
+      changed = true;
+    }
   }
 }
-if (!changed) {
+if (!found) {
   pkg.dependencies = pkg.dependencies || {};
-  if (pkg.dependencies.protobufjs !== 'latest') {
-    pkg.dependencies.protobufjs = 'latest';
-    console.log(`2. ${TARGET}/package.json dependencies.protobufjs ditambahkan: latest`);
-  } else console.log('2. package.json sudah "latest", lewati');
+  pkg.dependencies.protobufjs = VERSION;
+  console.log(`2. ${TARGET}/package.json dependencies.protobufjs added: ${VERSION}`);
+  changed = true;
 }
-fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+if (changed) {
+  const bak = pkgPath + '.bak';
+  if (!fs.existsSync(bak)) fs.copyFileSync(pkgPath, bak); // back up once, keep the original
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+} else {
+  console.log(`2. package.json already uses "${VERSION}", skipping`);
+}
 
-// 3. install lokal di root proyek
-if (process.env.SKIP_INSTALL === '1') console.log('3. SKIP_INSTALL=1, npm install dilewati');
-else {
-  console.log('3. npm install protobufjs@latest ...');
-  const r = spawnSync('npm', ['install', 'protobufjs@latest'],
+// 3. install in the project root
+if (process.env.SKIP_INSTALL === '1') {
+  console.log('3. SKIP_INSTALL=1, npm install skipped');
+} else {
+  console.log(`3. npm install protobufjs@${VERSION} ...`);
+  const r = spawnSync('npm', ['install', `protobufjs@${VERSION}`],
     { stdio: 'inherit', cwd: root, shell: process.platform === 'win32' });
-  if (r.status !== 0) fail('npm install gagal');
+  if (r.error) fail(`cannot run npm: ${r.error.message}`);
+  if (r.status !== 0) fail('npm install failed');
 }
 
-// 4. salin protobufjs root -> dalam module target
-const src = path.join(root, 'node_modules', 'protobufjs');
-if (!fs.existsSync(src)) fail('node_modules/protobufjs tidak ada di root. Install dulu.');
+// 4. copy protobufjs from the root into the target module
+const src = path.join(nodeModules, 'protobufjs');
+const srcPkgPath = path.join(src, 'package.json');
+if (!fs.existsSync(srcPkgPath)) fail('node_modules/protobufjs not found in the project root. Install it first (do not use SKIP_INSTALL=1).');
+const srcPkg = readJson(srcPkgPath);
+
 const dest = path.join(targetDir, 'node_modules', 'protobufjs');
-fs.mkdirSync(path.dirname(dest), { recursive: true });
-fs.rmSync(dest, { recursive: true, force: true });
-fs.cpSync(src, dest, { recursive: true });
-const v = readJson(path.join(dest, 'package.json')).version;
-console.log(`4. protobufjs ${v} disalin ke ${path.relative(root, dest)}`);
-console.log('Selesai.');
+const destPkgPath = path.join(dest, 'package.json');
+const destVersion = fs.existsSync(destPkgPath) ? readJson(destPkgPath).version : null;
+
+if (destVersion === srcPkg.version) {
+  console.log(`4. protobufjs ${destVersion} is already in ${path.relative(root, dest)}, skipping`);
+} else {
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.rmSync(dest, { recursive: true, force: true });
+  fs.cpSync(src, dest, { recursive: true });
+  const v = readJson(destPkgPath).version;
+  console.log(`4. protobufjs ${destVersion ? destVersion + ' -> ' : ''}${v} copied to ${path.relative(root, dest)}`);
+}
+
+// 5. check that protobufjs dependencies can be resolved from the copy
+const resolvable = (dep, from) => {
+  for (let dir = from; ; dir = path.dirname(dir)) {
+    if (fs.existsSync(path.join(dir, 'node_modules', dep))) return true;
+    if (path.dirname(dir) === dir) return false;
+  }
+};
+const missing = Object.keys(srcPkg.dependencies || {}).filter((d) => !resolvable(d, path.dirname(dest)));
+if (missing.length) {
+  warn(`protobufjs dependencies not found: ${missing.join(', ')}. Run "npm install" and run this script again.`);
+}
+
+console.log('Done. Check the version with: npm ls protobufjs');
