@@ -5483,6 +5483,300 @@ export namespace proto {
     }
 
     /**
+     * Properties of an AddDeviceKeysOutput.
+     * @deprecated Use proto.AddDeviceKeysOutput.$Properties instead.
+     */
+    interface IAddDeviceKeysOutput extends proto.AddDeviceKeysOutput.$Properties {
+    }
+
+    /** Represents an AddDeviceKeysOutput. */
+    class AddDeviceKeysOutput {
+
+        /**
+         * Constructs a new AddDeviceKeysOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.AddDeviceKeysOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** AddDeviceKeysOutput devicePublicKey. */
+        devicePublicKey?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput epochAuthPublicKey. */
+        epochAuthPublicKey?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput epochAuthPublicKeySig. */
+        epochAuthPublicKeySig?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput epochStoragePublicKey. */
+        epochStoragePublicKey?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput epochStoragePublicKeySig. */
+        epochStoragePublicKeySig?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput epochStoragePrivateKey. */
+        epochStoragePrivateKey?: (Uint8Array|null);
+
+        /** AddDeviceKeysOutput orfClientState. */
+        orfClientState?: (Uint8Array|null);
+
+        /**
+         * Creates a new AddDeviceKeysOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AddDeviceKeysOutput instance
+         */
+        static create(properties: proto.AddDeviceKeysOutput.$Shape): proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape;
+        static create(properties?: proto.AddDeviceKeysOutput.$Properties): proto.AddDeviceKeysOutput;
+
+        /**
+         * Encodes the specified AddDeviceKeysOutput message. Does not implicitly {@link proto.AddDeviceKeysOutput.verify|verify} messages.
+         * @param message AddDeviceKeysOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.AddDeviceKeysOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AddDeviceKeysOutput message, length delimited. Does not implicitly {@link proto.AddDeviceKeysOutput.verify|verify} messages.
+         * @param message AddDeviceKeysOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.AddDeviceKeysOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AddDeviceKeysOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape} AddDeviceKeysOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape;
+
+        /**
+         * Decodes an AddDeviceKeysOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape} AddDeviceKeysOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape;
+
+        /**
+         * Verifies an AddDeviceKeysOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AddDeviceKeysOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AddDeviceKeysOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.AddDeviceKeysOutput;
+
+        /**
+         * Creates a plain object from an AddDeviceKeysOutput message. Also converts values to other types if specified.
+         * @param message AddDeviceKeysOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.AddDeviceKeysOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AddDeviceKeysOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for AddDeviceKeysOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace AddDeviceKeysOutput {
+
+        /** Properties of an AddDeviceKeysOutput. */
+        interface $Properties {
+
+            /** AddDeviceKeysOutput devicePublicKey */
+            devicePublicKey?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput epochAuthPublicKey */
+            epochAuthPublicKey?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput epochAuthPublicKeySig */
+            epochAuthPublicKeySig?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput epochStoragePublicKey */
+            epochStoragePublicKey?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput epochStoragePublicKeySig */
+            epochStoragePublicKeySig?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput epochStoragePrivateKey */
+            epochStoragePrivateKey?: (Uint8Array|null);
+
+            /** AddDeviceKeysOutput orfClientState */
+            orfClientState?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an AddDeviceKeysOutput. */
+        type $Shape = proto.AddDeviceKeysOutput.$Properties;
+    }
+
+    /**
+     * Properties of an AddDeviceSyncEpochInput.
+     * @deprecated Use proto.AddDeviceSyncEpochInput.$Properties instead.
+     */
+    interface IAddDeviceSyncEpochInput extends proto.AddDeviceSyncEpochInput.$Properties {
+    }
+
+    /** Represents an AddDeviceSyncEpochInput. */
+    class AddDeviceSyncEpochInput {
+
+        /**
+         * Constructs a new AddDeviceSyncEpochInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.AddDeviceSyncEpochInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** AddDeviceSyncEpochInput epochId. */
+        epochId?: (number|Long|null);
+
+        /** AddDeviceSyncEpochInput epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** AddDeviceSyncEpochInput encryptedEpochKey. */
+        encryptedEpochKey?: (Uint8Array|null);
+
+        /** AddDeviceSyncEpochInput senderAuthPubKey. */
+        senderAuthPubKey?: (Uint8Array|null);
+
+        /** AddDeviceSyncEpochInput nextEpochId. */
+        nextEpochId?: (number|Long|null);
+
+        /**
+         * Creates a new AddDeviceSyncEpochInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AddDeviceSyncEpochInput instance
+         */
+        static create(properties: proto.AddDeviceSyncEpochInput.$Shape): proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape;
+        static create(properties?: proto.AddDeviceSyncEpochInput.$Properties): proto.AddDeviceSyncEpochInput;
+
+        /**
+         * Encodes the specified AddDeviceSyncEpochInput message. Does not implicitly {@link proto.AddDeviceSyncEpochInput.verify|verify} messages.
+         * @param message AddDeviceSyncEpochInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.AddDeviceSyncEpochInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AddDeviceSyncEpochInput message, length delimited. Does not implicitly {@link proto.AddDeviceSyncEpochInput.verify|verify} messages.
+         * @param message AddDeviceSyncEpochInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.AddDeviceSyncEpochInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AddDeviceSyncEpochInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape} AddDeviceSyncEpochInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape;
+
+        /**
+         * Decodes an AddDeviceSyncEpochInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape} AddDeviceSyncEpochInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape;
+
+        /**
+         * Verifies an AddDeviceSyncEpochInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AddDeviceSyncEpochInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AddDeviceSyncEpochInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.AddDeviceSyncEpochInput;
+
+        /**
+         * Creates a plain object from an AddDeviceSyncEpochInput message. Also converts values to other types if specified.
+         * @param message AddDeviceSyncEpochInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.AddDeviceSyncEpochInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AddDeviceSyncEpochInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for AddDeviceSyncEpochInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace AddDeviceSyncEpochInput {
+
+        /** Properties of an AddDeviceSyncEpochInput. */
+        interface $Properties {
+
+            /** AddDeviceSyncEpochInput epochId */
+            epochId?: (number|Long|null);
+
+            /** AddDeviceSyncEpochInput epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** AddDeviceSyncEpochInput encryptedEpochKey */
+            encryptedEpochKey?: (Uint8Array|null);
+
+            /** AddDeviceSyncEpochInput senderAuthPubKey */
+            senderAuthPubKey?: (Uint8Array|null);
+
+            /** AddDeviceSyncEpochInput nextEpochId */
+            nextEpochId?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an AddDeviceSyncEpochInput. */
+        type $Shape = proto.AddDeviceSyncEpochInput.$Properties;
+    }
+
+    /**
      * Properties of an AutoDownloadSettings.
      * @deprecated Use proto.AutoDownloadSettings.$Properties instead.
      */
@@ -5738,6 +6032,135 @@ export namespace proto {
 
         /** Shape of an AvatarUserSettings. */
         type $Shape = proto.AvatarUserSettings.$Properties;
+    }
+
+    /**
+     * Properties of a BackwardEdge.
+     * @deprecated Use proto.BackwardEdge.$Properties instead.
+     */
+    interface IBackwardEdge extends proto.BackwardEdge.$Properties {
+    }
+
+    /** Represents a BackwardEdge. */
+    class BackwardEdge {
+
+        /**
+         * Constructs a new BackwardEdge.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.BackwardEdge.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** BackwardEdge encryptedPrevEpochAnonId. */
+        encryptedPrevEpochAnonId?: (Uint8Array|null);
+
+        /** BackwardEdge encryptedPrevEpochRootKey. */
+        encryptedPrevEpochRootKey?: (Uint8Array|null);
+
+        /** BackwardEdge prevEpochRootKeyFingerprint. */
+        prevEpochRootKeyFingerprint?: (Uint8Array|null);
+
+        /**
+         * Creates a new BackwardEdge instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BackwardEdge instance
+         */
+        static create(properties: proto.BackwardEdge.$Shape): proto.BackwardEdge & proto.BackwardEdge.$Shape;
+        static create(properties?: proto.BackwardEdge.$Properties): proto.BackwardEdge;
+
+        /**
+         * Encodes the specified BackwardEdge message. Does not implicitly {@link proto.BackwardEdge.verify|verify} messages.
+         * @param message BackwardEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.BackwardEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BackwardEdge message, length delimited. Does not implicitly {@link proto.BackwardEdge.verify|verify} messages.
+         * @param message BackwardEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.BackwardEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BackwardEdge message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.BackwardEdge & proto.BackwardEdge.$Shape} BackwardEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.BackwardEdge & proto.BackwardEdge.$Shape;
+
+        /**
+         * Decodes a BackwardEdge message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.BackwardEdge & proto.BackwardEdge.$Shape} BackwardEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.BackwardEdge & proto.BackwardEdge.$Shape;
+
+        /**
+         * Verifies a BackwardEdge message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BackwardEdge message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BackwardEdge
+         */
+        static fromObject(object: { [k: string]: any }): proto.BackwardEdge;
+
+        /**
+         * Creates a plain object from a BackwardEdge message. Also converts values to other types if specified.
+         * @param message BackwardEdge
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.BackwardEdge, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BackwardEdge to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for BackwardEdge
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace BackwardEdge {
+
+        /** Properties of a BackwardEdge. */
+        interface $Properties {
+
+            /** BackwardEdge encryptedPrevEpochAnonId */
+            encryptedPrevEpochAnonId?: (Uint8Array|null);
+
+            /** BackwardEdge encryptedPrevEpochRootKey */
+            encryptedPrevEpochRootKey?: (Uint8Array|null);
+
+            /** BackwardEdge prevEpochRootKeyFingerprint */
+            prevEpochRootKeyFingerprint?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a BackwardEdge. */
+        type $Shape = proto.BackwardEdge.$Properties;
     }
 
     /**
@@ -20265,6 +20688,744 @@ export namespace proto {
     }
 
     /**
+     * Properties of a CompanionTestMessageThreadIdInput.
+     * @deprecated Use proto.CompanionTestMessageThreadIdInput.$Properties instead.
+     */
+    interface ICompanionTestMessageThreadIdInput extends proto.CompanionTestMessageThreadIdInput.$Properties {
+    }
+
+    /** Represents a CompanionTestMessageThreadIdInput. */
+    class CompanionTestMessageThreadIdInput {
+
+        /**
+         * Constructs a new CompanionTestMessageThreadIdInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CompanionTestMessageThreadIdInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /**
+         * Creates a new CompanionTestMessageThreadIdInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CompanionTestMessageThreadIdInput instance
+         */
+        static create(properties: proto.CompanionTestMessageThreadIdInput.$Shape): proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape;
+        static create(properties?: proto.CompanionTestMessageThreadIdInput.$Properties): proto.CompanionTestMessageThreadIdInput;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdInput message. Does not implicitly {@link proto.CompanionTestMessageThreadIdInput.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CompanionTestMessageThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdInput message, length delimited. Does not implicitly {@link proto.CompanionTestMessageThreadIdInput.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CompanionTestMessageThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape} CompanionTestMessageThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape} CompanionTestMessageThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape;
+
+        /**
+         * Verifies a CompanionTestMessageThreadIdInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CompanionTestMessageThreadIdInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CompanionTestMessageThreadIdInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.CompanionTestMessageThreadIdInput;
+
+        /**
+         * Creates a plain object from a CompanionTestMessageThreadIdInput message. Also converts values to other types if specified.
+         * @param message CompanionTestMessageThreadIdInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CompanionTestMessageThreadIdInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CompanionTestMessageThreadIdInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CompanionTestMessageThreadIdInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CompanionTestMessageThreadIdInput {
+
+        /** Properties of a CompanionTestMessageThreadIdInput. */
+        interface $Properties {
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CompanionTestMessageThreadIdInput. */
+        type $Shape = proto.CompanionTestMessageThreadIdInput.$Properties;
+    }
+
+    /**
+     * Properties of a CompanionTestMessageThreadIdOutput.
+     * @deprecated Use proto.CompanionTestMessageThreadIdOutput.$Properties instead.
+     */
+    interface ICompanionTestMessageThreadIdOutput extends proto.CompanionTestMessageThreadIdOutput.$Properties {
+    }
+
+    /** Represents a CompanionTestMessageThreadIdOutput. */
+    class CompanionTestMessageThreadIdOutput {
+
+        /**
+         * Constructs a new CompanionTestMessageThreadIdOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CompanionTestMessageThreadIdOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** CompanionTestMessageThreadIdOutput success. */
+        success?: (proto.CompanionTestMessageThreadIdSuccess.$Properties|null);
+
+        /** CompanionTestMessageThreadIdOutput error. */
+        error?: (string|null);
+
+        /** CompanionTestMessageThreadIdOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new CompanionTestMessageThreadIdOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CompanionTestMessageThreadIdOutput instance
+         */
+        static create(properties: proto.CompanionTestMessageThreadIdOutput.$Shape): proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape;
+        static create(properties?: proto.CompanionTestMessageThreadIdOutput.$Properties): proto.CompanionTestMessageThreadIdOutput;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdOutput message. Does not implicitly {@link proto.CompanionTestMessageThreadIdOutput.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CompanionTestMessageThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdOutput message, length delimited. Does not implicitly {@link proto.CompanionTestMessageThreadIdOutput.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CompanionTestMessageThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape} CompanionTestMessageThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape} CompanionTestMessageThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape;
+
+        /**
+         * Verifies a CompanionTestMessageThreadIdOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CompanionTestMessageThreadIdOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CompanionTestMessageThreadIdOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.CompanionTestMessageThreadIdOutput;
+
+        /**
+         * Creates a plain object from a CompanionTestMessageThreadIdOutput message. Also converts values to other types if specified.
+         * @param message CompanionTestMessageThreadIdOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CompanionTestMessageThreadIdOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CompanionTestMessageThreadIdOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CompanionTestMessageThreadIdOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CompanionTestMessageThreadIdOutput {
+
+        /** Properties of a CompanionTestMessageThreadIdOutput. */
+        interface $Properties {
+
+            /** CompanionTestMessageThreadIdOutput success */
+            success?: (proto.CompanionTestMessageThreadIdSuccess.$Properties|null);
+
+            /** CompanionTestMessageThreadIdOutput error */
+            error?: (string|null);
+
+            /** CompanionTestMessageThreadIdOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a CompanionTestMessageThreadIdOutput. */
+        type $Shape = {
+          success?: proto.CompanionTestMessageThreadIdSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.CompanionTestMessageThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a CompanionTestMessageThreadIdSuccess.
+     * @deprecated Use proto.CompanionTestMessageThreadIdSuccess.$Properties instead.
+     */
+    interface ICompanionTestMessageThreadIdSuccess extends proto.CompanionTestMessageThreadIdSuccess.$Properties {
+    }
+
+    /** Represents a CompanionTestMessageThreadIdSuccess. */
+    class CompanionTestMessageThreadIdSuccess {
+
+        /**
+         * Constructs a new CompanionTestMessageThreadIdSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CompanionTestMessageThreadIdSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** CompanionTestMessageThreadIdSuccess threadId. */
+        threadId?: (string|null);
+
+        /**
+         * Creates a new CompanionTestMessageThreadIdSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CompanionTestMessageThreadIdSuccess instance
+         */
+        static create(properties: proto.CompanionTestMessageThreadIdSuccess.$Shape): proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape;
+        static create(properties?: proto.CompanionTestMessageThreadIdSuccess.$Properties): proto.CompanionTestMessageThreadIdSuccess;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdSuccess message. Does not implicitly {@link proto.CompanionTestMessageThreadIdSuccess.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CompanionTestMessageThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CompanionTestMessageThreadIdSuccess message, length delimited. Does not implicitly {@link proto.CompanionTestMessageThreadIdSuccess.verify|verify} messages.
+         * @param message CompanionTestMessageThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CompanionTestMessageThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape} CompanionTestMessageThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape;
+
+        /**
+         * Decodes a CompanionTestMessageThreadIdSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape} CompanionTestMessageThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape;
+
+        /**
+         * Verifies a CompanionTestMessageThreadIdSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CompanionTestMessageThreadIdSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CompanionTestMessageThreadIdSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.CompanionTestMessageThreadIdSuccess;
+
+        /**
+         * Creates a plain object from a CompanionTestMessageThreadIdSuccess message. Also converts values to other types if specified.
+         * @param message CompanionTestMessageThreadIdSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CompanionTestMessageThreadIdSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CompanionTestMessageThreadIdSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CompanionTestMessageThreadIdSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CompanionTestMessageThreadIdSuccess {
+
+        /** Properties of a CompanionTestMessageThreadIdSuccess. */
+        interface $Properties {
+
+            /** CompanionTestMessageThreadIdSuccess threadId */
+            threadId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CompanionTestMessageThreadIdSuccess. */
+        type $Shape = proto.CompanionTestMessageThreadIdSuccess.$Properties;
+    }
+
+    /**
+     * Properties of a ComputeClientSealTokenInput.
+     * @deprecated Use proto.ComputeClientSealTokenInput.$Properties instead.
+     */
+    interface IComputeClientSealTokenInput extends proto.ComputeClientSealTokenInput.$Properties {
+    }
+
+    /** Represents a ComputeClientSealTokenInput. */
+    class ComputeClientSealTokenInput {
+
+        /**
+         * Constructs a new ComputeClientSealTokenInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ComputeClientSealTokenInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ComputeClientSealTokenInput orfClientState. */
+        orfClientState?: (Uint8Array|null);
+
+        /** ComputeClientSealTokenInput backupId. */
+        backupId?: (number|Long|null);
+
+        /**
+         * Creates a new ComputeClientSealTokenInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ComputeClientSealTokenInput instance
+         */
+        static create(properties: proto.ComputeClientSealTokenInput.$Shape): proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape;
+        static create(properties?: proto.ComputeClientSealTokenInput.$Properties): proto.ComputeClientSealTokenInput;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenInput message. Does not implicitly {@link proto.ComputeClientSealTokenInput.verify|verify} messages.
+         * @param message ComputeClientSealTokenInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ComputeClientSealTokenInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenInput message, length delimited. Does not implicitly {@link proto.ComputeClientSealTokenInput.verify|verify} messages.
+         * @param message ComputeClientSealTokenInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ComputeClientSealTokenInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ComputeClientSealTokenInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape} ComputeClientSealTokenInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape;
+
+        /**
+         * Decodes a ComputeClientSealTokenInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape} ComputeClientSealTokenInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape;
+
+        /**
+         * Verifies a ComputeClientSealTokenInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ComputeClientSealTokenInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ComputeClientSealTokenInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.ComputeClientSealTokenInput;
+
+        /**
+         * Creates a plain object from a ComputeClientSealTokenInput message. Also converts values to other types if specified.
+         * @param message ComputeClientSealTokenInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ComputeClientSealTokenInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ComputeClientSealTokenInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ComputeClientSealTokenInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ComputeClientSealTokenInput {
+
+        /** Properties of a ComputeClientSealTokenInput. */
+        interface $Properties {
+
+            /** ComputeClientSealTokenInput orfClientState */
+            orfClientState?: (Uint8Array|null);
+
+            /** ComputeClientSealTokenInput backupId */
+            backupId?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ComputeClientSealTokenInput. */
+        type $Shape = proto.ComputeClientSealTokenInput.$Properties;
+    }
+
+    /**
+     * Properties of a ComputeClientSealTokenOutput.
+     * @deprecated Use proto.ComputeClientSealTokenOutput.$Properties instead.
+     */
+    interface IComputeClientSealTokenOutput extends proto.ComputeClientSealTokenOutput.$Properties {
+    }
+
+    /** Represents a ComputeClientSealTokenOutput. */
+    class ComputeClientSealTokenOutput {
+
+        /**
+         * Constructs a new ComputeClientSealTokenOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ComputeClientSealTokenOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ComputeClientSealTokenOutput success. */
+        success?: (proto.ComputeClientSealTokenSuccess.$Properties|null);
+
+        /** ComputeClientSealTokenOutput error. */
+        error?: (string|null);
+
+        /** ComputeClientSealTokenOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new ComputeClientSealTokenOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ComputeClientSealTokenOutput instance
+         */
+        static create(properties: proto.ComputeClientSealTokenOutput.$Shape): proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape;
+        static create(properties?: proto.ComputeClientSealTokenOutput.$Properties): proto.ComputeClientSealTokenOutput;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenOutput message. Does not implicitly {@link proto.ComputeClientSealTokenOutput.verify|verify} messages.
+         * @param message ComputeClientSealTokenOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ComputeClientSealTokenOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenOutput message, length delimited. Does not implicitly {@link proto.ComputeClientSealTokenOutput.verify|verify} messages.
+         * @param message ComputeClientSealTokenOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ComputeClientSealTokenOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ComputeClientSealTokenOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape} ComputeClientSealTokenOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape;
+
+        /**
+         * Decodes a ComputeClientSealTokenOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape} ComputeClientSealTokenOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape;
+
+        /**
+         * Verifies a ComputeClientSealTokenOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ComputeClientSealTokenOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ComputeClientSealTokenOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.ComputeClientSealTokenOutput;
+
+        /**
+         * Creates a plain object from a ComputeClientSealTokenOutput message. Also converts values to other types if specified.
+         * @param message ComputeClientSealTokenOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ComputeClientSealTokenOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ComputeClientSealTokenOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ComputeClientSealTokenOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ComputeClientSealTokenOutput {
+
+        /** Properties of a ComputeClientSealTokenOutput. */
+        interface $Properties {
+
+            /** ComputeClientSealTokenOutput success */
+            success?: (proto.ComputeClientSealTokenSuccess.$Properties|null);
+
+            /** ComputeClientSealTokenOutput error */
+            error?: (string|null);
+
+            /** ComputeClientSealTokenOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a ComputeClientSealTokenOutput. */
+        type $Shape = {
+          success?: proto.ComputeClientSealTokenSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.ComputeClientSealTokenSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a ComputeClientSealTokenSuccess.
+     * @deprecated Use proto.ComputeClientSealTokenSuccess.$Properties instead.
+     */
+    interface IComputeClientSealTokenSuccess extends proto.ComputeClientSealTokenSuccess.$Properties {
+    }
+
+    /** Represents a ComputeClientSealTokenSuccess. */
+    class ComputeClientSealTokenSuccess {
+
+        /**
+         * Constructs a new ComputeClientSealTokenSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ComputeClientSealTokenSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ComputeClientSealTokenSuccess clientSealToken. */
+        clientSealToken?: (Uint8Array|null);
+
+        /**
+         * Creates a new ComputeClientSealTokenSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ComputeClientSealTokenSuccess instance
+         */
+        static create(properties: proto.ComputeClientSealTokenSuccess.$Shape): proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape;
+        static create(properties?: proto.ComputeClientSealTokenSuccess.$Properties): proto.ComputeClientSealTokenSuccess;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenSuccess message. Does not implicitly {@link proto.ComputeClientSealTokenSuccess.verify|verify} messages.
+         * @param message ComputeClientSealTokenSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ComputeClientSealTokenSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ComputeClientSealTokenSuccess message, length delimited. Does not implicitly {@link proto.ComputeClientSealTokenSuccess.verify|verify} messages.
+         * @param message ComputeClientSealTokenSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ComputeClientSealTokenSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ComputeClientSealTokenSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape} ComputeClientSealTokenSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape;
+
+        /**
+         * Decodes a ComputeClientSealTokenSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape} ComputeClientSealTokenSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape;
+
+        /**
+         * Verifies a ComputeClientSealTokenSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ComputeClientSealTokenSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ComputeClientSealTokenSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.ComputeClientSealTokenSuccess;
+
+        /**
+         * Creates a plain object from a ComputeClientSealTokenSuccess message. Also converts values to other types if specified.
+         * @param message ComputeClientSealTokenSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ComputeClientSealTokenSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ComputeClientSealTokenSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ComputeClientSealTokenSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ComputeClientSealTokenSuccess {
+
+        /** Properties of a ComputeClientSealTokenSuccess. */
+        interface $Properties {
+
+            /** ComputeClientSealTokenSuccess clientSealToken */
+            clientSealToken?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ComputeClientSealTokenSuccess. */
+        type $Shape = proto.ComputeClientSealTokenSuccess.$Properties;
+    }
+
+    /**
      * Properties of a Config.
      * @deprecated Use proto.Config.$Properties instead.
      */
@@ -24215,6 +25376,1929 @@ export namespace proto {
     }
 
     /**
+     * Properties of a CreateBackupInput.
+     * @deprecated Use proto.CreateBackupInput.$Properties instead.
+     */
+    interface ICreateBackupInput extends proto.CreateBackupInput.$Properties {
+    }
+
+    /** Represents a CreateBackupInput. */
+    class CreateBackupInput {
+
+        /**
+         * Constructs a new CreateBackupInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CreateBackupInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** CreateBackupInput recoveryCode. */
+        recoveryCode?: (string|null);
+
+        /** CreateBackupInput userId. */
+        userId?: (number|Long|null);
+
+        /**
+         * Creates a new CreateBackupInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CreateBackupInput instance
+         */
+        static create(properties: proto.CreateBackupInput.$Shape): proto.CreateBackupInput & proto.CreateBackupInput.$Shape;
+        static create(properties?: proto.CreateBackupInput.$Properties): proto.CreateBackupInput;
+
+        /**
+         * Encodes the specified CreateBackupInput message. Does not implicitly {@link proto.CreateBackupInput.verify|verify} messages.
+         * @param message CreateBackupInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CreateBackupInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CreateBackupInput message, length delimited. Does not implicitly {@link proto.CreateBackupInput.verify|verify} messages.
+         * @param message CreateBackupInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CreateBackupInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CreateBackupInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CreateBackupInput & proto.CreateBackupInput.$Shape} CreateBackupInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CreateBackupInput & proto.CreateBackupInput.$Shape;
+
+        /**
+         * Decodes a CreateBackupInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CreateBackupInput & proto.CreateBackupInput.$Shape} CreateBackupInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CreateBackupInput & proto.CreateBackupInput.$Shape;
+
+        /**
+         * Verifies a CreateBackupInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CreateBackupInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CreateBackupInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.CreateBackupInput;
+
+        /**
+         * Creates a plain object from a CreateBackupInput message. Also converts values to other types if specified.
+         * @param message CreateBackupInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CreateBackupInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CreateBackupInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CreateBackupInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CreateBackupInput {
+
+        /** Properties of a CreateBackupInput. */
+        interface $Properties {
+
+            /** CreateBackupInput recoveryCode */
+            recoveryCode?: (string|null);
+
+            /** CreateBackupInput userId */
+            userId?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CreateBackupInput. */
+        type $Shape = proto.CreateBackupInput.$Properties;
+    }
+
+    /**
+     * Properties of a CreateBackupOutput.
+     * @deprecated Use proto.CreateBackupOutput.$Properties instead.
+     */
+    interface ICreateBackupOutput extends proto.CreateBackupOutput.$Properties {
+    }
+
+    /** Represents a CreateBackupOutput. */
+    class CreateBackupOutput {
+
+        /**
+         * Constructs a new CreateBackupOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CreateBackupOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** CreateBackupOutput success. */
+        success?: (proto.CreateBackupSuccess.$Properties|null);
+
+        /** CreateBackupOutput error. */
+        error?: (string|null);
+
+        /** CreateBackupOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new CreateBackupOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CreateBackupOutput instance
+         */
+        static create(properties: proto.CreateBackupOutput.$Shape): proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape;
+        static create(properties?: proto.CreateBackupOutput.$Properties): proto.CreateBackupOutput;
+
+        /**
+         * Encodes the specified CreateBackupOutput message. Does not implicitly {@link proto.CreateBackupOutput.verify|verify} messages.
+         * @param message CreateBackupOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CreateBackupOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CreateBackupOutput message, length delimited. Does not implicitly {@link proto.CreateBackupOutput.verify|verify} messages.
+         * @param message CreateBackupOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CreateBackupOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CreateBackupOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape} CreateBackupOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape;
+
+        /**
+         * Decodes a CreateBackupOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape} CreateBackupOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape;
+
+        /**
+         * Verifies a CreateBackupOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CreateBackupOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CreateBackupOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.CreateBackupOutput;
+
+        /**
+         * Creates a plain object from a CreateBackupOutput message. Also converts values to other types if specified.
+         * @param message CreateBackupOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CreateBackupOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CreateBackupOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CreateBackupOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CreateBackupOutput {
+
+        /** Properties of a CreateBackupOutput. */
+        interface $Properties {
+
+            /** CreateBackupOutput success */
+            success?: (proto.CreateBackupSuccess.$Properties|null);
+
+            /** CreateBackupOutput error */
+            error?: (string|null);
+
+            /** CreateBackupOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a CreateBackupOutput. */
+        type $Shape = {
+          success?: proto.CreateBackupSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.CreateBackupSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a CreateBackupSuccess.
+     * @deprecated Use proto.CreateBackupSuccess.$Properties instead.
+     */
+    interface ICreateBackupSuccess extends proto.CreateBackupSuccess.$Properties {
+    }
+
+    /** Represents a CreateBackupSuccess. */
+    class CreateBackupSuccess {
+
+        /**
+         * Constructs a new CreateBackupSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.CreateBackupSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** CreateBackupSuccess device. */
+        device?: (proto.DeviceOutput.$Properties|null);
+
+        /** CreateBackupSuccess virtualDevice. */
+        virtualDevice?: (proto.VirtualDeviceOutput.$Properties|null);
+
+        /** CreateBackupSuccess epoch0. */
+        epoch0?: (proto.Epoch0Output.$Properties|null);
+
+        /** CreateBackupSuccess mailboxRootKey. */
+        mailboxRootKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new CreateBackupSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CreateBackupSuccess instance
+         */
+        static create(properties: proto.CreateBackupSuccess.$Shape): proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape;
+        static create(properties?: proto.CreateBackupSuccess.$Properties): proto.CreateBackupSuccess;
+
+        /**
+         * Encodes the specified CreateBackupSuccess message. Does not implicitly {@link proto.CreateBackupSuccess.verify|verify} messages.
+         * @param message CreateBackupSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.CreateBackupSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CreateBackupSuccess message, length delimited. Does not implicitly {@link proto.CreateBackupSuccess.verify|verify} messages.
+         * @param message CreateBackupSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.CreateBackupSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CreateBackupSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape} CreateBackupSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape;
+
+        /**
+         * Decodes a CreateBackupSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape} CreateBackupSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape;
+
+        /**
+         * Verifies a CreateBackupSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CreateBackupSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CreateBackupSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.CreateBackupSuccess;
+
+        /**
+         * Creates a plain object from a CreateBackupSuccess message. Also converts values to other types if specified.
+         * @param message CreateBackupSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.CreateBackupSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CreateBackupSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for CreateBackupSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace CreateBackupSuccess {
+
+        /** Properties of a CreateBackupSuccess. */
+        interface $Properties {
+
+            /** CreateBackupSuccess device */
+            device?: (proto.DeviceOutput.$Properties|null);
+
+            /** CreateBackupSuccess virtualDevice */
+            virtualDevice?: (proto.VirtualDeviceOutput.$Properties|null);
+
+            /** CreateBackupSuccess epoch0 */
+            epoch0?: (proto.Epoch0Output.$Properties|null);
+
+            /** CreateBackupSuccess mailboxRootKey */
+            mailboxRootKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a CreateBackupSuccess. */
+        type $Shape = proto.CreateBackupSuccess.$Properties;
+    }
+
+    /**
+     * Properties of a DecryptMessageInput.
+     * @deprecated Use proto.DecryptMessageInput.$Properties instead.
+     */
+    interface IDecryptMessageInput extends proto.DecryptMessageInput.$Properties {
+    }
+
+    /** Represents a DecryptMessageInput. */
+    class DecryptMessageInput {
+
+        /**
+         * Constructs a new DecryptMessageInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DecryptMessageInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DecryptMessageInput epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /** DecryptMessageInput epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** DecryptMessageInput threadId. */
+        threadId?: (string|null);
+
+        /** DecryptMessageInput encryptionVersion. */
+        encryptionVersion?: (number|null);
+
+        /** DecryptMessageInput ciphertext. */
+        ciphertext?: (Uint8Array|null);
+
+        /**
+         * Creates a new DecryptMessageInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DecryptMessageInput instance
+         */
+        static create(properties: proto.DecryptMessageInput.$Shape): proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape;
+        static create(properties?: proto.DecryptMessageInput.$Properties): proto.DecryptMessageInput;
+
+        /**
+         * Encodes the specified DecryptMessageInput message. Does not implicitly {@link proto.DecryptMessageInput.verify|verify} messages.
+         * @param message DecryptMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DecryptMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DecryptMessageInput message, length delimited. Does not implicitly {@link proto.DecryptMessageInput.verify|verify} messages.
+         * @param message DecryptMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DecryptMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DecryptMessageInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape} DecryptMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape;
+
+        /**
+         * Decodes a DecryptMessageInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape} DecryptMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape;
+
+        /**
+         * Verifies a DecryptMessageInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DecryptMessageInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DecryptMessageInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DecryptMessageInput;
+
+        /**
+         * Creates a plain object from a DecryptMessageInput message. Also converts values to other types if specified.
+         * @param message DecryptMessageInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DecryptMessageInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DecryptMessageInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DecryptMessageInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DecryptMessageInput {
+
+        /** Properties of a DecryptMessageInput. */
+        interface $Properties {
+
+            /** DecryptMessageInput epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** DecryptMessageInput epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** DecryptMessageInput threadId */
+            threadId?: (string|null);
+
+            /** DecryptMessageInput encryptionVersion */
+            encryptionVersion?: (number|null);
+
+            /** DecryptMessageInput ciphertext */
+            ciphertext?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DecryptMessageInput. */
+        type $Shape = proto.DecryptMessageInput.$Properties;
+    }
+
+    /**
+     * Properties of a DecryptMessageOutput.
+     * @deprecated Use proto.DecryptMessageOutput.$Properties instead.
+     */
+    interface IDecryptMessageOutput extends proto.DecryptMessageOutput.$Properties {
+    }
+
+    /** Represents a DecryptMessageOutput. */
+    class DecryptMessageOutput {
+
+        /**
+         * Constructs a new DecryptMessageOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DecryptMessageOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DecryptMessageOutput success. */
+        success?: (proto.DecryptMessageSuccess.$Properties|null);
+
+        /** DecryptMessageOutput error. */
+        error?: (string|null);
+
+        /** DecryptMessageOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new DecryptMessageOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DecryptMessageOutput instance
+         */
+        static create(properties: proto.DecryptMessageOutput.$Shape): proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape;
+        static create(properties?: proto.DecryptMessageOutput.$Properties): proto.DecryptMessageOutput;
+
+        /**
+         * Encodes the specified DecryptMessageOutput message. Does not implicitly {@link proto.DecryptMessageOutput.verify|verify} messages.
+         * @param message DecryptMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DecryptMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DecryptMessageOutput message, length delimited. Does not implicitly {@link proto.DecryptMessageOutput.verify|verify} messages.
+         * @param message DecryptMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DecryptMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DecryptMessageOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape} DecryptMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape;
+
+        /**
+         * Decodes a DecryptMessageOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape} DecryptMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape;
+
+        /**
+         * Verifies a DecryptMessageOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DecryptMessageOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DecryptMessageOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DecryptMessageOutput;
+
+        /**
+         * Creates a plain object from a DecryptMessageOutput message. Also converts values to other types if specified.
+         * @param message DecryptMessageOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DecryptMessageOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DecryptMessageOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DecryptMessageOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DecryptMessageOutput {
+
+        /** Properties of a DecryptMessageOutput. */
+        interface $Properties {
+
+            /** DecryptMessageOutput success */
+            success?: (proto.DecryptMessageSuccess.$Properties|null);
+
+            /** DecryptMessageOutput error */
+            error?: (string|null);
+
+            /** DecryptMessageOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a DecryptMessageOutput. */
+        type $Shape = {
+          success?: proto.DecryptMessageSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DecryptMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a DecryptMessageSuccess.
+     * @deprecated Use proto.DecryptMessageSuccess.$Properties instead.
+     */
+    interface IDecryptMessageSuccess extends proto.DecryptMessageSuccess.$Properties {
+    }
+
+    /** Represents a DecryptMessageSuccess. */
+    class DecryptMessageSuccess {
+
+        /**
+         * Constructs a new DecryptMessageSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DecryptMessageSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DecryptMessageSuccess plaintextPayload. */
+        plaintextPayload?: (Uint8Array|null);
+
+        /**
+         * Creates a new DecryptMessageSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DecryptMessageSuccess instance
+         */
+        static create(properties: proto.DecryptMessageSuccess.$Shape): proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape;
+        static create(properties?: proto.DecryptMessageSuccess.$Properties): proto.DecryptMessageSuccess;
+
+        /**
+         * Encodes the specified DecryptMessageSuccess message. Does not implicitly {@link proto.DecryptMessageSuccess.verify|verify} messages.
+         * @param message DecryptMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DecryptMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DecryptMessageSuccess message, length delimited. Does not implicitly {@link proto.DecryptMessageSuccess.verify|verify} messages.
+         * @param message DecryptMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DecryptMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DecryptMessageSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape} DecryptMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape;
+
+        /**
+         * Decodes a DecryptMessageSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape} DecryptMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape;
+
+        /**
+         * Verifies a DecryptMessageSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DecryptMessageSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DecryptMessageSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.DecryptMessageSuccess;
+
+        /**
+         * Creates a plain object from a DecryptMessageSuccess message. Also converts values to other types if specified.
+         * @param message DecryptMessageSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DecryptMessageSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DecryptMessageSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DecryptMessageSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DecryptMessageSuccess {
+
+        /** Properties of a DecryptMessageSuccess. */
+        interface $Properties {
+
+            /** DecryptMessageSuccess plaintextPayload */
+            plaintextPayload?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DecryptMessageSuccess. */
+        type $Shape = proto.DecryptMessageSuccess.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveEpochsInput.
+     * @deprecated Use proto.DeriveEpochsInput.$Properties instead.
+     */
+    interface IDeriveEpochsInput extends proto.DeriveEpochsInput.$Properties {
+    }
+
+    /** Represents a DeriveEpochsInput. */
+    class DeriveEpochsInput {
+
+        /**
+         * Constructs a new DeriveEpochsInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveEpochsInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveEpochsInput epochStoragePrivateKey. */
+        epochStoragePrivateKey?: (Uint8Array|null);
+
+        /** DeriveEpochsInput epochs. */
+        epochs: proto.EpochKey.$Properties[];
+
+        /** DeriveEpochsInput edges. */
+        edges: proto.EpochDerivationEdge.$Properties[];
+
+        /**
+         * Creates a new DeriveEpochsInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveEpochsInput instance
+         */
+        static create(properties: proto.DeriveEpochsInput.$Shape): proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape;
+        static create(properties?: proto.DeriveEpochsInput.$Properties): proto.DeriveEpochsInput;
+
+        /**
+         * Encodes the specified DeriveEpochsInput message. Does not implicitly {@link proto.DeriveEpochsInput.verify|verify} messages.
+         * @param message DeriveEpochsInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveEpochsInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveEpochsInput message, length delimited. Does not implicitly {@link proto.DeriveEpochsInput.verify|verify} messages.
+         * @param message DeriveEpochsInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveEpochsInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveEpochsInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape} DeriveEpochsInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape;
+
+        /**
+         * Decodes a DeriveEpochsInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape} DeriveEpochsInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape;
+
+        /**
+         * Verifies a DeriveEpochsInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveEpochsInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveEpochsInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveEpochsInput;
+
+        /**
+         * Creates a plain object from a DeriveEpochsInput message. Also converts values to other types if specified.
+         * @param message DeriveEpochsInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveEpochsInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveEpochsInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveEpochsInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveEpochsInput {
+
+        /** Properties of a DeriveEpochsInput. */
+        interface $Properties {
+
+            /** DeriveEpochsInput epochStoragePrivateKey */
+            epochStoragePrivateKey?: (Uint8Array|null);
+
+            /** DeriveEpochsInput epochs */
+            epochs?: (proto.EpochKey.$Properties[]|null);
+
+            /** DeriveEpochsInput edges */
+            edges?: (proto.EpochDerivationEdge.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveEpochsInput. */
+        type $Shape = proto.DeriveEpochsInput.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveEpochsOutput.
+     * @deprecated Use proto.DeriveEpochsOutput.$Properties instead.
+     */
+    interface IDeriveEpochsOutput extends proto.DeriveEpochsOutput.$Properties {
+    }
+
+    /** Represents a DeriveEpochsOutput. */
+    class DeriveEpochsOutput {
+
+        /**
+         * Constructs a new DeriveEpochsOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveEpochsOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveEpochsOutput success. */
+        success?: (proto.DeriveEpochsSuccess.$Properties|null);
+
+        /** DeriveEpochsOutput error. */
+        error?: (string|null);
+
+        /** DeriveEpochsOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new DeriveEpochsOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveEpochsOutput instance
+         */
+        static create(properties: proto.DeriveEpochsOutput.$Shape): proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape;
+        static create(properties?: proto.DeriveEpochsOutput.$Properties): proto.DeriveEpochsOutput;
+
+        /**
+         * Encodes the specified DeriveEpochsOutput message. Does not implicitly {@link proto.DeriveEpochsOutput.verify|verify} messages.
+         * @param message DeriveEpochsOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveEpochsOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveEpochsOutput message, length delimited. Does not implicitly {@link proto.DeriveEpochsOutput.verify|verify} messages.
+         * @param message DeriveEpochsOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveEpochsOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveEpochsOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape} DeriveEpochsOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape;
+
+        /**
+         * Decodes a DeriveEpochsOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape} DeriveEpochsOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape;
+
+        /**
+         * Verifies a DeriveEpochsOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveEpochsOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveEpochsOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveEpochsOutput;
+
+        /**
+         * Creates a plain object from a DeriveEpochsOutput message. Also converts values to other types if specified.
+         * @param message DeriveEpochsOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveEpochsOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveEpochsOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveEpochsOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveEpochsOutput {
+
+        /** Properties of a DeriveEpochsOutput. */
+        interface $Properties {
+
+            /** DeriveEpochsOutput success */
+            success?: (proto.DeriveEpochsSuccess.$Properties|null);
+
+            /** DeriveEpochsOutput error */
+            error?: (string|null);
+
+            /** DeriveEpochsOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a DeriveEpochsOutput. */
+        type $Shape = {
+          success?: proto.DeriveEpochsSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveEpochsSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a DeriveEpochsSuccess.
+     * @deprecated Use proto.DeriveEpochsSuccess.$Properties instead.
+     */
+    interface IDeriveEpochsSuccess extends proto.DeriveEpochsSuccess.$Properties {
+    }
+
+    /** Represents a DeriveEpochsSuccess. */
+    class DeriveEpochsSuccess {
+
+        /**
+         * Constructs a new DeriveEpochsSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveEpochsSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveEpochsSuccess epochs. */
+        epochs: proto.EpochKey.$Properties[];
+
+        /**
+         * Creates a new DeriveEpochsSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveEpochsSuccess instance
+         */
+        static create(properties: proto.DeriveEpochsSuccess.$Shape): proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape;
+        static create(properties?: proto.DeriveEpochsSuccess.$Properties): proto.DeriveEpochsSuccess;
+
+        /**
+         * Encodes the specified DeriveEpochsSuccess message. Does not implicitly {@link proto.DeriveEpochsSuccess.verify|verify} messages.
+         * @param message DeriveEpochsSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveEpochsSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveEpochsSuccess message, length delimited. Does not implicitly {@link proto.DeriveEpochsSuccess.verify|verify} messages.
+         * @param message DeriveEpochsSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveEpochsSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveEpochsSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape} DeriveEpochsSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape;
+
+        /**
+         * Decodes a DeriveEpochsSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape} DeriveEpochsSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape;
+
+        /**
+         * Verifies a DeriveEpochsSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveEpochsSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveEpochsSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveEpochsSuccess;
+
+        /**
+         * Creates a plain object from a DeriveEpochsSuccess message. Also converts values to other types if specified.
+         * @param message DeriveEpochsSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveEpochsSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveEpochsSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveEpochsSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveEpochsSuccess {
+
+        /** Properties of a DeriveEpochsSuccess. */
+        interface $Properties {
+
+            /** DeriveEpochsSuccess epochs */
+            epochs?: (proto.EpochKey.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveEpochsSuccess. */
+        type $Shape = proto.DeriveEpochsSuccess.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveMessageKeyInput.
+     * @deprecated Use proto.DeriveMessageKeyInput.$Properties instead.
+     */
+    interface IDeriveMessageKeyInput extends proto.DeriveMessageKeyInput.$Properties {
+    }
+
+    /** Represents a DeriveMessageKeyInput. */
+    class DeriveMessageKeyInput {
+
+        /**
+         * Constructs a new DeriveMessageKeyInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveMessageKeyInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveMessageKeyInput epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /** DeriveMessageKeyInput epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** DeriveMessageKeyInput threadId. */
+        threadId?: (string|null);
+
+        /**
+         * Creates a new DeriveMessageKeyInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveMessageKeyInput instance
+         */
+        static create(properties: proto.DeriveMessageKeyInput.$Shape): proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape;
+        static create(properties?: proto.DeriveMessageKeyInput.$Properties): proto.DeriveMessageKeyInput;
+
+        /**
+         * Encodes the specified DeriveMessageKeyInput message. Does not implicitly {@link proto.DeriveMessageKeyInput.verify|verify} messages.
+         * @param message DeriveMessageKeyInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveMessageKeyInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveMessageKeyInput message, length delimited. Does not implicitly {@link proto.DeriveMessageKeyInput.verify|verify} messages.
+         * @param message DeriveMessageKeyInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveMessageKeyInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveMessageKeyInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape} DeriveMessageKeyInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape;
+
+        /**
+         * Decodes a DeriveMessageKeyInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape} DeriveMessageKeyInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape;
+
+        /**
+         * Verifies a DeriveMessageKeyInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveMessageKeyInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveMessageKeyInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveMessageKeyInput;
+
+        /**
+         * Creates a plain object from a DeriveMessageKeyInput message. Also converts values to other types if specified.
+         * @param message DeriveMessageKeyInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveMessageKeyInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveMessageKeyInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveMessageKeyInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveMessageKeyInput {
+
+        /** Properties of a DeriveMessageKeyInput. */
+        interface $Properties {
+
+            /** DeriveMessageKeyInput epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** DeriveMessageKeyInput epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** DeriveMessageKeyInput threadId */
+            threadId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveMessageKeyInput. */
+        type $Shape = proto.DeriveMessageKeyInput.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveMessageKeyOutput.
+     * @deprecated Use proto.DeriveMessageKeyOutput.$Properties instead.
+     */
+    interface IDeriveMessageKeyOutput extends proto.DeriveMessageKeyOutput.$Properties {
+    }
+
+    /** Represents a DeriveMessageKeyOutput. */
+    class DeriveMessageKeyOutput {
+
+        /**
+         * Constructs a new DeriveMessageKeyOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveMessageKeyOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveMessageKeyOutput success. */
+        success?: (proto.DeriveMessageKeySuccess.$Properties|null);
+
+        /** DeriveMessageKeyOutput error. */
+        error?: (string|null);
+
+        /** DeriveMessageKeyOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new DeriveMessageKeyOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveMessageKeyOutput instance
+         */
+        static create(properties: proto.DeriveMessageKeyOutput.$Shape): proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape;
+        static create(properties?: proto.DeriveMessageKeyOutput.$Properties): proto.DeriveMessageKeyOutput;
+
+        /**
+         * Encodes the specified DeriveMessageKeyOutput message. Does not implicitly {@link proto.DeriveMessageKeyOutput.verify|verify} messages.
+         * @param message DeriveMessageKeyOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveMessageKeyOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveMessageKeyOutput message, length delimited. Does not implicitly {@link proto.DeriveMessageKeyOutput.verify|verify} messages.
+         * @param message DeriveMessageKeyOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveMessageKeyOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveMessageKeyOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape} DeriveMessageKeyOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape;
+
+        /**
+         * Decodes a DeriveMessageKeyOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape} DeriveMessageKeyOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape;
+
+        /**
+         * Verifies a DeriveMessageKeyOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveMessageKeyOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveMessageKeyOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveMessageKeyOutput;
+
+        /**
+         * Creates a plain object from a DeriveMessageKeyOutput message. Also converts values to other types if specified.
+         * @param message DeriveMessageKeyOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveMessageKeyOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveMessageKeyOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveMessageKeyOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveMessageKeyOutput {
+
+        /** Properties of a DeriveMessageKeyOutput. */
+        interface $Properties {
+
+            /** DeriveMessageKeyOutput success */
+            success?: (proto.DeriveMessageKeySuccess.$Properties|null);
+
+            /** DeriveMessageKeyOutput error */
+            error?: (string|null);
+
+            /** DeriveMessageKeyOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a DeriveMessageKeyOutput. */
+        type $Shape = {
+          success?: proto.DeriveMessageKeySuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveMessageKeySuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a DeriveMessageKeySuccess.
+     * @deprecated Use proto.DeriveMessageKeySuccess.$Properties instead.
+     */
+    interface IDeriveMessageKeySuccess extends proto.DeriveMessageKeySuccess.$Properties {
+    }
+
+    /** Represents a DeriveMessageKeySuccess. */
+    class DeriveMessageKeySuccess {
+
+        /**
+         * Constructs a new DeriveMessageKeySuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveMessageKeySuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveMessageKeySuccess messageKey. */
+        messageKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new DeriveMessageKeySuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveMessageKeySuccess instance
+         */
+        static create(properties: proto.DeriveMessageKeySuccess.$Shape): proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape;
+        static create(properties?: proto.DeriveMessageKeySuccess.$Properties): proto.DeriveMessageKeySuccess;
+
+        /**
+         * Encodes the specified DeriveMessageKeySuccess message. Does not implicitly {@link proto.DeriveMessageKeySuccess.verify|verify} messages.
+         * @param message DeriveMessageKeySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveMessageKeySuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveMessageKeySuccess message, length delimited. Does not implicitly {@link proto.DeriveMessageKeySuccess.verify|verify} messages.
+         * @param message DeriveMessageKeySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveMessageKeySuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveMessageKeySuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape} DeriveMessageKeySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape;
+
+        /**
+         * Decodes a DeriveMessageKeySuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape} DeriveMessageKeySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape;
+
+        /**
+         * Verifies a DeriveMessageKeySuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveMessageKeySuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveMessageKeySuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveMessageKeySuccess;
+
+        /**
+         * Creates a plain object from a DeriveMessageKeySuccess message. Also converts values to other types if specified.
+         * @param message DeriveMessageKeySuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveMessageKeySuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveMessageKeySuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveMessageKeySuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveMessageKeySuccess {
+
+        /** Properties of a DeriveMessageKeySuccess. */
+        interface $Properties {
+
+            /** DeriveMessageKeySuccess messageKey */
+            messageKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveMessageKeySuccess. */
+        type $Shape = proto.DeriveMessageKeySuccess.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveVirtualDeviceIdInput.
+     * @deprecated Use proto.DeriveVirtualDeviceIdInput.$Properties instead.
+     */
+    interface IDeriveVirtualDeviceIdInput extends proto.DeriveVirtualDeviceIdInput.$Properties {
+    }
+
+    /** Represents a DeriveVirtualDeviceIdInput. */
+    class DeriveVirtualDeviceIdInput {
+
+        /**
+         * Constructs a new DeriveVirtualDeviceIdInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveVirtualDeviceIdInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveVirtualDeviceIdInput recoveryCode. */
+        recoveryCode?: (string|null);
+
+        /** DeriveVirtualDeviceIdInput userId. */
+        userId?: (number|Long|null);
+
+        /**
+         * Creates a new DeriveVirtualDeviceIdInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveVirtualDeviceIdInput instance
+         */
+        static create(properties: proto.DeriveVirtualDeviceIdInput.$Shape): proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape;
+        static create(properties?: proto.DeriveVirtualDeviceIdInput.$Properties): proto.DeriveVirtualDeviceIdInput;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdInput message. Does not implicitly {@link proto.DeriveVirtualDeviceIdInput.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveVirtualDeviceIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdInput message, length delimited. Does not implicitly {@link proto.DeriveVirtualDeviceIdInput.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveVirtualDeviceIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape} DeriveVirtualDeviceIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape} DeriveVirtualDeviceIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape;
+
+        /**
+         * Verifies a DeriveVirtualDeviceIdInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveVirtualDeviceIdInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveVirtualDeviceIdInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveVirtualDeviceIdInput;
+
+        /**
+         * Creates a plain object from a DeriveVirtualDeviceIdInput message. Also converts values to other types if specified.
+         * @param message DeriveVirtualDeviceIdInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveVirtualDeviceIdInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveVirtualDeviceIdInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveVirtualDeviceIdInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveVirtualDeviceIdInput {
+
+        /** Properties of a DeriveVirtualDeviceIdInput. */
+        interface $Properties {
+
+            /** DeriveVirtualDeviceIdInput recoveryCode */
+            recoveryCode?: (string|null);
+
+            /** DeriveVirtualDeviceIdInput userId */
+            userId?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveVirtualDeviceIdInput. */
+        type $Shape = proto.DeriveVirtualDeviceIdInput.$Properties;
+    }
+
+    /**
+     * Properties of a DeriveVirtualDeviceIdOutput.
+     * @deprecated Use proto.DeriveVirtualDeviceIdOutput.$Properties instead.
+     */
+    interface IDeriveVirtualDeviceIdOutput extends proto.DeriveVirtualDeviceIdOutput.$Properties {
+    }
+
+    /** Represents a DeriveVirtualDeviceIdOutput. */
+    class DeriveVirtualDeviceIdOutput {
+
+        /**
+         * Constructs a new DeriveVirtualDeviceIdOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveVirtualDeviceIdOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveVirtualDeviceIdOutput success. */
+        success?: (proto.DeriveVirtualDeviceIdSuccess.$Properties|null);
+
+        /** DeriveVirtualDeviceIdOutput error. */
+        error?: (string|null);
+
+        /** DeriveVirtualDeviceIdOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new DeriveVirtualDeviceIdOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveVirtualDeviceIdOutput instance
+         */
+        static create(properties: proto.DeriveVirtualDeviceIdOutput.$Shape): proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape;
+        static create(properties?: proto.DeriveVirtualDeviceIdOutput.$Properties): proto.DeriveVirtualDeviceIdOutput;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdOutput message. Does not implicitly {@link proto.DeriveVirtualDeviceIdOutput.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveVirtualDeviceIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdOutput message, length delimited. Does not implicitly {@link proto.DeriveVirtualDeviceIdOutput.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveVirtualDeviceIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape} DeriveVirtualDeviceIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape} DeriveVirtualDeviceIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape;
+
+        /**
+         * Verifies a DeriveVirtualDeviceIdOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveVirtualDeviceIdOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveVirtualDeviceIdOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveVirtualDeviceIdOutput;
+
+        /**
+         * Creates a plain object from a DeriveVirtualDeviceIdOutput message. Also converts values to other types if specified.
+         * @param message DeriveVirtualDeviceIdOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveVirtualDeviceIdOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveVirtualDeviceIdOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveVirtualDeviceIdOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveVirtualDeviceIdOutput {
+
+        /** Properties of a DeriveVirtualDeviceIdOutput. */
+        interface $Properties {
+
+            /** DeriveVirtualDeviceIdOutput success */
+            success?: (proto.DeriveVirtualDeviceIdSuccess.$Properties|null);
+
+            /** DeriveVirtualDeviceIdOutput error */
+            error?: (string|null);
+
+            /** DeriveVirtualDeviceIdOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a DeriveVirtualDeviceIdOutput. */
+        type $Shape = {
+          success?: proto.DeriveVirtualDeviceIdSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveVirtualDeviceIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a DeriveVirtualDeviceIdSuccess.
+     * @deprecated Use proto.DeriveVirtualDeviceIdSuccess.$Properties instead.
+     */
+    interface IDeriveVirtualDeviceIdSuccess extends proto.DeriveVirtualDeviceIdSuccess.$Properties {
+    }
+
+    /** Represents a DeriveVirtualDeviceIdSuccess. */
+    class DeriveVirtualDeviceIdSuccess {
+
+        /**
+         * Constructs a new DeriveVirtualDeviceIdSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeriveVirtualDeviceIdSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeriveVirtualDeviceIdSuccess virtualDeviceId. */
+        virtualDeviceId?: (Uint8Array|null);
+
+        /**
+         * Creates a new DeriveVirtualDeviceIdSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeriveVirtualDeviceIdSuccess instance
+         */
+        static create(properties: proto.DeriveVirtualDeviceIdSuccess.$Shape): proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape;
+        static create(properties?: proto.DeriveVirtualDeviceIdSuccess.$Properties): proto.DeriveVirtualDeviceIdSuccess;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdSuccess message. Does not implicitly {@link proto.DeriveVirtualDeviceIdSuccess.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeriveVirtualDeviceIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeriveVirtualDeviceIdSuccess message, length delimited. Does not implicitly {@link proto.DeriveVirtualDeviceIdSuccess.verify|verify} messages.
+         * @param message DeriveVirtualDeviceIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeriveVirtualDeviceIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape} DeriveVirtualDeviceIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape;
+
+        /**
+         * Decodes a DeriveVirtualDeviceIdSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape} DeriveVirtualDeviceIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape;
+
+        /**
+         * Verifies a DeriveVirtualDeviceIdSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeriveVirtualDeviceIdSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeriveVirtualDeviceIdSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeriveVirtualDeviceIdSuccess;
+
+        /**
+         * Creates a plain object from a DeriveVirtualDeviceIdSuccess message. Also converts values to other types if specified.
+         * @param message DeriveVirtualDeviceIdSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeriveVirtualDeviceIdSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeriveVirtualDeviceIdSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeriveVirtualDeviceIdSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeriveVirtualDeviceIdSuccess {
+
+        /** Properties of a DeriveVirtualDeviceIdSuccess. */
+        interface $Properties {
+
+            /** DeriveVirtualDeviceIdSuccess virtualDeviceId */
+            virtualDeviceId?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeriveVirtualDeviceIdSuccess. */
+        type $Shape = proto.DeriveVirtualDeviceIdSuccess.$Properties;
+    }
+
+    /**
      * Properties of a DeviceCapabilities.
      * @deprecated Use proto.DeviceCapabilities.$Properties instead.
      */
@@ -26439,6 +29523,189 @@ export namespace proto {
     }
 
     /**
+     * Properties of a DeviceOutput.
+     * @deprecated Use proto.DeviceOutput.$Properties instead.
+     */
+    interface IDeviceOutput extends proto.DeviceOutput.$Properties {
+    }
+
+    /** Represents a DeviceOutput. */
+    class DeviceOutput {
+
+        /**
+         * Constructs a new DeviceOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DeviceOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DeviceOutput publicKey. */
+        publicKey?: (Uint8Array|null);
+
+        /** DeviceOutput epochAuthPublicKey. */
+        epochAuthPublicKey?: (Uint8Array|null);
+
+        /** DeviceOutput epochAuthPublicKeySig. */
+        epochAuthPublicKeySig?: (Uint8Array|null);
+
+        /** DeviceOutput epochStoragePublicKey. */
+        epochStoragePublicKey?: (Uint8Array|null);
+
+        /** DeviceOutput epochStoragePublicKeySig. */
+        epochStoragePublicKeySig?: (Uint8Array|null);
+
+        /** DeviceOutput supportedEncryptionVersions. */
+        supportedEncryptionVersions: number[];
+
+        /** DeviceOutput encryptionVersionSignature. */
+        encryptionVersionSignature?: (Uint8Array|null);
+
+        /** DeviceOutput clientVersion. */
+        clientVersion?: (number|null);
+
+        /** DeviceOutput ocmfClientState. */
+        ocmfClientState?: (Uint8Array|null);
+
+        /** DeviceOutput epochStoragePrivateKey. */
+        epochStoragePrivateKey?: (Uint8Array|null);
+
+        /** DeviceOutput epochAuthPrivateKey. */
+        epochAuthPrivateKey?: (Uint8Array|null);
+
+        /** DeviceOutput deviceEpochHmac. */
+        deviceEpochHmac?: (Uint8Array|null);
+
+        /**
+         * Creates a new DeviceOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DeviceOutput instance
+         */
+        static create(properties: proto.DeviceOutput.$Shape): proto.DeviceOutput & proto.DeviceOutput.$Shape;
+        static create(properties?: proto.DeviceOutput.$Properties): proto.DeviceOutput;
+
+        /**
+         * Encodes the specified DeviceOutput message. Does not implicitly {@link proto.DeviceOutput.verify|verify} messages.
+         * @param message DeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DeviceOutput message, length delimited. Does not implicitly {@link proto.DeviceOutput.verify|verify} messages.
+         * @param message DeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DeviceOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DeviceOutput & proto.DeviceOutput.$Shape} DeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeviceOutput & proto.DeviceOutput.$Shape;
+
+        /**
+         * Decodes a DeviceOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DeviceOutput & proto.DeviceOutput.$Shape} DeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeviceOutput & proto.DeviceOutput.$Shape;
+
+        /**
+         * Verifies a DeviceOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DeviceOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DeviceOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.DeviceOutput;
+
+        /**
+         * Creates a plain object from a DeviceOutput message. Also converts values to other types if specified.
+         * @param message DeviceOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DeviceOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DeviceOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DeviceOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DeviceOutput {
+
+        /** Properties of a DeviceOutput. */
+        interface $Properties {
+
+            /** DeviceOutput publicKey */
+            publicKey?: (Uint8Array|null);
+
+            /** DeviceOutput epochAuthPublicKey */
+            epochAuthPublicKey?: (Uint8Array|null);
+
+            /** DeviceOutput epochAuthPublicKeySig */
+            epochAuthPublicKeySig?: (Uint8Array|null);
+
+            /** DeviceOutput epochStoragePublicKey */
+            epochStoragePublicKey?: (Uint8Array|null);
+
+            /** DeviceOutput epochStoragePublicKeySig */
+            epochStoragePublicKeySig?: (Uint8Array|null);
+
+            /** DeviceOutput supportedEncryptionVersions */
+            supportedEncryptionVersions?: (number[]|null);
+
+            /** DeviceOutput encryptionVersionSignature */
+            encryptionVersionSignature?: (Uint8Array|null);
+
+            /** DeviceOutput clientVersion */
+            clientVersion?: (number|null);
+
+            /** DeviceOutput ocmfClientState */
+            ocmfClientState?: (Uint8Array|null);
+
+            /** DeviceOutput epochStoragePrivateKey */
+            epochStoragePrivateKey?: (Uint8Array|null);
+
+            /** DeviceOutput epochAuthPrivateKey */
+            epochAuthPrivateKey?: (Uint8Array|null);
+
+            /** DeviceOutput deviceEpochHmac */
+            deviceEpochHmac?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DeviceOutput. */
+        type $Shape = proto.DeviceOutput.$Properties;
+    }
+
+    /**
      * Properties of a DeviceProps.
      * @deprecated Use proto.DeviceProps.$Properties instead.
      */
@@ -27727,6 +30994,459 @@ export namespace proto {
     }
 
     /**
+     * Properties of an EncryptMessageInput.
+     * @deprecated Use proto.EncryptMessageInput.$Properties instead.
+     */
+    interface IEncryptMessageInput extends proto.EncryptMessageInput.$Properties {
+    }
+
+    /** Represents an EncryptMessageInput. */
+    class EncryptMessageInput {
+
+        /**
+         * Constructs a new EncryptMessageInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EncryptMessageInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EncryptMessageInput epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /** EncryptMessageInput mailboxRootKey. */
+        mailboxRootKey?: (Uint8Array|null);
+
+        /** EncryptMessageInput orfClientState. */
+        orfClientState?: (Uint8Array|null);
+
+        /** EncryptMessageInput epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** EncryptMessageInput epochId. */
+        epochId?: (number|Long|null);
+
+        /** EncryptMessageInput threadId. */
+        threadId?: (string|null);
+
+        /** EncryptMessageInput waCanonicalUserFbid. */
+        waCanonicalUserFbid?: (number|Long|null);
+
+        /** EncryptMessageInput timestampMs. */
+        timestampMs?: (number|Long|null);
+
+        /** EncryptMessageInput backupId. */
+        backupId?: (number|Long|null);
+
+        /** EncryptMessageInput plaintextPayload. */
+        plaintextPayload?: (Uint8Array|null);
+
+        /** EncryptMessageInput stanzaId. */
+        stanzaId?: (string|null);
+
+        /**
+         * Creates a new EncryptMessageInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EncryptMessageInput instance
+         */
+        static create(properties: proto.EncryptMessageInput.$Shape): proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape;
+        static create(properties?: proto.EncryptMessageInput.$Properties): proto.EncryptMessageInput;
+
+        /**
+         * Encodes the specified EncryptMessageInput message. Does not implicitly {@link proto.EncryptMessageInput.verify|verify} messages.
+         * @param message EncryptMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EncryptMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EncryptMessageInput message, length delimited. Does not implicitly {@link proto.EncryptMessageInput.verify|verify} messages.
+         * @param message EncryptMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EncryptMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EncryptMessageInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape} EncryptMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape;
+
+        /**
+         * Decodes an EncryptMessageInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape} EncryptMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape;
+
+        /**
+         * Verifies an EncryptMessageInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EncryptMessageInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EncryptMessageInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.EncryptMessageInput;
+
+        /**
+         * Creates a plain object from an EncryptMessageInput message. Also converts values to other types if specified.
+         * @param message EncryptMessageInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EncryptMessageInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EncryptMessageInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EncryptMessageInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EncryptMessageInput {
+
+        /** Properties of an EncryptMessageInput. */
+        interface $Properties {
+
+            /** EncryptMessageInput epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** EncryptMessageInput mailboxRootKey */
+            mailboxRootKey?: (Uint8Array|null);
+
+            /** EncryptMessageInput orfClientState */
+            orfClientState?: (Uint8Array|null);
+
+            /** EncryptMessageInput epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** EncryptMessageInput epochId */
+            epochId?: (number|Long|null);
+
+            /** EncryptMessageInput threadId */
+            threadId?: (string|null);
+
+            /** EncryptMessageInput waCanonicalUserFbid */
+            waCanonicalUserFbid?: (number|Long|null);
+
+            /** EncryptMessageInput timestampMs */
+            timestampMs?: (number|Long|null);
+
+            /** EncryptMessageInput backupId */
+            backupId?: (number|Long|null);
+
+            /** EncryptMessageInput plaintextPayload */
+            plaintextPayload?: (Uint8Array|null);
+
+            /** EncryptMessageInput stanzaId */
+            stanzaId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EncryptMessageInput. */
+        type $Shape = proto.EncryptMessageInput.$Properties;
+    }
+
+    /**
+     * Properties of an EncryptMessageOutput.
+     * @deprecated Use proto.EncryptMessageOutput.$Properties instead.
+     */
+    interface IEncryptMessageOutput extends proto.EncryptMessageOutput.$Properties {
+    }
+
+    /** Represents an EncryptMessageOutput. */
+    class EncryptMessageOutput {
+
+        /**
+         * Constructs a new EncryptMessageOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EncryptMessageOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EncryptMessageOutput success. */
+        success?: (proto.EncryptMessageSuccess.$Properties|null);
+
+        /** EncryptMessageOutput error. */
+        error?: (string|null);
+
+        /** EncryptMessageOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new EncryptMessageOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EncryptMessageOutput instance
+         */
+        static create(properties: proto.EncryptMessageOutput.$Shape): proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape;
+        static create(properties?: proto.EncryptMessageOutput.$Properties): proto.EncryptMessageOutput;
+
+        /**
+         * Encodes the specified EncryptMessageOutput message. Does not implicitly {@link proto.EncryptMessageOutput.verify|verify} messages.
+         * @param message EncryptMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EncryptMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EncryptMessageOutput message, length delimited. Does not implicitly {@link proto.EncryptMessageOutput.verify|verify} messages.
+         * @param message EncryptMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EncryptMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EncryptMessageOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape} EncryptMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape;
+
+        /**
+         * Decodes an EncryptMessageOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape} EncryptMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape;
+
+        /**
+         * Verifies an EncryptMessageOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EncryptMessageOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EncryptMessageOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.EncryptMessageOutput;
+
+        /**
+         * Creates a plain object from an EncryptMessageOutput message. Also converts values to other types if specified.
+         * @param message EncryptMessageOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EncryptMessageOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EncryptMessageOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EncryptMessageOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EncryptMessageOutput {
+
+        /** Properties of an EncryptMessageOutput. */
+        interface $Properties {
+
+            /** EncryptMessageOutput success */
+            success?: (proto.EncryptMessageSuccess.$Properties|null);
+
+            /** EncryptMessageOutput error */
+            error?: (string|null);
+
+            /** EncryptMessageOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of an EncryptMessageOutput. */
+        type $Shape = {
+          success?: proto.EncryptMessageSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.EncryptMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of an EncryptMessageSuccess.
+     * @deprecated Use proto.EncryptMessageSuccess.$Properties instead.
+     */
+    interface IEncryptMessageSuccess extends proto.EncryptMessageSuccess.$Properties {
+    }
+
+    /** Represents an EncryptMessageSuccess. */
+    class EncryptMessageSuccess {
+
+        /**
+         * Constructs a new EncryptMessageSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EncryptMessageSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EncryptMessageSuccess encryptedProtobuf. */
+        encryptedProtobuf?: (Uint8Array|null);
+
+        /** EncryptMessageSuccess orfThreadId. */
+        orfThreadId?: (Uint8Array|null);
+
+        /** EncryptMessageSuccess valueSecretRef. */
+        valueSecretRef?: (string|null);
+
+        /** EncryptMessageSuccess offlineThreadingId. */
+        offlineThreadingId?: (number|Long|null);
+
+        /** EncryptMessageSuccess timestampMs. */
+        timestampMs?: (number|Long|null);
+
+        /**
+         * Creates a new EncryptMessageSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EncryptMessageSuccess instance
+         */
+        static create(properties: proto.EncryptMessageSuccess.$Shape): proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape;
+        static create(properties?: proto.EncryptMessageSuccess.$Properties): proto.EncryptMessageSuccess;
+
+        /**
+         * Encodes the specified EncryptMessageSuccess message. Does not implicitly {@link proto.EncryptMessageSuccess.verify|verify} messages.
+         * @param message EncryptMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EncryptMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EncryptMessageSuccess message, length delimited. Does not implicitly {@link proto.EncryptMessageSuccess.verify|verify} messages.
+         * @param message EncryptMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EncryptMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EncryptMessageSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape} EncryptMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape;
+
+        /**
+         * Decodes an EncryptMessageSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape} EncryptMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape;
+
+        /**
+         * Verifies an EncryptMessageSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EncryptMessageSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EncryptMessageSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.EncryptMessageSuccess;
+
+        /**
+         * Creates a plain object from an EncryptMessageSuccess message. Also converts values to other types if specified.
+         * @param message EncryptMessageSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EncryptMessageSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EncryptMessageSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EncryptMessageSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EncryptMessageSuccess {
+
+        /** Properties of an EncryptMessageSuccess. */
+        interface $Properties {
+
+            /** EncryptMessageSuccess encryptedProtobuf */
+            encryptedProtobuf?: (Uint8Array|null);
+
+            /** EncryptMessageSuccess orfThreadId */
+            orfThreadId?: (Uint8Array|null);
+
+            /** EncryptMessageSuccess valueSecretRef */
+            valueSecretRef?: (string|null);
+
+            /** EncryptMessageSuccess offlineThreadingId */
+            offlineThreadingId?: (number|Long|null);
+
+            /** EncryptMessageSuccess timestampMs */
+            timestampMs?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EncryptMessageSuccess. */
+        type $Shape = proto.EncryptMessageSuccess.$Properties;
+    }
+
+    /**
      * Properties of an EncryptedJoinRequestPayload.
      * @deprecated Use proto.EncryptedJoinRequestPayload.$Properties instead.
      */
@@ -27985,6 +31705,159 @@ export namespace proto {
     }
 
     /**
+     * Properties of an EncryptedSecretValuesOutput.
+     * @deprecated Use proto.EncryptedSecretValuesOutput.$Properties instead.
+     */
+    interface IEncryptedSecretValuesOutput extends proto.EncryptedSecretValuesOutput.$Properties {
+    }
+
+    /** Represents an EncryptedSecretValuesOutput. */
+    class EncryptedSecretValuesOutput {
+
+        /**
+         * Constructs a new EncryptedSecretValuesOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EncryptedSecretValuesOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EncryptedSecretValuesOutput encryptedDevicePrivateKey. */
+        encryptedDevicePrivateKey?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedObliviousValidationTokenBlob. */
+        encryptedObliviousValidationTokenBlob?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedEpochStoragePrivateKey. */
+        encryptedEpochStoragePrivateKey?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedOcmfClientState. */
+        encryptedOcmfClientState?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedMailboxRootKeyBlob. */
+        encryptedMailboxRootKeyBlob?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedEpochAnonId. */
+        encryptedEpochAnonId?: (Uint8Array|null);
+
+        /** EncryptedSecretValuesOutput encryptedEpochRootKey. */
+        encryptedEpochRootKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new EncryptedSecretValuesOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EncryptedSecretValuesOutput instance
+         */
+        static create(properties: proto.EncryptedSecretValuesOutput.$Shape): proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape;
+        static create(properties?: proto.EncryptedSecretValuesOutput.$Properties): proto.EncryptedSecretValuesOutput;
+
+        /**
+         * Encodes the specified EncryptedSecretValuesOutput message. Does not implicitly {@link proto.EncryptedSecretValuesOutput.verify|verify} messages.
+         * @param message EncryptedSecretValuesOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EncryptedSecretValuesOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EncryptedSecretValuesOutput message, length delimited. Does not implicitly {@link proto.EncryptedSecretValuesOutput.verify|verify} messages.
+         * @param message EncryptedSecretValuesOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EncryptedSecretValuesOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EncryptedSecretValuesOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape} EncryptedSecretValuesOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape;
+
+        /**
+         * Decodes an EncryptedSecretValuesOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape} EncryptedSecretValuesOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape;
+
+        /**
+         * Verifies an EncryptedSecretValuesOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EncryptedSecretValuesOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EncryptedSecretValuesOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.EncryptedSecretValuesOutput;
+
+        /**
+         * Creates a plain object from an EncryptedSecretValuesOutput message. Also converts values to other types if specified.
+         * @param message EncryptedSecretValuesOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EncryptedSecretValuesOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EncryptedSecretValuesOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EncryptedSecretValuesOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EncryptedSecretValuesOutput {
+
+        /** Properties of an EncryptedSecretValuesOutput. */
+        interface $Properties {
+
+            /** EncryptedSecretValuesOutput encryptedDevicePrivateKey */
+            encryptedDevicePrivateKey?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedObliviousValidationTokenBlob */
+            encryptedObliviousValidationTokenBlob?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedEpochStoragePrivateKey */
+            encryptedEpochStoragePrivateKey?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedOcmfClientState */
+            encryptedOcmfClientState?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedMailboxRootKeyBlob */
+            encryptedMailboxRootKeyBlob?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedEpochAnonId */
+            encryptedEpochAnonId?: (Uint8Array|null);
+
+            /** EncryptedSecretValuesOutput encryptedEpochRootKey */
+            encryptedEpochRootKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EncryptedSecretValuesOutput. */
+        type $Shape = proto.EncryptedSecretValuesOutput.$Properties;
+    }
+
+    /**
      * Properties of an EphemeralSetting.
      * @deprecated Use proto.EphemeralSetting.$Properties instead.
      */
@@ -28105,6 +31978,522 @@ export namespace proto {
 
         /** Shape of an EphemeralSetting. */
         type $Shape = proto.EphemeralSetting.$Properties;
+    }
+
+    /**
+     * Properties of an Epoch0Output.
+     * @deprecated Use proto.Epoch0Output.$Properties instead.
+     */
+    interface IEpoch0Output extends proto.Epoch0Output.$Properties {
+    }
+
+    /** Represents an Epoch0Output. */
+    class Epoch0Output {
+
+        /**
+         * Constructs a new Epoch0Output.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.Epoch0Output.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** Epoch0Output epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** Epoch0Output epochRootKeyFingerprint. */
+        epochRootKeyFingerprint?: (Uint8Array|null);
+
+        /** Epoch0Output epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new Epoch0Output instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Epoch0Output instance
+         */
+        static create(properties: proto.Epoch0Output.$Shape): proto.Epoch0Output & proto.Epoch0Output.$Shape;
+        static create(properties?: proto.Epoch0Output.$Properties): proto.Epoch0Output;
+
+        /**
+         * Encodes the specified Epoch0Output message. Does not implicitly {@link proto.Epoch0Output.verify|verify} messages.
+         * @param message Epoch0Output message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.Epoch0Output.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Epoch0Output message, length delimited. Does not implicitly {@link proto.Epoch0Output.verify|verify} messages.
+         * @param message Epoch0Output message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.Epoch0Output.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Epoch0Output message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.Epoch0Output & proto.Epoch0Output.$Shape} Epoch0Output
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.Epoch0Output & proto.Epoch0Output.$Shape;
+
+        /**
+         * Decodes an Epoch0Output message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.Epoch0Output & proto.Epoch0Output.$Shape} Epoch0Output
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.Epoch0Output & proto.Epoch0Output.$Shape;
+
+        /**
+         * Verifies an Epoch0Output message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Epoch0Output message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Epoch0Output
+         */
+        static fromObject(object: { [k: string]: any }): proto.Epoch0Output;
+
+        /**
+         * Creates a plain object from an Epoch0Output message. Also converts values to other types if specified.
+         * @param message Epoch0Output
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.Epoch0Output, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Epoch0Output to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for Epoch0Output
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace Epoch0Output {
+
+        /** Properties of an Epoch0Output. */
+        interface $Properties {
+
+            /** Epoch0Output epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** Epoch0Output epochRootKeyFingerprint */
+            epochRootKeyFingerprint?: (Uint8Array|null);
+
+            /** Epoch0Output epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an Epoch0Output. */
+        type $Shape = proto.Epoch0Output.$Properties;
+    }
+
+    /**
+     * Properties of an EpochDerivationEdge.
+     * @deprecated Use proto.EpochDerivationEdge.$Properties instead.
+     */
+    interface IEpochDerivationEdge extends proto.EpochDerivationEdge.$Properties {
+    }
+
+    /** Represents an EpochDerivationEdge. */
+    class EpochDerivationEdge {
+
+        /**
+         * Constructs a new EpochDerivationEdge.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EpochDerivationEdge.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EpochDerivationEdge fromEpoch. */
+        fromEpoch?: (proto.EpochIds.$Properties|null);
+
+        /** EpochDerivationEdge toEpoch. */
+        toEpoch?: (proto.EpochIds.$Properties|null);
+
+        /** EpochDerivationEdge forwardEdge. */
+        forwardEdge?: (proto.ForwardEdgeInput.$Properties|null);
+
+        /** EpochDerivationEdge backwardEdge. */
+        backwardEdge?: (Uint8Array|null);
+
+        /**
+         * Creates a new EpochDerivationEdge instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EpochDerivationEdge instance
+         */
+        static create(properties: proto.EpochDerivationEdge.$Shape): proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape;
+        static create(properties?: proto.EpochDerivationEdge.$Properties): proto.EpochDerivationEdge;
+
+        /**
+         * Encodes the specified EpochDerivationEdge message. Does not implicitly {@link proto.EpochDerivationEdge.verify|verify} messages.
+         * @param message EpochDerivationEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EpochDerivationEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EpochDerivationEdge message, length delimited. Does not implicitly {@link proto.EpochDerivationEdge.verify|verify} messages.
+         * @param message EpochDerivationEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EpochDerivationEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EpochDerivationEdge message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape} EpochDerivationEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape;
+
+        /**
+         * Decodes an EpochDerivationEdge message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape} EpochDerivationEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape;
+
+        /**
+         * Verifies an EpochDerivationEdge message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EpochDerivationEdge message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EpochDerivationEdge
+         */
+        static fromObject(object: { [k: string]: any }): proto.EpochDerivationEdge;
+
+        /**
+         * Creates a plain object from an EpochDerivationEdge message. Also converts values to other types if specified.
+         * @param message EpochDerivationEdge
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EpochDerivationEdge, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EpochDerivationEdge to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EpochDerivationEdge
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EpochDerivationEdge {
+
+        /** Properties of an EpochDerivationEdge. */
+        interface $Properties {
+
+            /** EpochDerivationEdge fromEpoch */
+            fromEpoch?: (proto.EpochIds.$Properties|null);
+
+            /** EpochDerivationEdge toEpoch */
+            toEpoch?: (proto.EpochIds.$Properties|null);
+
+            /** EpochDerivationEdge forwardEdge */
+            forwardEdge?: (proto.ForwardEdgeInput.$Properties|null);
+
+            /** EpochDerivationEdge backwardEdge */
+            backwardEdge?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EpochDerivationEdge. */
+        type $Shape = proto.EpochDerivationEdge.$Properties;
+    }
+
+    /**
+     * Properties of an EpochIds.
+     * @deprecated Use proto.EpochIds.$Properties instead.
+     */
+    interface IEpochIds extends proto.EpochIds.$Properties {
+    }
+
+    /** Represents an EpochIds. */
+    class EpochIds {
+
+        /**
+         * Constructs a new EpochIds.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EpochIds.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EpochIds serverEpochId. */
+        serverEpochId?: (number|Long|null);
+
+        /** EpochIds epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /**
+         * Creates a new EpochIds instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EpochIds instance
+         */
+        static create(properties: proto.EpochIds.$Shape): proto.EpochIds & proto.EpochIds.$Shape;
+        static create(properties?: proto.EpochIds.$Properties): proto.EpochIds;
+
+        /**
+         * Encodes the specified EpochIds message. Does not implicitly {@link proto.EpochIds.verify|verify} messages.
+         * @param message EpochIds message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EpochIds.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EpochIds message, length delimited. Does not implicitly {@link proto.EpochIds.verify|verify} messages.
+         * @param message EpochIds message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EpochIds.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EpochIds message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EpochIds & proto.EpochIds.$Shape} EpochIds
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EpochIds & proto.EpochIds.$Shape;
+
+        /**
+         * Decodes an EpochIds message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EpochIds & proto.EpochIds.$Shape} EpochIds
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EpochIds & proto.EpochIds.$Shape;
+
+        /**
+         * Verifies an EpochIds message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EpochIds message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EpochIds
+         */
+        static fromObject(object: { [k: string]: any }): proto.EpochIds;
+
+        /**
+         * Creates a plain object from an EpochIds message. Also converts values to other types if specified.
+         * @param message EpochIds
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EpochIds, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EpochIds to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EpochIds
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EpochIds {
+
+        /** Properties of an EpochIds. */
+        interface $Properties {
+
+            /** EpochIds serverEpochId */
+            serverEpochId?: (number|Long|null);
+
+            /** EpochIds epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EpochIds. */
+        type $Shape = proto.EpochIds.$Properties;
+    }
+
+    /**
+     * Properties of an EpochKey.
+     * @deprecated Use proto.EpochKey.$Properties instead.
+     */
+    interface IEpochKey extends proto.EpochKey.$Properties {
+    }
+
+    /** Represents an EpochKey. */
+    class EpochKey {
+
+        /**
+         * Constructs a new EpochKey.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.EpochKey.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** EpochKey serverEpochId. */
+        serverEpochId?: (number|Long|null);
+
+        /** EpochKey epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** EpochKey epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new EpochKey instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EpochKey instance
+         */
+        static create(properties: proto.EpochKey.$Shape): proto.EpochKey & proto.EpochKey.$Shape;
+        static create(properties?: proto.EpochKey.$Properties): proto.EpochKey;
+
+        /**
+         * Encodes the specified EpochKey message. Does not implicitly {@link proto.EpochKey.verify|verify} messages.
+         * @param message EpochKey message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.EpochKey.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EpochKey message, length delimited. Does not implicitly {@link proto.EpochKey.verify|verify} messages.
+         * @param message EpochKey message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.EpochKey.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EpochKey message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.EpochKey & proto.EpochKey.$Shape} EpochKey
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.EpochKey & proto.EpochKey.$Shape;
+
+        /**
+         * Decodes an EpochKey message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.EpochKey & proto.EpochKey.$Shape} EpochKey
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.EpochKey & proto.EpochKey.$Shape;
+
+        /**
+         * Verifies an EpochKey message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EpochKey message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EpochKey
+         */
+        static fromObject(object: { [k: string]: any }): proto.EpochKey;
+
+        /**
+         * Creates a plain object from an EpochKey message. Also converts values to other types if specified.
+         * @param message EpochKey
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.EpochKey, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EpochKey to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for EpochKey
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace EpochKey {
+
+        /** Properties of an EpochKey. */
+        interface $Properties {
+
+            /** EpochKey serverEpochId */
+            serverEpochId?: (number|Long|null);
+
+            /** EpochKey epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** EpochKey epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an EpochKey. */
+        type $Shape = proto.EpochKey.$Properties;
     }
 
     /**
@@ -29088,6 +33477,129 @@ export namespace proto {
 
         /** Shape of a FingerprintData. */
         type $Shape = proto.FingerprintData.$Properties;
+    }
+
+    /**
+     * Properties of a ForwardEdgeInput.
+     * @deprecated Use proto.ForwardEdgeInput.$Properties instead.
+     */
+    interface IForwardEdgeInput extends proto.ForwardEdgeInput.$Properties {
+    }
+
+    /** Represents a ForwardEdgeInput. */
+    class ForwardEdgeInput {
+
+        /**
+         * Constructs a new ForwardEdgeInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ForwardEdgeInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ForwardEdgeInput encryptedEntropy. */
+        encryptedEntropy?: (Uint8Array|null);
+
+        /** ForwardEdgeInput authPublicKey. */
+        authPublicKey?: (Uint8Array|null);
+
+        /**
+         * Creates a new ForwardEdgeInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ForwardEdgeInput instance
+         */
+        static create(properties: proto.ForwardEdgeInput.$Shape): proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape;
+        static create(properties?: proto.ForwardEdgeInput.$Properties): proto.ForwardEdgeInput;
+
+        /**
+         * Encodes the specified ForwardEdgeInput message. Does not implicitly {@link proto.ForwardEdgeInput.verify|verify} messages.
+         * @param message ForwardEdgeInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ForwardEdgeInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ForwardEdgeInput message, length delimited. Does not implicitly {@link proto.ForwardEdgeInput.verify|verify} messages.
+         * @param message ForwardEdgeInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ForwardEdgeInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ForwardEdgeInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape} ForwardEdgeInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape;
+
+        /**
+         * Decodes a ForwardEdgeInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape} ForwardEdgeInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape;
+
+        /**
+         * Verifies a ForwardEdgeInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ForwardEdgeInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ForwardEdgeInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.ForwardEdgeInput;
+
+        /**
+         * Creates a plain object from a ForwardEdgeInput message. Also converts values to other types if specified.
+         * @param message ForwardEdgeInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ForwardEdgeInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ForwardEdgeInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ForwardEdgeInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ForwardEdgeInput {
+
+        /** Properties of a ForwardEdgeInput. */
+        interface $Properties {
+
+            /** ForwardEdgeInput encryptedEntropy */
+            encryptedEntropy?: (Uint8Array|null);
+
+            /** ForwardEdgeInput authPublicKey */
+            authPublicKey?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ForwardEdgeInput. */
+        type $Shape = proto.ForwardEdgeInput.$Properties;
     }
 
     /**
@@ -34994,6 +39506,232 @@ export namespace proto {
 
         /** Shape of a LIDMigrationMappingSyncMessage. */
         type $Shape = proto.LIDMigrationMappingSyncMessage.$Properties;
+    }
+
+    /**
+     * Properties of a LabyrinthWaCommand.
+     * @deprecated Use proto.LabyrinthWaCommand.$Properties instead.
+     */
+    interface ILabyrinthWaCommand extends proto.LabyrinthWaCommand.$Properties {
+    }
+
+    /** Represents a LabyrinthWaCommand. */
+    class LabyrinthWaCommand {
+
+        /**
+         * Constructs a new LabyrinthWaCommand.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.LabyrinthWaCommand.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** LabyrinthWaCommand createBackupInput. */
+        createBackupInput?: (proto.CreateBackupInput.$Properties|null);
+
+        /** LabyrinthWaCommand encryptMessageInput. */
+        encryptMessageInput?: (proto.EncryptMessageInput.$Properties|null);
+
+        /** LabyrinthWaCommand decryptMessageInput. */
+        decryptMessageInput?: (proto.DecryptMessageInput.$Properties|null);
+
+        /** LabyrinthWaCommand orfThreadIdInput. */
+        orfThreadIdInput?: (proto.OrfThreadIdInput.$Properties|null);
+
+        /** LabyrinthWaCommand deriveMessageKeyInput. */
+        deriveMessageKeyInput?: (proto.DeriveMessageKeyInput.$Properties|null);
+
+        /** LabyrinthWaCommand rotateEpochInput. */
+        rotateEpochInput?: (proto.RotateEpochInput.$Properties|null);
+
+        /** LabyrinthWaCommand deriveVirtualDeviceIdInput. */
+        deriveVirtualDeviceIdInput?: (proto.DeriveVirtualDeviceIdInput.$Properties|null);
+
+        /** LabyrinthWaCommand prepareAddDeviceInput. */
+        prepareAddDeviceInput?: (proto.PrepareAddDeviceInput.$Properties|null);
+
+        /** LabyrinthWaCommand computeClientSealTokenInput. */
+        computeClientSealTokenInput?: (proto.ComputeClientSealTokenInput.$Properties|null);
+
+        /** LabyrinthWaCommand openSealedThreadIdInput. */
+        openSealedThreadIdInput?: (proto.OpenSealedThreadIdInput.$Properties|null);
+
+        /** LabyrinthWaCommand deriveEpochsInput. */
+        deriveEpochsInput?: (proto.DeriveEpochsInput.$Properties|null);
+
+        /** LabyrinthWaCommand sealThreadIdInput. */
+        sealThreadIdInput?: (proto.SealThreadIdInput.$Properties|null);
+
+        /** LabyrinthWaCommand prepareAddPeerDeviceInput. */
+        prepareAddPeerDeviceInput?: (proto.PrepareAddPeerDeviceInput.$Properties|null);
+
+        /** LabyrinthWaCommand companionTestMessageThreadIdInput. */
+        companionTestMessageThreadIdInput?: (proto.CompanionTestMessageThreadIdInput.$Properties|null);
+
+        /** LabyrinthWaCommand parseCompanionTestMessageInput. */
+        parseCompanionTestMessageInput?: (proto.ParseCompanionTestMessageInput.$Properties|null);
+
+        /** LabyrinthWaCommand commandInput. */
+        commandInput?: ("createBackupInput"|"encryptMessageInput"|"decryptMessageInput"|"orfThreadIdInput"|"deriveMessageKeyInput"|"rotateEpochInput"|"deriveVirtualDeviceIdInput"|"prepareAddDeviceInput"|"computeClientSealTokenInput"|"openSealedThreadIdInput"|"deriveEpochsInput"|"sealThreadIdInput"|"prepareAddPeerDeviceInput"|"companionTestMessageThreadIdInput"|"parseCompanionTestMessageInput");
+
+        /**
+         * Creates a new LabyrinthWaCommand instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LabyrinthWaCommand instance
+         */
+        static create(properties: proto.LabyrinthWaCommand.$Shape): proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape;
+        static create(properties?: proto.LabyrinthWaCommand.$Properties): proto.LabyrinthWaCommand;
+
+        /**
+         * Encodes the specified LabyrinthWaCommand message. Does not implicitly {@link proto.LabyrinthWaCommand.verify|verify} messages.
+         * @param message LabyrinthWaCommand message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.LabyrinthWaCommand.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LabyrinthWaCommand message, length delimited. Does not implicitly {@link proto.LabyrinthWaCommand.verify|verify} messages.
+         * @param message LabyrinthWaCommand message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.LabyrinthWaCommand.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LabyrinthWaCommand message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape} LabyrinthWaCommand
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape;
+
+        /**
+         * Decodes a LabyrinthWaCommand message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape} LabyrinthWaCommand
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape;
+
+        /**
+         * Verifies a LabyrinthWaCommand message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LabyrinthWaCommand message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LabyrinthWaCommand
+         */
+        static fromObject(object: { [k: string]: any }): proto.LabyrinthWaCommand;
+
+        /**
+         * Creates a plain object from a LabyrinthWaCommand message. Also converts values to other types if specified.
+         * @param message LabyrinthWaCommand
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.LabyrinthWaCommand, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LabyrinthWaCommand to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for LabyrinthWaCommand
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace LabyrinthWaCommand {
+
+        /** Properties of a LabyrinthWaCommand. */
+        interface $Properties {
+
+            /** LabyrinthWaCommand createBackupInput */
+            createBackupInput?: (proto.CreateBackupInput.$Properties|null);
+
+            /** LabyrinthWaCommand encryptMessageInput */
+            encryptMessageInput?: (proto.EncryptMessageInput.$Properties|null);
+
+            /** LabyrinthWaCommand decryptMessageInput */
+            decryptMessageInput?: (proto.DecryptMessageInput.$Properties|null);
+
+            /** LabyrinthWaCommand orfThreadIdInput */
+            orfThreadIdInput?: (proto.OrfThreadIdInput.$Properties|null);
+
+            /** LabyrinthWaCommand deriveMessageKeyInput */
+            deriveMessageKeyInput?: (proto.DeriveMessageKeyInput.$Properties|null);
+
+            /** LabyrinthWaCommand rotateEpochInput */
+            rotateEpochInput?: (proto.RotateEpochInput.$Properties|null);
+
+            /** LabyrinthWaCommand deriveVirtualDeviceIdInput */
+            deriveVirtualDeviceIdInput?: (proto.DeriveVirtualDeviceIdInput.$Properties|null);
+
+            /** LabyrinthWaCommand prepareAddDeviceInput */
+            prepareAddDeviceInput?: (proto.PrepareAddDeviceInput.$Properties|null);
+
+            /** LabyrinthWaCommand computeClientSealTokenInput */
+            computeClientSealTokenInput?: (proto.ComputeClientSealTokenInput.$Properties|null);
+
+            /** LabyrinthWaCommand openSealedThreadIdInput */
+            openSealedThreadIdInput?: (proto.OpenSealedThreadIdInput.$Properties|null);
+
+            /** LabyrinthWaCommand deriveEpochsInput */
+            deriveEpochsInput?: (proto.DeriveEpochsInput.$Properties|null);
+
+            /** LabyrinthWaCommand sealThreadIdInput */
+            sealThreadIdInput?: (proto.SealThreadIdInput.$Properties|null);
+
+            /** LabyrinthWaCommand prepareAddPeerDeviceInput */
+            prepareAddPeerDeviceInput?: (proto.PrepareAddPeerDeviceInput.$Properties|null);
+
+            /** LabyrinthWaCommand companionTestMessageThreadIdInput */
+            companionTestMessageThreadIdInput?: (proto.CompanionTestMessageThreadIdInput.$Properties|null);
+
+            /** LabyrinthWaCommand parseCompanionTestMessageInput */
+            parseCompanionTestMessageInput?: (proto.ParseCompanionTestMessageInput.$Properties|null);
+
+            /** LabyrinthWaCommand commandInput */
+            commandInput?: ("createBackupInput"|"encryptMessageInput"|"decryptMessageInput"|"orfThreadIdInput"|"deriveMessageKeyInput"|"rotateEpochInput"|"deriveVirtualDeviceIdInput"|"prepareAddDeviceInput"|"computeClientSealTokenInput"|"openSealedThreadIdInput"|"deriveEpochsInput"|"sealThreadIdInput"|"prepareAddPeerDeviceInput"|"companionTestMessageThreadIdInput"|"parseCompanionTestMessageInput");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a LabyrinthWaCommand. */
+        type $Shape = {
+          createBackupInput?: proto.CreateBackupInput.$Shape|null;
+          encryptMessageInput?: proto.EncryptMessageInput.$Shape|null;
+          decryptMessageInput?: proto.DecryptMessageInput.$Shape|null;
+          orfThreadIdInput?: proto.OrfThreadIdInput.$Shape|null;
+          deriveMessageKeyInput?: proto.DeriveMessageKeyInput.$Shape|null;
+          rotateEpochInput?: proto.RotateEpochInput.$Shape|null;
+          deriveVirtualDeviceIdInput?: proto.DeriveVirtualDeviceIdInput.$Shape|null;
+          prepareAddDeviceInput?: proto.PrepareAddDeviceInput.$Shape|null;
+          computeClientSealTokenInput?: proto.ComputeClientSealTokenInput.$Shape|null;
+          openSealedThreadIdInput?: proto.OpenSealedThreadIdInput.$Shape|null;
+          deriveEpochsInput?: proto.DeriveEpochsInput.$Shape|null;
+          sealThreadIdInput?: proto.SealThreadIdInput.$Shape|null;
+          prepareAddPeerDeviceInput?: proto.PrepareAddPeerDeviceInput.$Shape|null;
+          companionTestMessageThreadIdInput?: proto.CompanionTestMessageThreadIdInput.$Shape|null;
+          parseCompanionTestMessageInput?: proto.ParseCompanionTestMessageInput.$Shape|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ commandInput?: undefined; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "createBackupInput"; createBackupInput: proto.CreateBackupInput.$Shape; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "encryptMessageInput"; createBackupInput?: null; encryptMessageInput: proto.EncryptMessageInput.$Shape; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "decryptMessageInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput: proto.DecryptMessageInput.$Shape; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "orfThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput: proto.OrfThreadIdInput.$Shape; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveMessageKeyInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput: proto.DeriveMessageKeyInput.$Shape; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "rotateEpochInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput: proto.RotateEpochInput.$Shape; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveVirtualDeviceIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput: proto.DeriveVirtualDeviceIdInput.$Shape; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "prepareAddDeviceInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput: proto.PrepareAddDeviceInput.$Shape; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "computeClientSealTokenInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput: proto.ComputeClientSealTokenInput.$Shape; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "openSealedThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput: proto.OpenSealedThreadIdInput.$Shape; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveEpochsInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput: proto.DeriveEpochsInput.$Shape; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "sealThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput: proto.SealThreadIdInput.$Shape; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "prepareAddPeerDeviceInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput: proto.PrepareAddPeerDeviceInput.$Shape; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "companionTestMessageThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput: proto.CompanionTestMessageThreadIdInput.$Shape; parseCompanionTestMessageInput?: null }|{ commandInput?: "parseCompanionTestMessageInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput: proto.ParseCompanionTestMessageInput.$Shape })
+        );
     }
 
     /**
@@ -69945,6 +74683,768 @@ export namespace proto {
     }
 
     /**
+     * Properties of an OpenSealedThreadIdInput.
+     * @deprecated Use proto.OpenSealedThreadIdInput.$Properties instead.
+     */
+    interface IOpenSealedThreadIdInput extends proto.OpenSealedThreadIdInput.$Properties {
+    }
+
+    /** Represents an OpenSealedThreadIdInput. */
+    class OpenSealedThreadIdInput {
+
+        /**
+         * Constructs a new OpenSealedThreadIdInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OpenSealedThreadIdInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OpenSealedThreadIdInput backupId. */
+        backupId?: (number|Long|null);
+
+        /** OpenSealedThreadIdInput sealedThreadId. */
+        sealedThreadId?: (Uint8Array|null);
+
+        /** OpenSealedThreadIdInput epochs. */
+        epochs: proto.EpochKey.$Properties[];
+
+        /**
+         * Creates a new OpenSealedThreadIdInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OpenSealedThreadIdInput instance
+         */
+        static create(properties: proto.OpenSealedThreadIdInput.$Shape): proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape;
+        static create(properties?: proto.OpenSealedThreadIdInput.$Properties): proto.OpenSealedThreadIdInput;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdInput message. Does not implicitly {@link proto.OpenSealedThreadIdInput.verify|verify} messages.
+         * @param message OpenSealedThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OpenSealedThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdInput message, length delimited. Does not implicitly {@link proto.OpenSealedThreadIdInput.verify|verify} messages.
+         * @param message OpenSealedThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OpenSealedThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OpenSealedThreadIdInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape} OpenSealedThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape;
+
+        /**
+         * Decodes an OpenSealedThreadIdInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape} OpenSealedThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape;
+
+        /**
+         * Verifies an OpenSealedThreadIdInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OpenSealedThreadIdInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OpenSealedThreadIdInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.OpenSealedThreadIdInput;
+
+        /**
+         * Creates a plain object from an OpenSealedThreadIdInput message. Also converts values to other types if specified.
+         * @param message OpenSealedThreadIdInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OpenSealedThreadIdInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OpenSealedThreadIdInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OpenSealedThreadIdInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OpenSealedThreadIdInput {
+
+        /** Properties of an OpenSealedThreadIdInput. */
+        interface $Properties {
+
+            /** OpenSealedThreadIdInput backupId */
+            backupId?: (number|Long|null);
+
+            /** OpenSealedThreadIdInput sealedThreadId */
+            sealedThreadId?: (Uint8Array|null);
+
+            /** OpenSealedThreadIdInput epochs */
+            epochs?: (proto.EpochKey.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an OpenSealedThreadIdInput. */
+        type $Shape = proto.OpenSealedThreadIdInput.$Properties;
+    }
+
+    /**
+     * Properties of an OpenSealedThreadIdOutput.
+     * @deprecated Use proto.OpenSealedThreadIdOutput.$Properties instead.
+     */
+    interface IOpenSealedThreadIdOutput extends proto.OpenSealedThreadIdOutput.$Properties {
+    }
+
+    /** Represents an OpenSealedThreadIdOutput. */
+    class OpenSealedThreadIdOutput {
+
+        /**
+         * Constructs a new OpenSealedThreadIdOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OpenSealedThreadIdOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OpenSealedThreadIdOutput success. */
+        success?: (proto.OpenSealedThreadIdSuccess.$Properties|null);
+
+        /** OpenSealedThreadIdOutput error. */
+        error?: (string|null);
+
+        /** OpenSealedThreadIdOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new OpenSealedThreadIdOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OpenSealedThreadIdOutput instance
+         */
+        static create(properties: proto.OpenSealedThreadIdOutput.$Shape): proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape;
+        static create(properties?: proto.OpenSealedThreadIdOutput.$Properties): proto.OpenSealedThreadIdOutput;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdOutput message. Does not implicitly {@link proto.OpenSealedThreadIdOutput.verify|verify} messages.
+         * @param message OpenSealedThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OpenSealedThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdOutput message, length delimited. Does not implicitly {@link proto.OpenSealedThreadIdOutput.verify|verify} messages.
+         * @param message OpenSealedThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OpenSealedThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OpenSealedThreadIdOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape} OpenSealedThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape;
+
+        /**
+         * Decodes an OpenSealedThreadIdOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape} OpenSealedThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape;
+
+        /**
+         * Verifies an OpenSealedThreadIdOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OpenSealedThreadIdOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OpenSealedThreadIdOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.OpenSealedThreadIdOutput;
+
+        /**
+         * Creates a plain object from an OpenSealedThreadIdOutput message. Also converts values to other types if specified.
+         * @param message OpenSealedThreadIdOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OpenSealedThreadIdOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OpenSealedThreadIdOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OpenSealedThreadIdOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OpenSealedThreadIdOutput {
+
+        /** Properties of an OpenSealedThreadIdOutput. */
+        interface $Properties {
+
+            /** OpenSealedThreadIdOutput success */
+            success?: (proto.OpenSealedThreadIdSuccess.$Properties|null);
+
+            /** OpenSealedThreadIdOutput error */
+            error?: (string|null);
+
+            /** OpenSealedThreadIdOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of an OpenSealedThreadIdOutput. */
+        type $Shape = {
+          success?: proto.OpenSealedThreadIdSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.OpenSealedThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of an OpenSealedThreadIdSuccess.
+     * @deprecated Use proto.OpenSealedThreadIdSuccess.$Properties instead.
+     */
+    interface IOpenSealedThreadIdSuccess extends proto.OpenSealedThreadIdSuccess.$Properties {
+    }
+
+    /** Represents an OpenSealedThreadIdSuccess. */
+    class OpenSealedThreadIdSuccess {
+
+        /**
+         * Constructs a new OpenSealedThreadIdSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OpenSealedThreadIdSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OpenSealedThreadIdSuccess threadId. */
+        threadId?: (string|null);
+
+        /** OpenSealedThreadIdSuccess sealEpochAnonId. */
+        sealEpochAnonId?: (number|null);
+
+        /**
+         * Creates a new OpenSealedThreadIdSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OpenSealedThreadIdSuccess instance
+         */
+        static create(properties: proto.OpenSealedThreadIdSuccess.$Shape): proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape;
+        static create(properties?: proto.OpenSealedThreadIdSuccess.$Properties): proto.OpenSealedThreadIdSuccess;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdSuccess message. Does not implicitly {@link proto.OpenSealedThreadIdSuccess.verify|verify} messages.
+         * @param message OpenSealedThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OpenSealedThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OpenSealedThreadIdSuccess message, length delimited. Does not implicitly {@link proto.OpenSealedThreadIdSuccess.verify|verify} messages.
+         * @param message OpenSealedThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OpenSealedThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OpenSealedThreadIdSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape} OpenSealedThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape;
+
+        /**
+         * Decodes an OpenSealedThreadIdSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape} OpenSealedThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape;
+
+        /**
+         * Verifies an OpenSealedThreadIdSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OpenSealedThreadIdSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OpenSealedThreadIdSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.OpenSealedThreadIdSuccess;
+
+        /**
+         * Creates a plain object from an OpenSealedThreadIdSuccess message. Also converts values to other types if specified.
+         * @param message OpenSealedThreadIdSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OpenSealedThreadIdSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OpenSealedThreadIdSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OpenSealedThreadIdSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OpenSealedThreadIdSuccess {
+
+        /** Properties of an OpenSealedThreadIdSuccess. */
+        interface $Properties {
+
+            /** OpenSealedThreadIdSuccess threadId */
+            threadId?: (string|null);
+
+            /** OpenSealedThreadIdSuccess sealEpochAnonId */
+            sealEpochAnonId?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an OpenSealedThreadIdSuccess. */
+        type $Shape = proto.OpenSealedThreadIdSuccess.$Properties;
+    }
+
+    /**
+     * Properties of an OrfThreadIdInput.
+     * @deprecated Use proto.OrfThreadIdInput.$Properties instead.
+     */
+    interface IOrfThreadIdInput extends proto.OrfThreadIdInput.$Properties {
+    }
+
+    /** Represents an OrfThreadIdInput. */
+    class OrfThreadIdInput {
+
+        /**
+         * Constructs a new OrfThreadIdInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OrfThreadIdInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OrfThreadIdInput orfClientState. */
+        orfClientState?: (Uint8Array|null);
+
+        /** OrfThreadIdInput threadId. */
+        threadId?: (string|null);
+
+        /**
+         * Creates a new OrfThreadIdInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OrfThreadIdInput instance
+         */
+        static create(properties: proto.OrfThreadIdInput.$Shape): proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape;
+        static create(properties?: proto.OrfThreadIdInput.$Properties): proto.OrfThreadIdInput;
+
+        /**
+         * Encodes the specified OrfThreadIdInput message. Does not implicitly {@link proto.OrfThreadIdInput.verify|verify} messages.
+         * @param message OrfThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OrfThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OrfThreadIdInput message, length delimited. Does not implicitly {@link proto.OrfThreadIdInput.verify|verify} messages.
+         * @param message OrfThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OrfThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OrfThreadIdInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape} OrfThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape;
+
+        /**
+         * Decodes an OrfThreadIdInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape} OrfThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape;
+
+        /**
+         * Verifies an OrfThreadIdInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OrfThreadIdInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OrfThreadIdInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.OrfThreadIdInput;
+
+        /**
+         * Creates a plain object from an OrfThreadIdInput message. Also converts values to other types if specified.
+         * @param message OrfThreadIdInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OrfThreadIdInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OrfThreadIdInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OrfThreadIdInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OrfThreadIdInput {
+
+        /** Properties of an OrfThreadIdInput. */
+        interface $Properties {
+
+            /** OrfThreadIdInput orfClientState */
+            orfClientState?: (Uint8Array|null);
+
+            /** OrfThreadIdInput threadId */
+            threadId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an OrfThreadIdInput. */
+        type $Shape = proto.OrfThreadIdInput.$Properties;
+    }
+
+    /**
+     * Properties of an OrfThreadIdOutput.
+     * @deprecated Use proto.OrfThreadIdOutput.$Properties instead.
+     */
+    interface IOrfThreadIdOutput extends proto.OrfThreadIdOutput.$Properties {
+    }
+
+    /** Represents an OrfThreadIdOutput. */
+    class OrfThreadIdOutput {
+
+        /**
+         * Constructs a new OrfThreadIdOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OrfThreadIdOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OrfThreadIdOutput success. */
+        success?: (proto.OrfThreadIdSuccess.$Properties|null);
+
+        /** OrfThreadIdOutput error. */
+        error?: (string|null);
+
+        /** OrfThreadIdOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new OrfThreadIdOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OrfThreadIdOutput instance
+         */
+        static create(properties: proto.OrfThreadIdOutput.$Shape): proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape;
+        static create(properties?: proto.OrfThreadIdOutput.$Properties): proto.OrfThreadIdOutput;
+
+        /**
+         * Encodes the specified OrfThreadIdOutput message. Does not implicitly {@link proto.OrfThreadIdOutput.verify|verify} messages.
+         * @param message OrfThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OrfThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OrfThreadIdOutput message, length delimited. Does not implicitly {@link proto.OrfThreadIdOutput.verify|verify} messages.
+         * @param message OrfThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OrfThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OrfThreadIdOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape} OrfThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape;
+
+        /**
+         * Decodes an OrfThreadIdOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape} OrfThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape;
+
+        /**
+         * Verifies an OrfThreadIdOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OrfThreadIdOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OrfThreadIdOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.OrfThreadIdOutput;
+
+        /**
+         * Creates a plain object from an OrfThreadIdOutput message. Also converts values to other types if specified.
+         * @param message OrfThreadIdOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OrfThreadIdOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OrfThreadIdOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OrfThreadIdOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OrfThreadIdOutput {
+
+        /** Properties of an OrfThreadIdOutput. */
+        interface $Properties {
+
+            /** OrfThreadIdOutput success */
+            success?: (proto.OrfThreadIdSuccess.$Properties|null);
+
+            /** OrfThreadIdOutput error */
+            error?: (string|null);
+
+            /** OrfThreadIdOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of an OrfThreadIdOutput. */
+        type $Shape = {
+          success?: proto.OrfThreadIdSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.OrfThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of an OrfThreadIdSuccess.
+     * @deprecated Use proto.OrfThreadIdSuccess.$Properties instead.
+     */
+    interface IOrfThreadIdSuccess extends proto.OrfThreadIdSuccess.$Properties {
+    }
+
+    /** Represents an OrfThreadIdSuccess. */
+    class OrfThreadIdSuccess {
+
+        /**
+         * Constructs a new OrfThreadIdSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.OrfThreadIdSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** OrfThreadIdSuccess orfThreadId. */
+        orfThreadId?: (Uint8Array|null);
+
+        /**
+         * Creates a new OrfThreadIdSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OrfThreadIdSuccess instance
+         */
+        static create(properties: proto.OrfThreadIdSuccess.$Shape): proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape;
+        static create(properties?: proto.OrfThreadIdSuccess.$Properties): proto.OrfThreadIdSuccess;
+
+        /**
+         * Encodes the specified OrfThreadIdSuccess message. Does not implicitly {@link proto.OrfThreadIdSuccess.verify|verify} messages.
+         * @param message OrfThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.OrfThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OrfThreadIdSuccess message, length delimited. Does not implicitly {@link proto.OrfThreadIdSuccess.verify|verify} messages.
+         * @param message OrfThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.OrfThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OrfThreadIdSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape} OrfThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape;
+
+        /**
+         * Decodes an OrfThreadIdSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape} OrfThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape;
+
+        /**
+         * Verifies an OrfThreadIdSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OrfThreadIdSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OrfThreadIdSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.OrfThreadIdSuccess;
+
+        /**
+         * Creates a plain object from an OrfThreadIdSuccess message. Also converts values to other types if specified.
+         * @param message OrfThreadIdSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.OrfThreadIdSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OrfThreadIdSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for OrfThreadIdSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace OrfThreadIdSuccess {
+
+        /** Properties of an OrfThreadIdSuccess. */
+        interface $Properties {
+
+            /** OrfThreadIdSuccess orfThreadId */
+            orfThreadId?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of an OrfThreadIdSuccess. */
+        type $Shape = proto.OrfThreadIdSuccess.$Properties;
+    }
+
+    /**
      * Properties of a PairingRequest.
      * @deprecated Use proto.PairingRequest.$Properties instead.
      */
@@ -70071,6 +75571,375 @@ export namespace proto {
 
         /** Shape of a PairingRequest. */
         type $Shape = proto.PairingRequest.$Properties;
+    }
+
+    /**
+     * Properties of a ParseCompanionTestMessageInput.
+     * @deprecated Use proto.ParseCompanionTestMessageInput.$Properties instead.
+     */
+    interface IParseCompanionTestMessageInput extends proto.ParseCompanionTestMessageInput.$Properties {
+    }
+
+    /** Represents a ParseCompanionTestMessageInput. */
+    class ParseCompanionTestMessageInput {
+
+        /**
+         * Constructs a new ParseCompanionTestMessageInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ParseCompanionTestMessageInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ParseCompanionTestMessageInput plaintext. */
+        plaintext?: (Uint8Array|null);
+
+        /**
+         * Creates a new ParseCompanionTestMessageInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ParseCompanionTestMessageInput instance
+         */
+        static create(properties: proto.ParseCompanionTestMessageInput.$Shape): proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape;
+        static create(properties?: proto.ParseCompanionTestMessageInput.$Properties): proto.ParseCompanionTestMessageInput;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageInput message. Does not implicitly {@link proto.ParseCompanionTestMessageInput.verify|verify} messages.
+         * @param message ParseCompanionTestMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ParseCompanionTestMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageInput message, length delimited. Does not implicitly {@link proto.ParseCompanionTestMessageInput.verify|verify} messages.
+         * @param message ParseCompanionTestMessageInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ParseCompanionTestMessageInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ParseCompanionTestMessageInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape} ParseCompanionTestMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape;
+
+        /**
+         * Decodes a ParseCompanionTestMessageInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape} ParseCompanionTestMessageInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape;
+
+        /**
+         * Verifies a ParseCompanionTestMessageInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ParseCompanionTestMessageInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ParseCompanionTestMessageInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.ParseCompanionTestMessageInput;
+
+        /**
+         * Creates a plain object from a ParseCompanionTestMessageInput message. Also converts values to other types if specified.
+         * @param message ParseCompanionTestMessageInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ParseCompanionTestMessageInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ParseCompanionTestMessageInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ParseCompanionTestMessageInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ParseCompanionTestMessageInput {
+
+        /** Properties of a ParseCompanionTestMessageInput. */
+        interface $Properties {
+
+            /** ParseCompanionTestMessageInput plaintext */
+            plaintext?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ParseCompanionTestMessageInput. */
+        type $Shape = proto.ParseCompanionTestMessageInput.$Properties;
+    }
+
+    /**
+     * Properties of a ParseCompanionTestMessageOutput.
+     * @deprecated Use proto.ParseCompanionTestMessageOutput.$Properties instead.
+     */
+    interface IParseCompanionTestMessageOutput extends proto.ParseCompanionTestMessageOutput.$Properties {
+    }
+
+    /** Represents a ParseCompanionTestMessageOutput. */
+    class ParseCompanionTestMessageOutput {
+
+        /**
+         * Constructs a new ParseCompanionTestMessageOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ParseCompanionTestMessageOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ParseCompanionTestMessageOutput success. */
+        success?: (proto.ParseCompanionTestMessageSuccess.$Properties|null);
+
+        /** ParseCompanionTestMessageOutput error. */
+        error?: (string|null);
+
+        /** ParseCompanionTestMessageOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new ParseCompanionTestMessageOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ParseCompanionTestMessageOutput instance
+         */
+        static create(properties: proto.ParseCompanionTestMessageOutput.$Shape): proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape;
+        static create(properties?: proto.ParseCompanionTestMessageOutput.$Properties): proto.ParseCompanionTestMessageOutput;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageOutput message. Does not implicitly {@link proto.ParseCompanionTestMessageOutput.verify|verify} messages.
+         * @param message ParseCompanionTestMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ParseCompanionTestMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageOutput message, length delimited. Does not implicitly {@link proto.ParseCompanionTestMessageOutput.verify|verify} messages.
+         * @param message ParseCompanionTestMessageOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ParseCompanionTestMessageOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ParseCompanionTestMessageOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape} ParseCompanionTestMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape;
+
+        /**
+         * Decodes a ParseCompanionTestMessageOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape} ParseCompanionTestMessageOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape;
+
+        /**
+         * Verifies a ParseCompanionTestMessageOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ParseCompanionTestMessageOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ParseCompanionTestMessageOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.ParseCompanionTestMessageOutput;
+
+        /**
+         * Creates a plain object from a ParseCompanionTestMessageOutput message. Also converts values to other types if specified.
+         * @param message ParseCompanionTestMessageOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ParseCompanionTestMessageOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ParseCompanionTestMessageOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ParseCompanionTestMessageOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ParseCompanionTestMessageOutput {
+
+        /** Properties of a ParseCompanionTestMessageOutput. */
+        interface $Properties {
+
+            /** ParseCompanionTestMessageOutput success */
+            success?: (proto.ParseCompanionTestMessageSuccess.$Properties|null);
+
+            /** ParseCompanionTestMessageOutput error */
+            error?: (string|null);
+
+            /** ParseCompanionTestMessageOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a ParseCompanionTestMessageOutput. */
+        type $Shape = {
+          success?: proto.ParseCompanionTestMessageSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.ParseCompanionTestMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a ParseCompanionTestMessageSuccess.
+     * @deprecated Use proto.ParseCompanionTestMessageSuccess.$Properties instead.
+     */
+    interface IParseCompanionTestMessageSuccess extends proto.ParseCompanionTestMessageSuccess.$Properties {
+    }
+
+    /** Represents a ParseCompanionTestMessageSuccess. */
+    class ParseCompanionTestMessageSuccess {
+
+        /**
+         * Constructs a new ParseCompanionTestMessageSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ParseCompanionTestMessageSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ParseCompanionTestMessageSuccess createdAtMs. */
+        createdAtMs?: (number|Long|null);
+
+        /**
+         * Creates a new ParseCompanionTestMessageSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ParseCompanionTestMessageSuccess instance
+         */
+        static create(properties: proto.ParseCompanionTestMessageSuccess.$Shape): proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape;
+        static create(properties?: proto.ParseCompanionTestMessageSuccess.$Properties): proto.ParseCompanionTestMessageSuccess;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageSuccess message. Does not implicitly {@link proto.ParseCompanionTestMessageSuccess.verify|verify} messages.
+         * @param message ParseCompanionTestMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ParseCompanionTestMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ParseCompanionTestMessageSuccess message, length delimited. Does not implicitly {@link proto.ParseCompanionTestMessageSuccess.verify|verify} messages.
+         * @param message ParseCompanionTestMessageSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ParseCompanionTestMessageSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ParseCompanionTestMessageSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape} ParseCompanionTestMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape;
+
+        /**
+         * Decodes a ParseCompanionTestMessageSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape} ParseCompanionTestMessageSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape;
+
+        /**
+         * Verifies a ParseCompanionTestMessageSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ParseCompanionTestMessageSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ParseCompanionTestMessageSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.ParseCompanionTestMessageSuccess;
+
+        /**
+         * Creates a plain object from a ParseCompanionTestMessageSuccess message. Also converts values to other types if specified.
+         * @param message ParseCompanionTestMessageSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ParseCompanionTestMessageSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ParseCompanionTestMessageSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ParseCompanionTestMessageSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ParseCompanionTestMessageSuccess {
+
+        /** Properties of a ParseCompanionTestMessageSuccess. */
+        interface $Properties {
+
+            /** ParseCompanionTestMessageSuccess createdAtMs */
+            createdAtMs?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ParseCompanionTestMessageSuccess. */
+        type $Shape = proto.ParseCompanionTestMessageSuccess.$Properties;
     }
 
     /**
@@ -73115,6 +78984,870 @@ export namespace proto {
     }
 
     /**
+     * Properties of a PrepareAddDeviceInput.
+     * @deprecated Use proto.PrepareAddDeviceInput.$Properties instead.
+     */
+    interface IPrepareAddDeviceInput extends proto.PrepareAddDeviceInput.$Properties {
+    }
+
+    /** Represents a PrepareAddDeviceInput. */
+    class PrepareAddDeviceInput {
+
+        /**
+         * Constructs a new PrepareAddDeviceInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddDeviceInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddDeviceInput recoveryCode. */
+        recoveryCode?: (string|null);
+
+        /** PrepareAddDeviceInput userId. */
+        userId?: (number|Long|null);
+
+        /** PrepareAddDeviceInput encryptedSecretValuesJson. */
+        encryptedSecretValuesJson?: (string|null);
+
+        /** PrepareAddDeviceInput virtualDeviceBaseEpochId. */
+        virtualDeviceBaseEpochId?: (number|Long|null);
+
+        /** PrepareAddDeviceInput activeEpochId. */
+        activeEpochId?: (number|Long|null);
+
+        /** PrepareAddDeviceInput syncEpochs. */
+        syncEpochs: proto.AddDeviceSyncEpochInput.$Properties[];
+
+        /**
+         * Creates a new PrepareAddDeviceInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddDeviceInput instance
+         */
+        static create(properties: proto.PrepareAddDeviceInput.$Shape): proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape;
+        static create(properties?: proto.PrepareAddDeviceInput.$Properties): proto.PrepareAddDeviceInput;
+
+        /**
+         * Encodes the specified PrepareAddDeviceInput message. Does not implicitly {@link proto.PrepareAddDeviceInput.verify|verify} messages.
+         * @param message PrepareAddDeviceInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddDeviceInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddDeviceInput message, length delimited. Does not implicitly {@link proto.PrepareAddDeviceInput.verify|verify} messages.
+         * @param message PrepareAddDeviceInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddDeviceInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddDeviceInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape} PrepareAddDeviceInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape;
+
+        /**
+         * Decodes a PrepareAddDeviceInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape} PrepareAddDeviceInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape;
+
+        /**
+         * Verifies a PrepareAddDeviceInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddDeviceInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddDeviceInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddDeviceInput;
+
+        /**
+         * Creates a plain object from a PrepareAddDeviceInput message. Also converts values to other types if specified.
+         * @param message PrepareAddDeviceInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddDeviceInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddDeviceInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddDeviceInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddDeviceInput {
+
+        /** Properties of a PrepareAddDeviceInput. */
+        interface $Properties {
+
+            /** PrepareAddDeviceInput recoveryCode */
+            recoveryCode?: (string|null);
+
+            /** PrepareAddDeviceInput userId */
+            userId?: (number|Long|null);
+
+            /** PrepareAddDeviceInput encryptedSecretValuesJson */
+            encryptedSecretValuesJson?: (string|null);
+
+            /** PrepareAddDeviceInput virtualDeviceBaseEpochId */
+            virtualDeviceBaseEpochId?: (number|Long|null);
+
+            /** PrepareAddDeviceInput activeEpochId */
+            activeEpochId?: (number|Long|null);
+
+            /** PrepareAddDeviceInput syncEpochs */
+            syncEpochs?: (proto.AddDeviceSyncEpochInput.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a PrepareAddDeviceInput. */
+        type $Shape = proto.PrepareAddDeviceInput.$Properties;
+    }
+
+    /**
+     * Properties of a PrepareAddDeviceOutput.
+     * @deprecated Use proto.PrepareAddDeviceOutput.$Properties instead.
+     */
+    interface IPrepareAddDeviceOutput extends proto.PrepareAddDeviceOutput.$Properties {
+    }
+
+    /** Represents a PrepareAddDeviceOutput. */
+    class PrepareAddDeviceOutput {
+
+        /**
+         * Constructs a new PrepareAddDeviceOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddDeviceOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddDeviceOutput success. */
+        success?: (proto.PrepareAddDeviceSuccess.$Properties|null);
+
+        /** PrepareAddDeviceOutput error. */
+        error?: (string|null);
+
+        /** PrepareAddDeviceOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new PrepareAddDeviceOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddDeviceOutput instance
+         */
+        static create(properties: proto.PrepareAddDeviceOutput.$Shape): proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape;
+        static create(properties?: proto.PrepareAddDeviceOutput.$Properties): proto.PrepareAddDeviceOutput;
+
+        /**
+         * Encodes the specified PrepareAddDeviceOutput message. Does not implicitly {@link proto.PrepareAddDeviceOutput.verify|verify} messages.
+         * @param message PrepareAddDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddDeviceOutput message, length delimited. Does not implicitly {@link proto.PrepareAddDeviceOutput.verify|verify} messages.
+         * @param message PrepareAddDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddDeviceOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape} PrepareAddDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape;
+
+        /**
+         * Decodes a PrepareAddDeviceOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape} PrepareAddDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape;
+
+        /**
+         * Verifies a PrepareAddDeviceOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddDeviceOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddDeviceOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddDeviceOutput;
+
+        /**
+         * Creates a plain object from a PrepareAddDeviceOutput message. Also converts values to other types if specified.
+         * @param message PrepareAddDeviceOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddDeviceOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddDeviceOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddDeviceOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddDeviceOutput {
+
+        /** Properties of a PrepareAddDeviceOutput. */
+        interface $Properties {
+
+            /** PrepareAddDeviceOutput success */
+            success?: (proto.PrepareAddDeviceSuccess.$Properties|null);
+
+            /** PrepareAddDeviceOutput error */
+            error?: (string|null);
+
+            /** PrepareAddDeviceOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a PrepareAddDeviceOutput. */
+        type $Shape = {
+          success?: proto.PrepareAddDeviceSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.PrepareAddDeviceSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a PrepareAddDeviceSuccess.
+     * @deprecated Use proto.PrepareAddDeviceSuccess.$Properties instead.
+     */
+    interface IPrepareAddDeviceSuccess extends proto.PrepareAddDeviceSuccess.$Properties {
+    }
+
+    /** Represents a PrepareAddDeviceSuccess. */
+    class PrepareAddDeviceSuccess {
+
+        /**
+         * Constructs a new PrepareAddDeviceSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddDeviceSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddDeviceSuccess deviceKeys. */
+        deviceKeys?: (proto.AddDeviceKeysOutput.$Properties|null);
+
+        /** PrepareAddDeviceSuccess currentEpoch. */
+        currentEpoch?: (proto.EpochKey.$Properties|null);
+
+        /** PrepareAddDeviceSuccess mailboxRootSalt. */
+        mailboxRootSalt?: (Uint8Array|null);
+
+        /** PrepareAddDeviceSuccess orfRotationToken. */
+        orfRotationToken?: (Uint8Array|null);
+
+        /** PrepareAddDeviceSuccess deviceEpochHmac. */
+        deviceEpochHmac?: (Uint8Array|null);
+
+        /** PrepareAddDeviceSuccess epochRootKeyFingerprint. */
+        epochRootKeyFingerprint?: (Uint8Array|null);
+
+        /** PrepareAddDeviceSuccess supportedEncryptionVersions. */
+        supportedEncryptionVersions: number[];
+
+        /** PrepareAddDeviceSuccess encryptionVersionSignature. */
+        encryptionVersionSignature?: (Uint8Array|null);
+
+        /** PrepareAddDeviceSuccess clientVersion. */
+        clientVersion?: (number|null);
+
+        /**
+         * Creates a new PrepareAddDeviceSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddDeviceSuccess instance
+         */
+        static create(properties: proto.PrepareAddDeviceSuccess.$Shape): proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape;
+        static create(properties?: proto.PrepareAddDeviceSuccess.$Properties): proto.PrepareAddDeviceSuccess;
+
+        /**
+         * Encodes the specified PrepareAddDeviceSuccess message. Does not implicitly {@link proto.PrepareAddDeviceSuccess.verify|verify} messages.
+         * @param message PrepareAddDeviceSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddDeviceSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddDeviceSuccess message, length delimited. Does not implicitly {@link proto.PrepareAddDeviceSuccess.verify|verify} messages.
+         * @param message PrepareAddDeviceSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddDeviceSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddDeviceSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape} PrepareAddDeviceSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape;
+
+        /**
+         * Decodes a PrepareAddDeviceSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape} PrepareAddDeviceSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape;
+
+        /**
+         * Verifies a PrepareAddDeviceSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddDeviceSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddDeviceSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddDeviceSuccess;
+
+        /**
+         * Creates a plain object from a PrepareAddDeviceSuccess message. Also converts values to other types if specified.
+         * @param message PrepareAddDeviceSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddDeviceSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddDeviceSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddDeviceSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddDeviceSuccess {
+
+        /** Properties of a PrepareAddDeviceSuccess. */
+        interface $Properties {
+
+            /** PrepareAddDeviceSuccess deviceKeys */
+            deviceKeys?: (proto.AddDeviceKeysOutput.$Properties|null);
+
+            /** PrepareAddDeviceSuccess currentEpoch */
+            currentEpoch?: (proto.EpochKey.$Properties|null);
+
+            /** PrepareAddDeviceSuccess mailboxRootSalt */
+            mailboxRootSalt?: (Uint8Array|null);
+
+            /** PrepareAddDeviceSuccess orfRotationToken */
+            orfRotationToken?: (Uint8Array|null);
+
+            /** PrepareAddDeviceSuccess deviceEpochHmac */
+            deviceEpochHmac?: (Uint8Array|null);
+
+            /** PrepareAddDeviceSuccess epochRootKeyFingerprint */
+            epochRootKeyFingerprint?: (Uint8Array|null);
+
+            /** PrepareAddDeviceSuccess supportedEncryptionVersions */
+            supportedEncryptionVersions?: (number[]|null);
+
+            /** PrepareAddDeviceSuccess encryptionVersionSignature */
+            encryptionVersionSignature?: (Uint8Array|null);
+
+            /** PrepareAddDeviceSuccess clientVersion */
+            clientVersion?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a PrepareAddDeviceSuccess. */
+        type $Shape = proto.PrepareAddDeviceSuccess.$Properties;
+    }
+
+    /**
+     * Properties of a PrepareAddPeerDeviceInput.
+     * @deprecated Use proto.PrepareAddPeerDeviceInput.$Properties instead.
+     */
+    interface IPrepareAddPeerDeviceInput extends proto.PrepareAddPeerDeviceInput.$Properties {
+    }
+
+    /** Represents a PrepareAddPeerDeviceInput. */
+    class PrepareAddPeerDeviceInput {
+
+        /**
+         * Constructs a new PrepareAddPeerDeviceInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddPeerDeviceInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddPeerDeviceInput advSecret. */
+        advSecret?: (Uint8Array|null);
+
+        /** PrepareAddPeerDeviceInput sealedPayload. */
+        sealedPayload?: (Uint8Array|null);
+
+        /** PrepareAddPeerDeviceInput backupId. */
+        backupId?: (number|Long|null);
+
+        /** PrepareAddPeerDeviceInput userId. */
+        userId?: (number|Long|null);
+
+        /** PrepareAddPeerDeviceInput companionIdentityPub. */
+        companionIdentityPub?: (Uint8Array|null);
+
+        /** PrepareAddPeerDeviceInput activeEpochId. */
+        activeEpochId?: (number|Long|null);
+
+        /**
+         * Creates a new PrepareAddPeerDeviceInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddPeerDeviceInput instance
+         */
+        static create(properties: proto.PrepareAddPeerDeviceInput.$Shape): proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape;
+        static create(properties?: proto.PrepareAddPeerDeviceInput.$Properties): proto.PrepareAddPeerDeviceInput;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceInput message. Does not implicitly {@link proto.PrepareAddPeerDeviceInput.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddPeerDeviceInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceInput message, length delimited. Does not implicitly {@link proto.PrepareAddPeerDeviceInput.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddPeerDeviceInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape} PrepareAddPeerDeviceInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape} PrepareAddPeerDeviceInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape;
+
+        /**
+         * Verifies a PrepareAddPeerDeviceInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddPeerDeviceInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddPeerDeviceInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddPeerDeviceInput;
+
+        /**
+         * Creates a plain object from a PrepareAddPeerDeviceInput message. Also converts values to other types if specified.
+         * @param message PrepareAddPeerDeviceInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddPeerDeviceInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddPeerDeviceInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddPeerDeviceInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddPeerDeviceInput {
+
+        /** Properties of a PrepareAddPeerDeviceInput. */
+        interface $Properties {
+
+            /** PrepareAddPeerDeviceInput advSecret */
+            advSecret?: (Uint8Array|null);
+
+            /** PrepareAddPeerDeviceInput sealedPayload */
+            sealedPayload?: (Uint8Array|null);
+
+            /** PrepareAddPeerDeviceInput backupId */
+            backupId?: (number|Long|null);
+
+            /** PrepareAddPeerDeviceInput userId */
+            userId?: (number|Long|null);
+
+            /** PrepareAddPeerDeviceInput companionIdentityPub */
+            companionIdentityPub?: (Uint8Array|null);
+
+            /** PrepareAddPeerDeviceInput activeEpochId */
+            activeEpochId?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a PrepareAddPeerDeviceInput. */
+        type $Shape = proto.PrepareAddPeerDeviceInput.$Properties;
+    }
+
+    /**
+     * Properties of a PrepareAddPeerDeviceOutput.
+     * @deprecated Use proto.PrepareAddPeerDeviceOutput.$Properties instead.
+     */
+    interface IPrepareAddPeerDeviceOutput extends proto.PrepareAddPeerDeviceOutput.$Properties {
+    }
+
+    /** Represents a PrepareAddPeerDeviceOutput. */
+    class PrepareAddPeerDeviceOutput {
+
+        /**
+         * Constructs a new PrepareAddPeerDeviceOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddPeerDeviceOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddPeerDeviceOutput success. */
+        success?: (proto.PrepareAddPeerDeviceSuccess.$Properties|null);
+
+        /** PrepareAddPeerDeviceOutput error. */
+        error?: (string|null);
+
+        /** PrepareAddPeerDeviceOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new PrepareAddPeerDeviceOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddPeerDeviceOutput instance
+         */
+        static create(properties: proto.PrepareAddPeerDeviceOutput.$Shape): proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape;
+        static create(properties?: proto.PrepareAddPeerDeviceOutput.$Properties): proto.PrepareAddPeerDeviceOutput;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceOutput message. Does not implicitly {@link proto.PrepareAddPeerDeviceOutput.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddPeerDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceOutput message, length delimited. Does not implicitly {@link proto.PrepareAddPeerDeviceOutput.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddPeerDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape} PrepareAddPeerDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape} PrepareAddPeerDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape;
+
+        /**
+         * Verifies a PrepareAddPeerDeviceOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddPeerDeviceOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddPeerDeviceOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddPeerDeviceOutput;
+
+        /**
+         * Creates a plain object from a PrepareAddPeerDeviceOutput message. Also converts values to other types if specified.
+         * @param message PrepareAddPeerDeviceOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddPeerDeviceOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddPeerDeviceOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddPeerDeviceOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddPeerDeviceOutput {
+
+        /** Properties of a PrepareAddPeerDeviceOutput. */
+        interface $Properties {
+
+            /** PrepareAddPeerDeviceOutput success */
+            success?: (proto.PrepareAddPeerDeviceSuccess.$Properties|null);
+
+            /** PrepareAddPeerDeviceOutput error */
+            error?: (string|null);
+
+            /** PrepareAddPeerDeviceOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a PrepareAddPeerDeviceOutput. */
+        type $Shape = {
+          success?: proto.PrepareAddPeerDeviceSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.PrepareAddPeerDeviceSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a PrepareAddPeerDeviceSuccess.
+     * @deprecated Use proto.PrepareAddPeerDeviceSuccess.$Properties instead.
+     */
+    interface IPrepareAddPeerDeviceSuccess extends proto.PrepareAddPeerDeviceSuccess.$Properties {
+    }
+
+    /** Represents a PrepareAddPeerDeviceSuccess. */
+    class PrepareAddPeerDeviceSuccess {
+
+        /**
+         * Constructs a new PrepareAddPeerDeviceSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.PrepareAddPeerDeviceSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** PrepareAddPeerDeviceSuccess enrolment. */
+        enrolment?: (proto.PrepareAddDeviceSuccess.$Properties|null);
+
+        /** PrepareAddPeerDeviceSuccess serverDataId. */
+        serverDataId?: (number|Long|null);
+
+        /** PrepareAddPeerDeviceSuccess companionDeviceBinding. */
+        companionDeviceBinding?: (Uint8Array|null);
+
+        /** PrepareAddPeerDeviceSuccess historyStartTime. */
+        historyStartTime?: (number|Long|null);
+
+        /**
+         * Creates a new PrepareAddPeerDeviceSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PrepareAddPeerDeviceSuccess instance
+         */
+        static create(properties: proto.PrepareAddPeerDeviceSuccess.$Shape): proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape;
+        static create(properties?: proto.PrepareAddPeerDeviceSuccess.$Properties): proto.PrepareAddPeerDeviceSuccess;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceSuccess message. Does not implicitly {@link proto.PrepareAddPeerDeviceSuccess.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.PrepareAddPeerDeviceSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PrepareAddPeerDeviceSuccess message, length delimited. Does not implicitly {@link proto.PrepareAddPeerDeviceSuccess.verify|verify} messages.
+         * @param message PrepareAddPeerDeviceSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.PrepareAddPeerDeviceSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape} PrepareAddPeerDeviceSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape;
+
+        /**
+         * Decodes a PrepareAddPeerDeviceSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape} PrepareAddPeerDeviceSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape;
+
+        /**
+         * Verifies a PrepareAddPeerDeviceSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PrepareAddPeerDeviceSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrepareAddPeerDeviceSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.PrepareAddPeerDeviceSuccess;
+
+        /**
+         * Creates a plain object from a PrepareAddPeerDeviceSuccess message. Also converts values to other types if specified.
+         * @param message PrepareAddPeerDeviceSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.PrepareAddPeerDeviceSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrepareAddPeerDeviceSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for PrepareAddPeerDeviceSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace PrepareAddPeerDeviceSuccess {
+
+        /** Properties of a PrepareAddPeerDeviceSuccess. */
+        interface $Properties {
+
+            /** PrepareAddPeerDeviceSuccess enrolment */
+            enrolment?: (proto.PrepareAddDeviceSuccess.$Properties|null);
+
+            /** PrepareAddPeerDeviceSuccess serverDataId */
+            serverDataId?: (number|Long|null);
+
+            /** PrepareAddPeerDeviceSuccess companionDeviceBinding */
+            companionDeviceBinding?: (Uint8Array|null);
+
+            /** PrepareAddPeerDeviceSuccess historyStartTime */
+            historyStartTime?: (number|Long|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a PrepareAddPeerDeviceSuccess. */
+        type $Shape = proto.PrepareAddPeerDeviceSuccess.$Properties;
+    }
+
+    /**
      * Properties of a PrimaryEphemeralIdentity.
      * @deprecated Use proto.PrimaryEphemeralIdentity.$Properties instead.
      */
@@ -74839,6 +81572,693 @@ export namespace proto {
     }
 
     /**
+     * Properties of a RotateEpochInput.
+     * @deprecated Use proto.RotateEpochInput.$Properties instead.
+     */
+    interface IRotateEpochInput extends proto.RotateEpochInput.$Properties {
+    }
+
+    /** Represents a RotateEpochInput. */
+    class RotateEpochInput {
+
+        /**
+         * Constructs a new RotateEpochInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.RotateEpochInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** RotateEpochInput currentEpochRootKey. */
+        currentEpochRootKey?: (Uint8Array|null);
+
+        /** RotateEpochInput currentEpochAnonId. */
+        currentEpochAnonId?: (number|null);
+
+        /** RotateEpochInput currentEpochFbid. */
+        currentEpochFbid?: (number|Long|null);
+
+        /** RotateEpochInput epochStorageAuthPrivateKey. */
+        epochStorageAuthPrivateKey?: (Uint8Array|null);
+
+        /** RotateEpochInput members. */
+        members: proto.RotateEpochMemberInput.$Properties[];
+
+        /**
+         * Creates a new RotateEpochInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RotateEpochInput instance
+         */
+        static create(properties: proto.RotateEpochInput.$Shape): proto.RotateEpochInput & proto.RotateEpochInput.$Shape;
+        static create(properties?: proto.RotateEpochInput.$Properties): proto.RotateEpochInput;
+
+        /**
+         * Encodes the specified RotateEpochInput message. Does not implicitly {@link proto.RotateEpochInput.verify|verify} messages.
+         * @param message RotateEpochInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.RotateEpochInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RotateEpochInput message, length delimited. Does not implicitly {@link proto.RotateEpochInput.verify|verify} messages.
+         * @param message RotateEpochInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.RotateEpochInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RotateEpochInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.RotateEpochInput & proto.RotateEpochInput.$Shape} RotateEpochInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RotateEpochInput & proto.RotateEpochInput.$Shape;
+
+        /**
+         * Decodes a RotateEpochInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.RotateEpochInput & proto.RotateEpochInput.$Shape} RotateEpochInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RotateEpochInput & proto.RotateEpochInput.$Shape;
+
+        /**
+         * Verifies a RotateEpochInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RotateEpochInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RotateEpochInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.RotateEpochInput;
+
+        /**
+         * Creates a plain object from a RotateEpochInput message. Also converts values to other types if specified.
+         * @param message RotateEpochInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.RotateEpochInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RotateEpochInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for RotateEpochInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace RotateEpochInput {
+
+        /** Properties of a RotateEpochInput. */
+        interface $Properties {
+
+            /** RotateEpochInput currentEpochRootKey */
+            currentEpochRootKey?: (Uint8Array|null);
+
+            /** RotateEpochInput currentEpochAnonId */
+            currentEpochAnonId?: (number|null);
+
+            /** RotateEpochInput currentEpochFbid */
+            currentEpochFbid?: (number|Long|null);
+
+            /** RotateEpochInput epochStorageAuthPrivateKey */
+            epochStorageAuthPrivateKey?: (Uint8Array|null);
+
+            /** RotateEpochInput members */
+            members?: (proto.RotateEpochMemberInput.$Properties[]|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a RotateEpochInput. */
+        type $Shape = proto.RotateEpochInput.$Properties;
+    }
+
+    /**
+     * Properties of a RotateEpochMemberEdge.
+     * @deprecated Use proto.RotateEpochMemberEdge.$Properties instead.
+     */
+    interface IRotateEpochMemberEdge extends proto.RotateEpochMemberEdge.$Properties {
+    }
+
+    /** Represents a RotateEpochMemberEdge. */
+    class RotateEpochMemberEdge {
+
+        /**
+         * Constructs a new RotateEpochMemberEdge.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.RotateEpochMemberEdge.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** RotateEpochMemberEdge deviceId. */
+        deviceId?: (number|Long|null);
+
+        /** RotateEpochMemberEdge encryptedEpochKey. */
+        encryptedEpochKey?: (Uint8Array|null);
+
+        /** RotateEpochMemberEdge deviceEpochHmac. */
+        deviceEpochHmac?: (Uint8Array|null);
+
+        /**
+         * Creates a new RotateEpochMemberEdge instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RotateEpochMemberEdge instance
+         */
+        static create(properties: proto.RotateEpochMemberEdge.$Shape): proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape;
+        static create(properties?: proto.RotateEpochMemberEdge.$Properties): proto.RotateEpochMemberEdge;
+
+        /**
+         * Encodes the specified RotateEpochMemberEdge message. Does not implicitly {@link proto.RotateEpochMemberEdge.verify|verify} messages.
+         * @param message RotateEpochMemberEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.RotateEpochMemberEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RotateEpochMemberEdge message, length delimited. Does not implicitly {@link proto.RotateEpochMemberEdge.verify|verify} messages.
+         * @param message RotateEpochMemberEdge message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.RotateEpochMemberEdge.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RotateEpochMemberEdge message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape} RotateEpochMemberEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape;
+
+        /**
+         * Decodes a RotateEpochMemberEdge message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape} RotateEpochMemberEdge
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape;
+
+        /**
+         * Verifies a RotateEpochMemberEdge message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RotateEpochMemberEdge message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RotateEpochMemberEdge
+         */
+        static fromObject(object: { [k: string]: any }): proto.RotateEpochMemberEdge;
+
+        /**
+         * Creates a plain object from a RotateEpochMemberEdge message. Also converts values to other types if specified.
+         * @param message RotateEpochMemberEdge
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.RotateEpochMemberEdge, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RotateEpochMemberEdge to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for RotateEpochMemberEdge
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace RotateEpochMemberEdge {
+
+        /** Properties of a RotateEpochMemberEdge. */
+        interface $Properties {
+
+            /** RotateEpochMemberEdge deviceId */
+            deviceId?: (number|Long|null);
+
+            /** RotateEpochMemberEdge encryptedEpochKey */
+            encryptedEpochKey?: (Uint8Array|null);
+
+            /** RotateEpochMemberEdge deviceEpochHmac */
+            deviceEpochHmac?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a RotateEpochMemberEdge. */
+        type $Shape = proto.RotateEpochMemberEdge.$Properties;
+    }
+
+    /**
+     * Properties of a RotateEpochMemberInput.
+     * @deprecated Use proto.RotateEpochMemberInput.$Properties instead.
+     */
+    interface IRotateEpochMemberInput extends proto.RotateEpochMemberInput.$Properties {
+    }
+
+    /** Represents a RotateEpochMemberInput. */
+    class RotateEpochMemberInput {
+
+        /**
+         * Constructs a new RotateEpochMemberInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.RotateEpochMemberInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** RotateEpochMemberInput deviceId. */
+        deviceId?: (number|Long|null);
+
+        /** RotateEpochMemberInput epochStoragePublicKey. */
+        epochStoragePublicKey?: (Uint8Array|null);
+
+        /** RotateEpochMemberInput devicePublicKey. */
+        devicePublicKey?: (Uint8Array|null);
+
+        /** RotateEpochMemberInput prevDeviceEpochHmac. */
+        prevDeviceEpochHmac?: (Uint8Array|null);
+
+        /** RotateEpochMemberInput epochStoragePublicKeySig. */
+        epochStoragePublicKeySig?: (Uint8Array|null);
+
+        /**
+         * Creates a new RotateEpochMemberInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RotateEpochMemberInput instance
+         */
+        static create(properties: proto.RotateEpochMemberInput.$Shape): proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape;
+        static create(properties?: proto.RotateEpochMemberInput.$Properties): proto.RotateEpochMemberInput;
+
+        /**
+         * Encodes the specified RotateEpochMemberInput message. Does not implicitly {@link proto.RotateEpochMemberInput.verify|verify} messages.
+         * @param message RotateEpochMemberInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.RotateEpochMemberInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RotateEpochMemberInput message, length delimited. Does not implicitly {@link proto.RotateEpochMemberInput.verify|verify} messages.
+         * @param message RotateEpochMemberInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.RotateEpochMemberInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RotateEpochMemberInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape} RotateEpochMemberInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape;
+
+        /**
+         * Decodes a RotateEpochMemberInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape} RotateEpochMemberInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape;
+
+        /**
+         * Verifies a RotateEpochMemberInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RotateEpochMemberInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RotateEpochMemberInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.RotateEpochMemberInput;
+
+        /**
+         * Creates a plain object from a RotateEpochMemberInput message. Also converts values to other types if specified.
+         * @param message RotateEpochMemberInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.RotateEpochMemberInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RotateEpochMemberInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for RotateEpochMemberInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace RotateEpochMemberInput {
+
+        /** Properties of a RotateEpochMemberInput. */
+        interface $Properties {
+
+            /** RotateEpochMemberInput deviceId */
+            deviceId?: (number|Long|null);
+
+            /** RotateEpochMemberInput epochStoragePublicKey */
+            epochStoragePublicKey?: (Uint8Array|null);
+
+            /** RotateEpochMemberInput devicePublicKey */
+            devicePublicKey?: (Uint8Array|null);
+
+            /** RotateEpochMemberInput prevDeviceEpochHmac */
+            prevDeviceEpochHmac?: (Uint8Array|null);
+
+            /** RotateEpochMemberInput epochStoragePublicKeySig */
+            epochStoragePublicKeySig?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a RotateEpochMemberInput. */
+        type $Shape = proto.RotateEpochMemberInput.$Properties;
+    }
+
+    /**
+     * Properties of a RotateEpochOutput.
+     * @deprecated Use proto.RotateEpochOutput.$Properties instead.
+     */
+    interface IRotateEpochOutput extends proto.RotateEpochOutput.$Properties {
+    }
+
+    /** Represents a RotateEpochOutput. */
+    class RotateEpochOutput {
+
+        /**
+         * Constructs a new RotateEpochOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.RotateEpochOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** RotateEpochOutput success. */
+        success?: (proto.RotateEpochSuccess.$Properties|null);
+
+        /** RotateEpochOutput error. */
+        error?: (string|null);
+
+        /** RotateEpochOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new RotateEpochOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RotateEpochOutput instance
+         */
+        static create(properties: proto.RotateEpochOutput.$Shape): proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape;
+        static create(properties?: proto.RotateEpochOutput.$Properties): proto.RotateEpochOutput;
+
+        /**
+         * Encodes the specified RotateEpochOutput message. Does not implicitly {@link proto.RotateEpochOutput.verify|verify} messages.
+         * @param message RotateEpochOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.RotateEpochOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RotateEpochOutput message, length delimited. Does not implicitly {@link proto.RotateEpochOutput.verify|verify} messages.
+         * @param message RotateEpochOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.RotateEpochOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RotateEpochOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape} RotateEpochOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape;
+
+        /**
+         * Decodes a RotateEpochOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape} RotateEpochOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape;
+
+        /**
+         * Verifies a RotateEpochOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RotateEpochOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RotateEpochOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.RotateEpochOutput;
+
+        /**
+         * Creates a plain object from a RotateEpochOutput message. Also converts values to other types if specified.
+         * @param message RotateEpochOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.RotateEpochOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RotateEpochOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for RotateEpochOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace RotateEpochOutput {
+
+        /** Properties of a RotateEpochOutput. */
+        interface $Properties {
+
+            /** RotateEpochOutput success */
+            success?: (proto.RotateEpochSuccess.$Properties|null);
+
+            /** RotateEpochOutput error */
+            error?: (string|null);
+
+            /** RotateEpochOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a RotateEpochOutput. */
+        type $Shape = {
+          success?: proto.RotateEpochSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.RotateEpochSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a RotateEpochSuccess.
+     * @deprecated Use proto.RotateEpochSuccess.$Properties instead.
+     */
+    interface IRotateEpochSuccess extends proto.RotateEpochSuccess.$Properties {
+    }
+
+    /** Represents a RotateEpochSuccess. */
+    class RotateEpochSuccess {
+
+        /**
+         * Constructs a new RotateEpochSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.RotateEpochSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** RotateEpochSuccess newEpochRootKey. */
+        newEpochRootKey?: (Uint8Array|null);
+
+        /** RotateEpochSuccess newEpochAnonId. */
+        newEpochAnonId?: (number|null);
+
+        /** RotateEpochSuccess backwardEdge. */
+        backwardEdge?: (proto.BackwardEdge.$Properties|null);
+
+        /** RotateEpochSuccess memberEdges. */
+        memberEdges: proto.RotateEpochMemberEdge.$Properties[];
+
+        /** RotateEpochSuccess epochRootKeyFingerprint. */
+        epochRootKeyFingerprint?: (Uint8Array|null);
+
+        /**
+         * Creates a new RotateEpochSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RotateEpochSuccess instance
+         */
+        static create(properties: proto.RotateEpochSuccess.$Shape): proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape;
+        static create(properties?: proto.RotateEpochSuccess.$Properties): proto.RotateEpochSuccess;
+
+        /**
+         * Encodes the specified RotateEpochSuccess message. Does not implicitly {@link proto.RotateEpochSuccess.verify|verify} messages.
+         * @param message RotateEpochSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.RotateEpochSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RotateEpochSuccess message, length delimited. Does not implicitly {@link proto.RotateEpochSuccess.verify|verify} messages.
+         * @param message RotateEpochSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.RotateEpochSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RotateEpochSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape} RotateEpochSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape;
+
+        /**
+         * Decodes a RotateEpochSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape} RotateEpochSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape;
+
+        /**
+         * Verifies a RotateEpochSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RotateEpochSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RotateEpochSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.RotateEpochSuccess;
+
+        /**
+         * Creates a plain object from a RotateEpochSuccess message. Also converts values to other types if specified.
+         * @param message RotateEpochSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.RotateEpochSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RotateEpochSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for RotateEpochSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace RotateEpochSuccess {
+
+        /** Properties of a RotateEpochSuccess. */
+        interface $Properties {
+
+            /** RotateEpochSuccess newEpochRootKey */
+            newEpochRootKey?: (Uint8Array|null);
+
+            /** RotateEpochSuccess newEpochAnonId */
+            newEpochAnonId?: (number|null);
+
+            /** RotateEpochSuccess backwardEdge */
+            backwardEdge?: (proto.BackwardEdge.$Properties|null);
+
+            /** RotateEpochSuccess memberEdges */
+            memberEdges?: (proto.RotateEpochMemberEdge.$Properties[]|null);
+
+            /** RotateEpochSuccess epochRootKeyFingerprint */
+            epochRootKeyFingerprint?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a RotateEpochSuccess. */
+        type $Shape = proto.RotateEpochSuccess.$Properties;
+    }
+
+    /**
      * Properties of a RoutingInfo.
      * @deprecated Use proto.RoutingInfo.$Properties instead.
      */
@@ -75112,6 +82532,393 @@ export namespace proto {
 
         /** Shape of a ScheduledMessageMetadata. */
         type $Shape = proto.ScheduledMessageMetadata.$Properties;
+    }
+
+    /**
+     * Properties of a SealThreadIdInput.
+     * @deprecated Use proto.SealThreadIdInput.$Properties instead.
+     */
+    interface ISealThreadIdInput extends proto.SealThreadIdInput.$Properties {
+    }
+
+    /** Represents a SealThreadIdInput. */
+    class SealThreadIdInput {
+
+        /**
+         * Constructs a new SealThreadIdInput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.SealThreadIdInput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** SealThreadIdInput epochRootKey. */
+        epochRootKey?: (Uint8Array|null);
+
+        /** SealThreadIdInput epochAnonId. */
+        epochAnonId?: (number|null);
+
+        /** SealThreadIdInput backupId. */
+        backupId?: (number|Long|null);
+
+        /** SealThreadIdInput threadId. */
+        threadId?: (string|null);
+
+        /**
+         * Creates a new SealThreadIdInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns SealThreadIdInput instance
+         */
+        static create(properties: proto.SealThreadIdInput.$Shape): proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape;
+        static create(properties?: proto.SealThreadIdInput.$Properties): proto.SealThreadIdInput;
+
+        /**
+         * Encodes the specified SealThreadIdInput message. Does not implicitly {@link proto.SealThreadIdInput.verify|verify} messages.
+         * @param message SealThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.SealThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified SealThreadIdInput message, length delimited. Does not implicitly {@link proto.SealThreadIdInput.verify|verify} messages.
+         * @param message SealThreadIdInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.SealThreadIdInput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a SealThreadIdInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape} SealThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape;
+
+        /**
+         * Decodes a SealThreadIdInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape} SealThreadIdInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape;
+
+        /**
+         * Verifies a SealThreadIdInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a SealThreadIdInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns SealThreadIdInput
+         */
+        static fromObject(object: { [k: string]: any }): proto.SealThreadIdInput;
+
+        /**
+         * Creates a plain object from a SealThreadIdInput message. Also converts values to other types if specified.
+         * @param message SealThreadIdInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.SealThreadIdInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this SealThreadIdInput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for SealThreadIdInput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace SealThreadIdInput {
+
+        /** Properties of a SealThreadIdInput. */
+        interface $Properties {
+
+            /** SealThreadIdInput epochRootKey */
+            epochRootKey?: (Uint8Array|null);
+
+            /** SealThreadIdInput epochAnonId */
+            epochAnonId?: (number|null);
+
+            /** SealThreadIdInput backupId */
+            backupId?: (number|Long|null);
+
+            /** SealThreadIdInput threadId */
+            threadId?: (string|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SealThreadIdInput. */
+        type $Shape = proto.SealThreadIdInput.$Properties;
+    }
+
+    /**
+     * Properties of a SealThreadIdOutput.
+     * @deprecated Use proto.SealThreadIdOutput.$Properties instead.
+     */
+    interface ISealThreadIdOutput extends proto.SealThreadIdOutput.$Properties {
+    }
+
+    /** Represents a SealThreadIdOutput. */
+    class SealThreadIdOutput {
+
+        /**
+         * Constructs a new SealThreadIdOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.SealThreadIdOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** SealThreadIdOutput success. */
+        success?: (proto.SealThreadIdSuccess.$Properties|null);
+
+        /** SealThreadIdOutput error. */
+        error?: (string|null);
+
+        /** SealThreadIdOutput result. */
+        result?: ("success"|"error");
+
+        /**
+         * Creates a new SealThreadIdOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns SealThreadIdOutput instance
+         */
+        static create(properties: proto.SealThreadIdOutput.$Shape): proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape;
+        static create(properties?: proto.SealThreadIdOutput.$Properties): proto.SealThreadIdOutput;
+
+        /**
+         * Encodes the specified SealThreadIdOutput message. Does not implicitly {@link proto.SealThreadIdOutput.verify|verify} messages.
+         * @param message SealThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.SealThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified SealThreadIdOutput message, length delimited. Does not implicitly {@link proto.SealThreadIdOutput.verify|verify} messages.
+         * @param message SealThreadIdOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.SealThreadIdOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a SealThreadIdOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape} SealThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape;
+
+        /**
+         * Decodes a SealThreadIdOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape} SealThreadIdOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape;
+
+        /**
+         * Verifies a SealThreadIdOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a SealThreadIdOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns SealThreadIdOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.SealThreadIdOutput;
+
+        /**
+         * Creates a plain object from a SealThreadIdOutput message. Also converts values to other types if specified.
+         * @param message SealThreadIdOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.SealThreadIdOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this SealThreadIdOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for SealThreadIdOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace SealThreadIdOutput {
+
+        /** Properties of a SealThreadIdOutput. */
+        interface $Properties {
+
+            /** SealThreadIdOutput success */
+            success?: (proto.SealThreadIdSuccess.$Properties|null);
+
+            /** SealThreadIdOutput error */
+            error?: (string|null);
+
+            /** SealThreadIdOutput result */
+            result?: ("success"|"error");
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Narrowed shape of a SealThreadIdOutput. */
+        type $Shape = {
+          success?: proto.SealThreadIdSuccess.$Shape|null;
+          error?: string|null;
+          $unknowns?: Uint8Array[];
+        } & (
+          ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.SealThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
+        );
+    }
+
+    /**
+     * Properties of a SealThreadIdSuccess.
+     * @deprecated Use proto.SealThreadIdSuccess.$Properties instead.
+     */
+    interface ISealThreadIdSuccess extends proto.SealThreadIdSuccess.$Properties {
+    }
+
+    /** Represents a SealThreadIdSuccess. */
+    class SealThreadIdSuccess {
+
+        /**
+         * Constructs a new SealThreadIdSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.SealThreadIdSuccess.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** SealThreadIdSuccess sealedThreadId. */
+        sealedThreadId?: (Uint8Array|null);
+
+        /**
+         * Creates a new SealThreadIdSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns SealThreadIdSuccess instance
+         */
+        static create(properties: proto.SealThreadIdSuccess.$Shape): proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape;
+        static create(properties?: proto.SealThreadIdSuccess.$Properties): proto.SealThreadIdSuccess;
+
+        /**
+         * Encodes the specified SealThreadIdSuccess message. Does not implicitly {@link proto.SealThreadIdSuccess.verify|verify} messages.
+         * @param message SealThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.SealThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified SealThreadIdSuccess message, length delimited. Does not implicitly {@link proto.SealThreadIdSuccess.verify|verify} messages.
+         * @param message SealThreadIdSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.SealThreadIdSuccess.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a SealThreadIdSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape} SealThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape;
+
+        /**
+         * Decodes a SealThreadIdSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape} SealThreadIdSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape;
+
+        /**
+         * Verifies a SealThreadIdSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a SealThreadIdSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns SealThreadIdSuccess
+         */
+        static fromObject(object: { [k: string]: any }): proto.SealThreadIdSuccess;
+
+        /**
+         * Creates a plain object from a SealThreadIdSuccess message. Also converts values to other types if specified.
+         * @param message SealThreadIdSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.SealThreadIdSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this SealThreadIdSuccess to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for SealThreadIdSuccess
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace SealThreadIdSuccess {
+
+        /** Properties of a SealThreadIdSuccess. */
+        interface $Properties {
+
+            /** SealThreadIdSuccess sealedThreadId */
+            sealedThreadId?: (Uint8Array|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a SealThreadIdSuccess. */
+        type $Shape = proto.SealThreadIdSuccess.$Properties;
     }
 
     /**
@@ -96906,6 +104713,159 @@ export namespace proto {
             /** Shape of a Details. */
             type $Shape = proto.VerifiedNameCertificate.Details.$Properties;
         }
+    }
+
+    /**
+     * Properties of a VirtualDeviceOutput.
+     * @deprecated Use proto.VirtualDeviceOutput.$Properties instead.
+     */
+    interface IVirtualDeviceOutput extends proto.VirtualDeviceOutput.$Properties {
+    }
+
+    /** Represents a VirtualDeviceOutput. */
+    class VirtualDeviceOutput {
+
+        /**
+         * Constructs a new VirtualDeviceOutput.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.VirtualDeviceOutput.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** VirtualDeviceOutput vdId. */
+        vdId?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput vdPublicKey. */
+        vdPublicKey?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput vdEpochStoragePublicKey. */
+        vdEpochStoragePublicKey?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput vdEpochStoragePublicKeySig. */
+        vdEpochStoragePublicKeySig?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput ocmfRotationToken. */
+        ocmfRotationToken?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput deviceEpochHmac. */
+        deviceEpochHmac?: (Uint8Array|null);
+
+        /** VirtualDeviceOutput encryptedSecretValues. */
+        encryptedSecretValues?: (proto.EncryptedSecretValuesOutput.$Properties|null);
+
+        /**
+         * Creates a new VirtualDeviceOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns VirtualDeviceOutput instance
+         */
+        static create(properties: proto.VirtualDeviceOutput.$Shape): proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape;
+        static create(properties?: proto.VirtualDeviceOutput.$Properties): proto.VirtualDeviceOutput;
+
+        /**
+         * Encodes the specified VirtualDeviceOutput message. Does not implicitly {@link proto.VirtualDeviceOutput.verify|verify} messages.
+         * @param message VirtualDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.VirtualDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified VirtualDeviceOutput message, length delimited. Does not implicitly {@link proto.VirtualDeviceOutput.verify|verify} messages.
+         * @param message VirtualDeviceOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.VirtualDeviceOutput.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a VirtualDeviceOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape} VirtualDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape;
+
+        /**
+         * Decodes a VirtualDeviceOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape} VirtualDeviceOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape;
+
+        /**
+         * Verifies a VirtualDeviceOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a VirtualDeviceOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns VirtualDeviceOutput
+         */
+        static fromObject(object: { [k: string]: any }): proto.VirtualDeviceOutput;
+
+        /**
+         * Creates a plain object from a VirtualDeviceOutput message. Also converts values to other types if specified.
+         * @param message VirtualDeviceOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.VirtualDeviceOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this VirtualDeviceOutput to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for VirtualDeviceOutput
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace VirtualDeviceOutput {
+
+        /** Properties of a VirtualDeviceOutput. */
+        interface $Properties {
+
+            /** VirtualDeviceOutput vdId */
+            vdId?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput vdPublicKey */
+            vdPublicKey?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput vdEpochStoragePublicKey */
+            vdEpochStoragePublicKey?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput vdEpochStoragePublicKeySig */
+            vdEpochStoragePublicKeySig?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput ocmfRotationToken */
+            ocmfRotationToken?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput deviceEpochHmac */
+            deviceEpochHmac?: (Uint8Array|null);
+
+            /** VirtualDeviceOutput encryptedSecretValues */
+            encryptedSecretValues?: (proto.EncryptedSecretValuesOutput.$Properties|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a VirtualDeviceOutput. */
+        type $Shape = proto.VirtualDeviceOutput.$Properties;
     }
 
     /**
