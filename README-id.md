@@ -59,7 +59,7 @@ atau dekripsi, hapus folder auth/session Baileys lalu pairing lagi (scan QR code
 Kalau masih versi lama, bisa muncul masalah seperti method tidak ketemu, gagal decode,
 atau error import.
 
-`fix.js` mengurusnya lewat empat langkah:
+`fix.js` mengurusnya lewat beberapa langkah:
 
 1. Tidak menyentuh `package-lock.json` (kalau mau dihapus, pakai `RESET_LOCK=1`).
 2. Mengubah `node_modules/<TARGET>/package.json` supaya `protobufjs` memakai versi yang
@@ -67,6 +67,8 @@ atau error import.
 3. Menjalankan `npm install protobufjs@<versi>` di root proyek.
 4. Menyalin `node_modules/protobufjs` ke `node_modules/<TARGET>/node_modules/protobufjs`
    (dilewati kalau salinan di situ sudah versi yang sama).
+5. Kalau versinya `latest`, menggantinya di `package.json` dengan rentang versi asli,
+   misalnya `^8.8.1`, supaya `npm ls` tidak menandai salinan itu sebagai `invalid`.
 
 Yang disalin hanya folder `protobufjs`. Dependensinya (`long`, `@protobufjs/*`) diambil
 dari root proyek, tempat langkah 3 memasangnya. Kalau ada yang tidak ketemu, skrip akan
@@ -109,6 +111,7 @@ aman dijalankan berkali-kali.
 | `TARGET` | `baileys` | Nama paket di `node_modules` (dicari naik ke folder induk dari folder saat ini). |
 | `SOURCE` | `https://raw.githubusercontent.com/andhikagg/waproto/main/WAProto` | URL dasar tempat `index.js`, `index.d.ts`, dan `WAProto.proto` diambil. Harus `https://`. |
 | `DRY_RUN` | tidak diset | Isi `1` untuk hanya mengunduh dan memvalidasi, tanpa menulis apa pun. |
+| `FORCE` | tidak diset | Isi `1` untuk tetap memasang walau cek runtime protobufjs gagal. |
 
 Yang dilakukan `patch.js`:
 
@@ -116,6 +119,8 @@ Yang dilakukan `patch.js`:
   sintaks `index.js` dicek sebelum `node_modules` disentuh.
 - Kalau `protobufjs`-mu tidak punya `exports` map, menambahkan `.js` di import
   `protobufjs/minimal` supaya bisa dibaca Node ESM.
+- Mengecek apakah runtime protobufjs yang dipakai paketmu punya yang dibutuhkan
+  `index.js` baru (misalnya `Reader.size()`), dan berhenti sebelum menulis apa pun kalau tidak.
 - Kalau `index.d.ts` masih memakai namespace `waproto`, otomatis diganti jadi `proto`.
 - Hanya menulis file yang memang berubah, dan setiap file yang diganti dicadangkan
   sebagai `*.bak` di folder yang sama.
@@ -199,7 +204,28 @@ Skrip memakai `zip` kalau ada, dan beralih ke `python3` kalau tidak.
 | `"x" not found in .../node_modules` atau `package "x" not found` | Jalankan perintah dari root proyek dan cek lagi nama `TARGET`. |
 | `SOURCE must be https://` | Pakai URL `https://`. `http://localhost` hanya boleh untuk pengujian. |
 | Error decode atau error import `protobufjs/minimal` | Jalankan `fix.js`, lalu cek `npm ls protobufjs` kalau-kalau ada salinan bersarang yang lebih lama. |
+| `TypeError: reader.size is not a function` | Runtime protobufjs lebih lama daripada yang dipakai saat build dibuat. Jalankan `fix.js` untuk memperbaruinya, lalu jalankan `patch.js` lagi. Ini bukan masalah sesi, jadi jangan hapus folder auth/session. |
+| `npm ls` menulis `invalid` untuk protobufjs | `fix.js` versi lama menulis `"latest"` ke `package.json` paketnya. Jalankan `fix.js` yang sekarang lagi, ia menggantinya dengan rentang versi asli. |
 | Error import setelah patch | Format modul tidak cocok. Build ulang dengan `MODULE_FORMAT` yang sesuai. |
 | Error tipe soal `proto` atau `waproto` | Jalankan `patch.js` lagi, skrip ini mengganti `waproto` jadi `proto` di `index.d.ts`. |
 | Perbaikan hilang setelah `npm install` | `node_modules` dibangun ulang. Jalankan `fix.js` dan `patch.js` lagi, atau pakai contoh `postinstall`. |
 | WhatsApp terputus atau error setelah patch | Hapus folder auth/session lalu pairing ulang. |
+
+## Lapor masalah
+
+Kalau build gagal, isi `WAProto/` kelihatan rusak, atau `fix.js` / `patch.js` error dan
+tabel di atas tidak membantu, silakan
+[buka issue](https://github.com/andhikagg/waproto/issues).
+
+Kalau build di workflow gagal, `WAProto/` tetap berisi hasil build terakhir yang sukses
+dan workflow akan mencoba lagi di run berikutnya, jadi instalasimu yang sudah ada tidak
+terpengaruh.
+
+Tolong sertakan:
+
+- perintah yang kamu jalankan (beserta `TARGET`) dan output lengkapnya
+- versi Node.js (`node -v`) dan hasil `npm ls protobufjs`
+- versi Baileys yang dipakai, dan apakah memakai ESM atau CommonJS
+- kalau build yang gagal: link run-nya di tab **Actions**
+
+Jangan tempel file auth/session, token, atau rahasia lainnya.
