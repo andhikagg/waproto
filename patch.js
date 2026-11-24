@@ -3,6 +3,7 @@
 // Env:    TARGET   package name in node_modules (default: baileys)
 //         SOURCE   raw folder that contains index.js, index.d.ts, WAProto.proto
 //         DRY_RUN  set to 1 to download and validate only, without writing anything
+//         FORCE    set to 1 to install even if the protobufjs runtime check fails
 'use strict';
 
 const fs = require('fs');
@@ -10,7 +11,11 @@ const os = require('os');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const fail = (msg) => { console.error('!! ' + msg); process.exit(1); };
+const fail = (msg) => {
+  console.error('!! ' + msg);
+  console.error('   If you think this is a bug, please open an issue: https://github.com/andhikagg/waproto/issues');
+  process.exit(1);
+};
 const warn = (msg) => console.warn('?? ' + msg);
 
 if (Number(process.versions.node.split('.')[0]) < 18) {
@@ -88,6 +93,27 @@ function fixProtobufImport(code, pkgDir) {
   return code.replace(re, '$1protobufjs/minimal.js$2');
 }
 
+// The generated code may call reader.size(), which only newer protobufjs runtimes have.
+// Catch that now instead of failing later with "reader.size is not a function".
+function checkRuntime(code, pkgDir) {
+  if (!/\breader\.size\(\)/.test(code)) return;
+  let mod;
+  try {
+    mod = require(require.resolve('protobufjs/minimal', { paths: [pkgDir] }));
+  } catch (e) {
+    warn(`could not load protobufjs from ${pkgDir} to check compatibility: ${e.message}`);
+    return;
+  }
+  if (mod && mod.Reader && typeof mod.Reader.prototype.size === 'function') {
+    console.log('==> protobufjs runtime check OK');
+    return;
+  }
+  const msg = `the protobufjs runtime used by "${TARGET}" has no Reader.size(), but the new index.js needs it ` +
+    '(it would crash with "reader.size is not a function"). Run fix.js first, then run this script again.';
+  if (process.env.FORCE === '1') warn(msg + ' Continuing because FORCE=1.');
+  else fail(msg + ' (set FORCE=1 to install anyway)');
+}
+
 async function main() {
   const pkgDir = findPkgDir();
   const dest = path.join(pkgDir, 'WAProto');
@@ -121,6 +147,7 @@ async function main() {
   fresh['index.js'] = fixProtobufImport(fresh['index.js'], pkgDir);
   checkSyntax(fresh['index.js']);
   console.log('==> Syntax OK');
+  checkRuntime(fresh['index.js'], pkgDir);
 
   if (fresh['index.d.ts'] && /\bwaproto\b/.test(fresh['index.d.ts'])) {
     warn('index.d.ts still uses the "waproto" namespace; renaming it to "proto" to match index.js');
