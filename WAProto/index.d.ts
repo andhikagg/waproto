@@ -20190,135 +20190,6 @@ export namespace proto {
     }
 
     /**
-     * Properties of a CombinedFingerprint.
-     * @deprecated Use proto.CombinedFingerprint.$Properties instead.
-     */
-    interface ICombinedFingerprint extends proto.CombinedFingerprint.$Properties {
-    }
-
-    /** Represents a CombinedFingerprint. */
-    class CombinedFingerprint {
-
-        /**
-         * Constructs a new CombinedFingerprint.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: proto.CombinedFingerprint.$Properties);
-
-        /** Unknown fields preserved while decoding when enabled */
-        $unknowns?: Uint8Array[];
-
-        /** CombinedFingerprint version. */
-        version?: (number|null);
-
-        /** CombinedFingerprint localFingerprint. */
-        localFingerprint?: (proto.FingerprintData.$Properties|null);
-
-        /** CombinedFingerprint remoteFingerprint. */
-        remoteFingerprint?: (proto.FingerprintData.$Properties|null);
-
-        /**
-         * Creates a new CombinedFingerprint instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns CombinedFingerprint instance
-         */
-        static create(properties: proto.CombinedFingerprint.$Shape): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape;
-        static create(properties?: proto.CombinedFingerprint.$Properties): proto.CombinedFingerprint;
-
-        /**
-         * Encodes the specified CombinedFingerprint message. Does not implicitly {@link proto.CombinedFingerprint.verify|verify} messages.
-         * @param message CombinedFingerprint message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encode(message: proto.CombinedFingerprint.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified CombinedFingerprint message, length delimited. Does not implicitly {@link proto.CombinedFingerprint.verify|verify} messages.
-         * @param message CombinedFingerprint message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encodeDelimited(message: proto.CombinedFingerprint.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a CombinedFingerprint message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns {proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape} CombinedFingerprint
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape;
-
-        /**
-         * Decodes a CombinedFingerprint message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns {proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape} CombinedFingerprint
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape;
-
-        /**
-         * Verifies a CombinedFingerprint message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a CombinedFingerprint message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns CombinedFingerprint
-         */
-        static fromObject(object: { [k: string]: any }): proto.CombinedFingerprint;
-
-        /**
-         * Creates a plain object from a CombinedFingerprint message. Also converts values to other types if specified.
-         * @param message CombinedFingerprint
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        static toObject(message: proto.CombinedFingerprint, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this CombinedFingerprint to JSON.
-         * @returns JSON object
-         */
-        toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the type url for CombinedFingerprint
-         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
-         * @returns The type url
-         */
-        static getTypeUrl(prefix?: string): string;
-    }
-
-    namespace CombinedFingerprint {
-
-        /** Properties of a CombinedFingerprint. */
-        interface $Properties {
-
-            /** CombinedFingerprint version */
-            version?: (number|null);
-
-            /** CombinedFingerprint localFingerprint */
-            localFingerprint?: (proto.FingerprintData.$Properties|null);
-
-            /** CombinedFingerprint remoteFingerprint */
-            remoteFingerprint?: (proto.FingerprintData.$Properties|null);
-
-            /** Unknown fields preserved while decoding when enabled */
-            $unknowns?: Uint8Array[];
-        }
-
-        /** Shape of a CombinedFingerprint. */
-        type $Shape = proto.CombinedFingerprint.$Properties;
-    }
-
-    /**
      * Properties of a CommentMetadata.
      * @deprecated Use proto.CommentMetadata.$Properties instead.
      */
@@ -24973,6 +24844,9 @@ export namespace proto {
         /** Conversation contactAccountEncryptionAttestationType. */
         contactAccountEncryptionAttestationType?: (proto.NonE2EEAttestation.AccountType|null);
 
+        /** Conversation unreadReplyToMyMessageCount. */
+        unreadReplyToMyMessageCount?: (number|null);
+
         /**
          * Creates a new Conversation instance using the specified properties.
          * @param [properties] Properties to set
@@ -25264,6 +25138,9 @@ export namespace proto {
             /** Conversation contactAccountEncryptionAttestationType */
             contactAccountEncryptionAttestationType?: (proto.NonE2EEAttestation.AccountType|null);
 
+            /** Conversation unreadReplyToMyMessageCount */
+            unreadReplyToMyMessageCount?: (number|null);
+
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
         }
@@ -25339,6 +25216,7 @@ export namespace proto {
           isWorkGroup?: boolean|null;
           nonE2EeType?: number|null;
           contactAccountEncryptionAttestationType?: proto.NonE2EEAttestation.AccountType|null;
+          unreadReplyToMyMessageCount?: number|null;
           $unknowns?: Uint8Array[];
         };
 
@@ -33333,153 +33211,6 @@ export namespace proto {
     }
 
     /**
-     * Properties of a FingerprintData.
-     * @deprecated Use proto.FingerprintData.$Properties instead.
-     */
-    interface IFingerprintData extends proto.FingerprintData.$Properties {
-    }
-
-    /** Represents a FingerprintData. */
-    class FingerprintData {
-
-        /**
-         * Constructs a new FingerprintData.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: proto.FingerprintData.$Properties);
-
-        /** Unknown fields preserved while decoding when enabled */
-        $unknowns?: Uint8Array[];
-
-        /** FingerprintData publicKey. */
-        publicKey?: (Uint8Array|null);
-
-        /** FingerprintData pnIdentifier. */
-        pnIdentifier?: (Uint8Array|null);
-
-        /** FingerprintData lidIdentifier. */
-        lidIdentifier?: (Uint8Array|null);
-
-        /** FingerprintData usernameIdentifier. */
-        usernameIdentifier?: (Uint8Array|null);
-
-        /** FingerprintData hostedState. */
-        hostedState?: (proto.HostedState|null);
-
-        /** FingerprintData hashedPublicKey. */
-        hashedPublicKey?: (Uint8Array|null);
-
-        /**
-         * Creates a new FingerprintData instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns FingerprintData instance
-         */
-        static create(properties: proto.FingerprintData.$Shape): proto.FingerprintData & proto.FingerprintData.$Shape;
-        static create(properties?: proto.FingerprintData.$Properties): proto.FingerprintData;
-
-        /**
-         * Encodes the specified FingerprintData message. Does not implicitly {@link proto.FingerprintData.verify|verify} messages.
-         * @param message FingerprintData message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encode(message: proto.FingerprintData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified FingerprintData message, length delimited. Does not implicitly {@link proto.FingerprintData.verify|verify} messages.
-         * @param message FingerprintData message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encodeDelimited(message: proto.FingerprintData.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a FingerprintData message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns {proto.FingerprintData & proto.FingerprintData.$Shape} FingerprintData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.FingerprintData & proto.FingerprintData.$Shape;
-
-        /**
-         * Decodes a FingerprintData message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns {proto.FingerprintData & proto.FingerprintData.$Shape} FingerprintData
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.FingerprintData & proto.FingerprintData.$Shape;
-
-        /**
-         * Verifies a FingerprintData message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a FingerprintData message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns FingerprintData
-         */
-        static fromObject(object: { [k: string]: any }): proto.FingerprintData;
-
-        /**
-         * Creates a plain object from a FingerprintData message. Also converts values to other types if specified.
-         * @param message FingerprintData
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        static toObject(message: proto.FingerprintData, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this FingerprintData to JSON.
-         * @returns JSON object
-         */
-        toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the type url for FingerprintData
-         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
-         * @returns The type url
-         */
-        static getTypeUrl(prefix?: string): string;
-    }
-
-    namespace FingerprintData {
-
-        /** Properties of a FingerprintData. */
-        interface $Properties {
-
-            /** FingerprintData publicKey */
-            publicKey?: (Uint8Array|null);
-
-            /** FingerprintData pnIdentifier */
-            pnIdentifier?: (Uint8Array|null);
-
-            /** FingerprintData lidIdentifier */
-            lidIdentifier?: (Uint8Array|null);
-
-            /** FingerprintData usernameIdentifier */
-            usernameIdentifier?: (Uint8Array|null);
-
-            /** FingerprintData hostedState */
-            hostedState?: (proto.HostedState|null);
-
-            /** FingerprintData hashedPublicKey */
-            hashedPublicKey?: (Uint8Array|null);
-
-            /** Unknown fields preserved while decoding when enabled */
-            $unknowns?: Uint8Array[];
-        }
-
-        /** Shape of a FingerprintData. */
-        type $Shape = proto.FingerprintData.$Properties;
-    }
-
-    /**
      * Properties of a ForwardEdgeInput.
      * @deprecated Use proto.ForwardEdgeInput.$Properties instead.
      */
@@ -37117,16 +36848,6 @@ export namespace proto {
           msgOrderId?: number|Long|null;
           $unknowns?: Uint8Array[];
         };
-    }
-
-    /** HostedState enum. */
-    enum HostedState {
-
-        /** E2EE value */
-        E2EE = 0,
-
-        /** HOSTED value */
-        HOSTED = 1
     }
 
     /**
@@ -82256,153 +81977,6 @@ export namespace proto {
 
         /** Shape of a RotateEpochSuccess. */
         type $Shape = proto.RotateEpochSuccess.$Properties;
-    }
-
-    /**
-     * Properties of a RoutingInfo.
-     * @deprecated Use proto.RoutingInfo.$Properties instead.
-     */
-    interface IRoutingInfo extends proto.RoutingInfo.$Properties {
-    }
-
-    /** Represents a RoutingInfo. */
-    class RoutingInfo {
-
-        /**
-         * Constructs a new RoutingInfo.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: proto.RoutingInfo.$Properties);
-
-        /** Unknown fields preserved while decoding when enabled */
-        $unknowns?: Uint8Array[];
-
-        /** RoutingInfo regionId. */
-        regionId: number[];
-
-        /** RoutingInfo clusterId. */
-        clusterId: number[];
-
-        /** RoutingInfo taskId. */
-        taskId?: (number|null);
-
-        /** RoutingInfo debug. */
-        debug?: (boolean|null);
-
-        /** RoutingInfo tcpBbr. */
-        tcpBbr?: (boolean|null);
-
-        /** RoutingInfo tcpKeepalive. */
-        tcpKeepalive?: (boolean|null);
-
-        /**
-         * Creates a new RoutingInfo instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns RoutingInfo instance
-         */
-        static create(properties: proto.RoutingInfo.$Shape): proto.RoutingInfo & proto.RoutingInfo.$Shape;
-        static create(properties?: proto.RoutingInfo.$Properties): proto.RoutingInfo;
-
-        /**
-         * Encodes the specified RoutingInfo message. Does not implicitly {@link proto.RoutingInfo.verify|verify} messages.
-         * @param message RoutingInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encode(message: proto.RoutingInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified RoutingInfo message, length delimited. Does not implicitly {@link proto.RoutingInfo.verify|verify} messages.
-         * @param message RoutingInfo message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        static encodeDelimited(message: proto.RoutingInfo.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a RoutingInfo message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns {proto.RoutingInfo & proto.RoutingInfo.$Shape} RoutingInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.RoutingInfo & proto.RoutingInfo.$Shape;
-
-        /**
-         * Decodes a RoutingInfo message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns {proto.RoutingInfo & proto.RoutingInfo.$Shape} RoutingInfo
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.RoutingInfo & proto.RoutingInfo.$Shape;
-
-        /**
-         * Verifies a RoutingInfo message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a RoutingInfo message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns RoutingInfo
-         */
-        static fromObject(object: { [k: string]: any }): proto.RoutingInfo;
-
-        /**
-         * Creates a plain object from a RoutingInfo message. Also converts values to other types if specified.
-         * @param message RoutingInfo
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        static toObject(message: proto.RoutingInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this RoutingInfo to JSON.
-         * @returns JSON object
-         */
-        toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the type url for RoutingInfo
-         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
-         * @returns The type url
-         */
-        static getTypeUrl(prefix?: string): string;
-    }
-
-    namespace RoutingInfo {
-
-        /** Properties of a RoutingInfo. */
-        interface $Properties {
-
-            /** RoutingInfo regionId */
-            regionId?: (number[]|null);
-
-            /** RoutingInfo clusterId */
-            clusterId?: (number[]|null);
-
-            /** RoutingInfo taskId */
-            taskId?: (number|null);
-
-            /** RoutingInfo debug */
-            debug?: (boolean|null);
-
-            /** RoutingInfo tcpBbr */
-            tcpBbr?: (boolean|null);
-
-            /** RoutingInfo tcpKeepalive */
-            tcpKeepalive?: (boolean|null);
-
-            /** Unknown fields preserved while decoding when enabled */
-            $unknowns?: Uint8Array[];
-        }
-
-        /** Shape of a RoutingInfo. */
-        type $Shape = proto.RoutingInfo.$Properties;
     }
 
     /**
