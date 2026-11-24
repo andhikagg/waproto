@@ -10,7 +10,11 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const fail = (m) => { console.error('!! ' + m); process.exit(1); };
+const fail = (m) => {
+  console.error('!! ' + m);
+  console.error('   If you think this is a bug, please open an issue: https://github.com/andhikagg/waproto/issues');
+  process.exit(1);
+};
 const warn = (m) => console.warn('?? ' + m);
 const readJson = (p) => {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
@@ -109,7 +113,21 @@ if (destVersion === srcPkg.version) {
   console.log(`4. protobufjs ${destVersion ? destVersion + ' -> ' : ''}${v} copied to ${path.relative(root, dest)}`);
 }
 
-// 5. check that protobufjs dependencies can be resolved from the copy
+// 5. replace the "latest" tag with a real range, so `npm ls` does not report it as invalid
+if (VERSION === 'latest') {
+  const range = `^${srcPkg.version}`;
+  const cur = readJson(pkgPath);
+  let pinned = false;
+  for (const field of ['dependencies', 'peerDependencies', 'optionalDependencies']) {
+    if (cur[field] && cur[field].protobufjs === 'latest') { cur[field].protobufjs = range; pinned = true; }
+  }
+  if (pinned) {
+    fs.writeFileSync(pkgPath, JSON.stringify(cur, null, 2) + '\n');
+    console.log(`5. ${TARGET}/package.json protobufjs: latest -> ${range}`);
+  }
+}
+
+// 6. check that protobufjs dependencies can be resolved from the copy
 const resolvable = (dep, from) => {
   for (let dir = from; ; dir = path.dirname(dir)) {
     if (fs.existsSync(path.join(dir, 'node_modules', dep))) return true;
