@@ -33,13 +33,13 @@ Jalankan kedua perintah ini di root proyek Baileys-mu, **berurutan**.
 **1. Update protobufjs** (wajib, penjelasannya ada [di bawah](#wajib-pakai-protobufjs-terbaru)):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/andhikagg/waproto/main/fix.js | TARGET="baileys" node -
+curl -fsSL https://andhikagg.github.io/waproto/fix.js | TARGET="baileys" node -
 ```
 
 **2. Patch WAProto:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/andhikagg/waproto/main/patch.js | TARGET="baileys" node -
+curl -fsSL https://andhikagg.github.io/waproto/patch.js | TARGET="baileys" node -
 ```
 
 `TARGET` adalah nama folder paket di dalam `node_modules`, contohnya:
