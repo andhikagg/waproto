@@ -58,7 +58,7 @@ The generated `index.js` is compiled with the latest `protobufjs-cli` and import
 `protobufjs/minimal`. The `protobufjs` runtime that Baileys resolves must be recent
 too. An old runtime can cause missing methods, decode failures, or import errors.
 
-`fix.js` does this for you in four steps:
+`fix.js` does this for you in a few steps:
 
 1. Leaves `package-lock.json` alone (set `RESET_LOCK=1` to delete it).
 2. Rewrites `node_modules/<TARGET>/package.json` so `protobufjs` uses the wanted
@@ -66,6 +66,8 @@ too. An old runtime can cause missing methods, decode failures, or import errors
 3. Runs `npm install protobufjs@<version>` in the project root.
 4. Copies `node_modules/protobufjs` into `node_modules/<TARGET>/node_modules/protobufjs`
    (skipped if that copy already has the same version).
+5. If the version was `latest`, replaces it in `package.json` with a real range such as
+   `^8.8.1`, so `npm ls` does not report the copy as `invalid`.
 
 Only the `protobufjs` folder is copied. Its own dependencies (`long`, `@protobufjs/*`)
 are resolved from the project root, where step 3 installs them. The script warns if
@@ -108,6 +110,7 @@ are safe to run repeatedly.
 | `TARGET` | `baileys` | Package name in `node_modules` (searched upward from the current directory). |
 | `SOURCE` | `https://raw.githubusercontent.com/andhikagg/waproto/main/WAProto` | Base URL that serves `index.js`, `index.d.ts` and `WAProto.proto`. Must be `https://`. |
 | `DRY_RUN` | unset | Set to `1` to download and validate only, without writing anything. |
+| `FORCE` | unset | Set to `1` to install even if the protobufjs runtime check fails. |
 
 What it does:
 
@@ -115,6 +118,8 @@ What it does:
   `index.js` is syntax-checked before `node_modules` is touched.
 - If your `protobufjs` has no `exports` map, adds `.js` to the `protobufjs/minimal`
   import so Node ESM can resolve it.
+- Checks that the protobufjs runtime used by your package has what the new `index.js`
+  needs (for example `Reader.size()`), and stops before writing anything if it does not.
 - If `index.d.ts` still uses the `waproto` namespace, renames it to `proto`.
 - Only writes files that actually changed, and backs up each replaced file as `*.bak`
   in the same folder.
@@ -198,7 +203,27 @@ The script uses `zip` if available and falls back to `python3`.
 | `"x" not found in .../node_modules` or `package "x" not found` | Run the command from your project root and check the `TARGET` name. |
 | `SOURCE must be https://` | Use an `https://` URL. `http://localhost` is only allowed for testing. |
 | Decode errors or `protobufjs/minimal` import errors | Run `fix.js`, then check `npm ls protobufjs` for older nested copies. |
+| `TypeError: reader.size is not a function` | The protobufjs runtime is older than the one the build was compiled for. Run `fix.js` to update it, then run `patch.js` again. This is not a session problem, so do not delete your auth/session folder. |
+| `npm ls` says `invalid` for protobufjs | An older `fix.js` wrote `"latest"` into the package's `package.json`. Run the current `fix.js` again; it replaces it with a real version range. |
 | Import errors after patching | Module format mismatch. Rebuild with the matching `MODULE_FORMAT`. |
 | Type errors about `proto` or `waproto` | Run `patch.js` again; it renames `waproto` to `proto` in `index.d.ts`. |
 | Fix disappears after `npm install` | `node_modules` was rebuilt. Run `fix.js` and `patch.js` again, or use the `postinstall` example. |
 | WhatsApp disconnects or errors after patching | Delete the auth/session folder and pair again. |
+
+## Reporting problems
+
+If a build fails, the generated `WAProto/` looks broken, or `fix.js` / `patch.js`
+errors out and the table above does not help, please
+[open an issue](https://github.com/andhikagg/waproto/issues).
+
+If a workflow build fails, `WAProto/` keeps the last successful build and the
+workflow tries again on its next run, so your existing install is not affected.
+
+Please include:
+
+- the command you ran (with `TARGET`) and the full output
+- your Node.js version (`node -v`) and the output of `npm ls protobufjs`
+- your Baileys version, and whether it uses ESM or CommonJS
+- for a failed build: the link to the run in the **Actions** tab
+
+Do not paste auth/session files, tokens, or other secrets.
