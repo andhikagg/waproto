@@ -191,8 +191,10 @@ Skrip memakai `zip` kalau ada, dan beralih ke `python3` kalau tidak.
 - Workflow memasang `protobufjs` dan `protobufjs-cli` tanpa mengunci versi, jadi rilis
   baru bisa mengubah hasil build.
 - Menjalankan skrip dari `curl` langsung ke `node` berarti skrip itu jalan dengan izinmu.
-  Pakai hanya URL dari repo yang kamu kelola atau sudah kamu baca isinya. Biar tidak
-  kena dampak commit baru, ganti `main` di URL (dan di `SOURCE`) dengan hash commit tertentu.
+  Pakai hanya URL dari repo yang kamu kelola atau sudah kamu baca isinya. URL pendek
+  `andhikagg.github.io` selalu menyajikan versi terbaru. Biar tidak kena dampak commit
+  baru, pakai `https://raw.githubusercontent.com/andhikagg/waproto/<hash-commit>/fix.js`
+  (begitu juga `patch.js`), dan isi `SOURCE` dengan hash yang sama.
 
 ## Pemecahan masalah
 
