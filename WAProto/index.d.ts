@@ -7806,8 +7806,20 @@ export namespace proto {
             /** AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED value */
             AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED = 91,
 
+            /** HATCH_DEVICE_NODE_HOST value */
+            HATCH_DEVICE_NODE_HOST = 92,
+
             /** AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED value */
-            AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED = 93
+            AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED = 93,
+
+            /** AI_RICH_RESPONSE_A2UI_CARDS_ENABLED value */
+            AI_RICH_RESPONSE_A2UI_CARDS_ENABLED = 94,
+
+            /** AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED value */
+            AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED = 95,
+
+            /** AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED value */
+            AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED = 96
         }
     }
 
@@ -24847,6 +24859,9 @@ export namespace proto {
         /** Conversation unreadReplyToMyMessageCount. */
         unreadReplyToMyMessageCount?: (number|null);
 
+        /** Conversation draft. */
+        draft?: (proto.ConversationDraft.$Properties|null);
+
         /**
          * Creates a new Conversation instance using the specified properties.
          * @param [properties] Properties to set
@@ -25141,6 +25156,9 @@ export namespace proto {
             /** Conversation unreadReplyToMyMessageCount */
             unreadReplyToMyMessageCount?: (number|null);
 
+            /** Conversation draft */
+            draft?: (proto.ConversationDraft.$Properties|null);
+
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
         }
@@ -25217,6 +25235,7 @@ export namespace proto {
           nonE2EeType?: number|null;
           contactAccountEncryptionAttestationType?: proto.NonE2EEAttestation.AccountType|null;
           unreadReplyToMyMessageCount?: number|null;
+          draft?: proto.ConversationDraft.$Shape|null;
           $unknowns?: Uint8Array[];
         };
 
@@ -25251,6 +25270,140 @@ export namespace proto {
             /** APPEAL_REJECTED value */
             APPEAL_REJECTED = 3
         }
+    }
+
+    /**
+     * Properties of a ConversationDraft.
+     * @deprecated Use proto.ConversationDraft.$Properties instead.
+     */
+    interface IConversationDraft extends proto.ConversationDraft.$Properties {
+    }
+
+    /** Represents a ConversationDraft. */
+    class ConversationDraft {
+
+        /**
+         * Constructs a new ConversationDraft.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.ConversationDraft.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** ConversationDraft content. */
+        content?: (proto.Message.$Properties|null);
+
+        /** ConversationDraft editTimestampMs. */
+        editTimestampMs?: (number|Long|null);
+
+        /** ConversationDraft editorDeviceId. */
+        editorDeviceId?: (number|null);
+
+        /**
+         * Creates a new ConversationDraft instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ConversationDraft instance
+         */
+        static create(properties: proto.ConversationDraft.$Shape): proto.ConversationDraft & proto.ConversationDraft.$Shape;
+        static create(properties?: proto.ConversationDraft.$Properties): proto.ConversationDraft;
+
+        /**
+         * Encodes the specified ConversationDraft message. Does not implicitly {@link proto.ConversationDraft.verify|verify} messages.
+         * @param message ConversationDraft message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.ConversationDraft.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ConversationDraft message, length delimited. Does not implicitly {@link proto.ConversationDraft.verify|verify} messages.
+         * @param message ConversationDraft message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.ConversationDraft.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ConversationDraft message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.ConversationDraft & proto.ConversationDraft.$Shape} ConversationDraft
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.ConversationDraft & proto.ConversationDraft.$Shape;
+
+        /**
+         * Decodes a ConversationDraft message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.ConversationDraft & proto.ConversationDraft.$Shape} ConversationDraft
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.ConversationDraft & proto.ConversationDraft.$Shape;
+
+        /**
+         * Verifies a ConversationDraft message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ConversationDraft message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ConversationDraft
+         */
+        static fromObject(object: { [k: string]: any }): proto.ConversationDraft;
+
+        /**
+         * Creates a plain object from a ConversationDraft message. Also converts values to other types if specified.
+         * @param message ConversationDraft
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.ConversationDraft, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ConversationDraft to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for ConversationDraft
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace ConversationDraft {
+
+        /** Properties of a ConversationDraft. */
+        interface $Properties {
+
+            /** ConversationDraft content */
+            content?: (proto.Message.$Properties|null);
+
+            /** ConversationDraft editTimestampMs */
+            editTimestampMs?: (number|Long|null);
+
+            /** ConversationDraft editorDeviceId */
+            editorDeviceId?: (number|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a ConversationDraft. */
+        type $Shape = {
+          content?: proto.Message.$Shape|null;
+          editTimestampMs?: number|Long|null;
+          editorDeviceId?: number|null;
+          $unknowns?: Uint8Array[];
+        };
     }
 
     /**
@@ -27243,6 +27396,9 @@ export namespace proto {
         /** DeviceCapabilities aiMuseJarvisGzip. */
         aiMuseJarvisGzip?: (proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties|null);
 
+        /** DeviceCapabilities draftSync. */
+        draftSync?: (proto.DeviceCapabilities.DraftSync.$Properties|null);
+
         /**
          * Creates a new DeviceCapabilities instance using the specified properties.
          * @param [properties] Properties to set
@@ -27374,6 +27530,9 @@ export namespace proto {
 
             /** DeviceCapabilities aiMuseJarvisGzip */
             aiMuseJarvisGzip?: (proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties|null);
+
+            /** DeviceCapabilities draftSync */
+            draftSync?: (proto.DeviceCapabilities.DraftSync.$Properties|null);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -28261,6 +28420,123 @@ export namespace proto {
 
             /** Shape of a ContactRefresh. */
             type $Shape = proto.DeviceCapabilities.ContactRefresh.$Properties;
+        }
+
+        /**
+         * Properties of a DraftSync.
+         * @deprecated Use proto.DeviceCapabilities.DraftSync.$Properties instead.
+         */
+        interface IDraftSync extends proto.DeviceCapabilities.DraftSync.$Properties {
+        }
+
+        /** Represents a DraftSync. */
+        class DraftSync {
+
+            /**
+             * Constructs a new DraftSync.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: proto.DeviceCapabilities.DraftSync.$Properties);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+
+            /** DraftSync version. */
+            version?: (number|null);
+
+            /**
+             * Creates a new DraftSync instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DraftSync instance
+             */
+            static create(properties: proto.DeviceCapabilities.DraftSync.$Shape): proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape;
+            static create(properties?: proto.DeviceCapabilities.DraftSync.$Properties): proto.DeviceCapabilities.DraftSync;
+
+            /**
+             * Encodes the specified DraftSync message. Does not implicitly {@link proto.DeviceCapabilities.DraftSync.verify|verify} messages.
+             * @param message DraftSync message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            static encode(message: proto.DeviceCapabilities.DraftSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified DraftSync message, length delimited. Does not implicitly {@link proto.DeviceCapabilities.DraftSync.verify|verify} messages.
+             * @param message DraftSync message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            static encodeDelimited(message: proto.DeviceCapabilities.DraftSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DraftSync message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns {proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape} DraftSync
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape;
+
+            /**
+             * Decodes a DraftSync message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns {proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape} DraftSync
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape;
+
+            /**
+             * Verifies a DraftSync message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a DraftSync message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns DraftSync
+             */
+            static fromObject(object: { [k: string]: any }): proto.DeviceCapabilities.DraftSync;
+
+            /**
+             * Creates a plain object from a DraftSync message. Also converts values to other types if specified.
+             * @param message DraftSync
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            static toObject(message: proto.DeviceCapabilities.DraftSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this DraftSync to JSON.
+             * @returns JSON object
+             */
+            toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the type url for DraftSync
+             * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns The type url
+             */
+            static getTypeUrl(prefix?: string): string;
+        }
+
+        namespace DraftSync {
+
+            /** Properties of a DraftSync. */
+            interface $Properties {
+
+                /** DraftSync version */
+                version?: (number|null);
+
+                /** Unknown fields preserved while decoding when enabled */
+                $unknowns?: Uint8Array[];
+            }
+
+            /** Shape of a DraftSync. */
+            type $Shape = proto.DeviceCapabilities.DraftSync.$Properties;
         }
 
         /**
@@ -29970,6 +30246,9 @@ export namespace proto {
             /** HistorySyncConfig supportOmittedConversationMetadata. */
             supportOmittedConversationMetadata?: (boolean|null);
 
+            /** HistorySyncConfig supportDraftSync. */
+            supportDraftSync?: (boolean|null);
+
             /**
              * Creates a new HistorySyncConfig instance using the specified properties.
              * @param [properties] Properties to set
@@ -30134,6 +30413,9 @@ export namespace proto {
 
                 /** HistorySyncConfig supportOmittedConversationMetadata */
                 supportOmittedConversationMetadata?: (boolean|null);
+
+                /** HistorySyncConfig supportDraftSync */
+                supportDraftSync?: (boolean|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
@@ -30411,6 +30693,193 @@ export namespace proto {
 
             /** UNKNOWN_GROUPS value */
             UNKNOWN_GROUPS = 5
+        }
+    }
+
+    /**
+     * Properties of a DraftMessageSync.
+     * @deprecated Use proto.DraftMessageSync.$Properties instead.
+     */
+    interface IDraftMessageSync extends proto.DraftMessageSync.$Properties {
+    }
+
+    /** Represents a DraftMessageSync. */
+    class DraftMessageSync {
+
+        /**
+         * Constructs a new DraftMessageSync.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.DraftMessageSync.$Properties);
+
+        /** Unknown fields preserved while decoding when enabled */
+        $unknowns?: Uint8Array[];
+
+        /** DraftMessageSync chatJid. */
+        chatJid?: (string|null);
+
+        /** DraftMessageSync altChatJid. */
+        altChatJid?: (string|null);
+
+        /** DraftMessageSync action. */
+        action?: (proto.DraftMessageSync.Action|null);
+
+        /** DraftMessageSync editTimestampMs. */
+        editTimestampMs?: (number|Long|null);
+
+        /** DraftMessageSync draft. */
+        draft?: (proto.Message.$Properties|null);
+
+        /** DraftMessageSync clearReason. */
+        clearReason?: (proto.DraftMessageSync.ClearReason|null);
+
+        /**
+         * Creates a new DraftMessageSync instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DraftMessageSync instance
+         */
+        static create(properties: proto.DraftMessageSync.$Shape): proto.DraftMessageSync & proto.DraftMessageSync.$Shape;
+        static create(properties?: proto.DraftMessageSync.$Properties): proto.DraftMessageSync;
+
+        /**
+         * Encodes the specified DraftMessageSync message. Does not implicitly {@link proto.DraftMessageSync.verify|verify} messages.
+         * @param message DraftMessageSync message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encode(message: proto.DraftMessageSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DraftMessageSync message, length delimited. Does not implicitly {@link proto.DraftMessageSync.verify|verify} messages.
+         * @param message DraftMessageSync message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        static encodeDelimited(message: proto.DraftMessageSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DraftMessageSync message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns {proto.DraftMessageSync & proto.DraftMessageSync.$Shape} DraftMessageSync
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.DraftMessageSync & proto.DraftMessageSync.$Shape;
+
+        /**
+         * Decodes a DraftMessageSync message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns {proto.DraftMessageSync & proto.DraftMessageSync.$Shape} DraftMessageSync
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.DraftMessageSync & proto.DraftMessageSync.$Shape;
+
+        /**
+         * Verifies a DraftMessageSync message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DraftMessageSync message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DraftMessageSync
+         */
+        static fromObject(object: { [k: string]: any }): proto.DraftMessageSync;
+
+        /**
+         * Creates a plain object from a DraftMessageSync message. Also converts values to other types if specified.
+         * @param message DraftMessageSync
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        static toObject(message: proto.DraftMessageSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DraftMessageSync to JSON.
+         * @returns JSON object
+         */
+        toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the type url for DraftMessageSync
+         * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns The type url
+         */
+        static getTypeUrl(prefix?: string): string;
+    }
+
+    namespace DraftMessageSync {
+
+        /** Properties of a DraftMessageSync. */
+        interface $Properties {
+
+            /** DraftMessageSync chatJid */
+            chatJid?: (string|null);
+
+            /** DraftMessageSync altChatJid */
+            altChatJid?: (string|null);
+
+            /** DraftMessageSync action */
+            action?: (proto.DraftMessageSync.Action|null);
+
+            /** DraftMessageSync editTimestampMs */
+            editTimestampMs?: (number|Long|null);
+
+            /** DraftMessageSync draft */
+            draft?: (proto.Message.$Properties|null);
+
+            /** DraftMessageSync clearReason */
+            clearReason?: (proto.DraftMessageSync.ClearReason|null);
+
+            /** Unknown fields preserved while decoding when enabled */
+            $unknowns?: Uint8Array[];
+        }
+
+        /** Shape of a DraftMessageSync. */
+        type $Shape = {
+          chatJid?: string|null;
+          altChatJid?: string|null;
+          action?: proto.DraftMessageSync.Action|null;
+          editTimestampMs?: number|Long|null;
+          draft?: proto.Message.$Shape|null;
+          clearReason?: proto.DraftMessageSync.ClearReason|null;
+          $unknowns?: Uint8Array[];
+        };
+
+        /** Action enum. */
+        enum Action {
+
+            /** ACTION_UNKNOWN value */
+            ACTION_UNKNOWN = 0,
+
+            /** SET value */
+            SET = 1,
+
+            /** CLEAR value */
+            CLEAR = 2
+        }
+
+        /** ClearReason enum. */
+        enum ClearReason {
+
+            /** CLEAR_REASON_UNKNOWN value */
+            CLEAR_REASON_UNKNOWN = 0,
+
+            /** USER_CLEARED value */
+            USER_CLEARED = 1,
+
+            /** SENT value */
+            SENT = 2,
+
+            /** CHAT_LOCKED value */
+            CHAT_LOCKED = 3,
+
+            /** REPLACED_BY_NON_TEXT value */
+            REPLACED_BY_NON_TEXT = 4
         }
     }
 
@@ -64523,6 +64992,9 @@ export namespace proto {
             /** ProtocolMessage messageEditDisplayType. */
             messageEditDisplayType?: (proto.Message.ProtocolMessage.MessageEditDisplayType|null);
 
+            /** ProtocolMessage draftMessageSync. */
+            draftMessageSync?: (proto.DraftMessageSync.$Properties|null);
+
             /**
              * Creates a new ProtocolMessage instance using the specified properties.
              * @param [properties] Properties to set
@@ -64721,6 +65193,9 @@ export namespace proto {
                 /** ProtocolMessage messageEditDisplayType */
                 messageEditDisplayType?: (proto.Message.ProtocolMessage.MessageEditDisplayType|null);
 
+                /** ProtocolMessage draftMessageSync */
+                draftMessageSync?: (proto.DraftMessageSync.$Properties|null);
+
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
@@ -64765,6 +65240,7 @@ export namespace proto {
               membershipFormKeyFingerprintVerification?: proto.MembershipFormKeyFingerprintVerification.$Shape|null;
               groupRootKeyShare?: proto.GroupRootKeyShare.$Shape|null;
               messageEditDisplayType?: proto.Message.ProtocolMessage.MessageEditDisplayType|null;
+              draftMessageSync?: proto.DraftMessageSync.$Shape|null;
               $unknowns?: Uint8Array[];
             };
 
@@ -64893,7 +65369,10 @@ export namespace proto {
                 MEMBERSHIP_FORM_KEY_FINGERPRINT_VERIFICATION = 43,
 
                 /** GROUP_ROOT_KEY_SHARE value */
-                GROUP_ROOT_KEY_SHARE = 44
+                GROUP_ROOT_KEY_SHARE = 44,
+
+                /** DRAFT_MESSAGE_SYNC value */
+                DRAFT_MESSAGE_SYNC = 45
             }
         }
 

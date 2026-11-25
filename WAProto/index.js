@@ -21368,9 +21368,25 @@ export const proto = $root.proto = (() => {
                     case 91:
                         message.capabilities[message.capabilities.length] = 91;
                         break;
+                    case "HATCH_DEVICE_NODE_HOST":
+                    case 92:
+                        message.capabilities[message.capabilities.length] = 92;
+                        break;
                     case "AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED":
                     case 93:
                         message.capabilities[message.capabilities.length] = 93;
+                        break;
+                    case "AI_RICH_RESPONSE_A2UI_CARDS_ENABLED":
+                    case 94:
+                        message.capabilities[message.capabilities.length] = 94;
+                        break;
+                    case "AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED":
+                    case 95:
+                        message.capabilities[message.capabilities.length] = 95;
+                        break;
+                    case "AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED":
+                    case 96:
+                        message.capabilities[message.capabilities.length] = 96;
                         break;
                     default:
                         if (typeof object.capabilities[i] === "number" && (object.capabilities[i] | 0) === object.capabilities[i])
@@ -21528,7 +21544,11 @@ export const proto = $root.proto = (() => {
          * @property {number} RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH=89 RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH value
          * @property {number} AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED=90 AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED value
          * @property {number} AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED=91 AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED value
+         * @property {number} HATCH_DEVICE_NODE_HOST=92 HATCH_DEVICE_NODE_HOST value
          * @property {number} AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED=93 AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED value
+         * @property {number} AI_RICH_RESPONSE_A2UI_CARDS_ENABLED=94 AI_RICH_RESPONSE_A2UI_CARDS_ENABLED value
+         * @property {number} AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED=95 AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED value
+         * @property {number} AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED=96 AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED value
          */
         BotCapabilityMetadata.BotCapabilityType = (function() {
             const valuesById = $Object.create(null), values = $Object.create(valuesById);
@@ -21624,7 +21644,11 @@ export const proto = $root.proto = (() => {
             values[valuesById[89] = "RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH"] = 89;
             values[valuesById[90] = "AI_MUSE_JARVIS_ENVELOPE_GZIP_ENABLED"] = 90;
             values[valuesById[91] = "AI_RICH_RESPONSE_INLINE_MEDIA_LIGHTBOX_ENABLED"] = 91;
+            values[valuesById[92] = "HATCH_DEVICE_NODE_HOST"] = 92;
             values[valuesById[93] = "AI_MUSE_JARVIS_PAYLOAD_GZIP_ENABLED"] = 93;
+            values[valuesById[94] = "AI_RICH_RESPONSE_A2UI_CARDS_ENABLED"] = 94;
+            values[valuesById[95] = "AI_RICH_RESPONSE_READ_ALOUD_LENGTH_APPROXIMATION_ENABLED"] = 95;
+            values[valuesById[96] = "AI_RICH_RESPONSE_READ_ALOUD_ACTION_TRAY_ENABLED"] = 96;
             return values;
         })();
 
@@ -71711,6 +71735,7 @@ export const proto = $root.proto = (() => {
          * @property {number|null} [nonE2EeType] Conversation nonE2EeType
          * @property {proto.NonE2EEAttestation.AccountType|null} [contactAccountEncryptionAttestationType] Conversation contactAccountEncryptionAttestationType
          * @property {number|null} [unreadReplyToMyMessageCount] Conversation unreadReplyToMyMessageCount
+         * @property {proto.ConversationDraft.$Properties|null} [draft] Conversation draft
          * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
 
@@ -71795,6 +71820,7 @@ export const proto = $root.proto = (() => {
          *   nonE2EeType?: number|null;
          *   contactAccountEncryptionAttestationType?: proto.NonE2EEAttestation.AccountType|null;
          *   unreadReplyToMyMessageCount?: number|null;
+         *   draft?: proto.ConversationDraft.$Shape|null;
          *   $unknowns?: Array.<Uint8Array>;
          * }} proto.Conversation.$Shape
          */
@@ -72377,6 +72403,14 @@ export const proto = $root.proto = (() => {
          */
         Conversation.prototype.unreadReplyToMyMessageCount = null;
 
+        /**
+         * Conversation draft.
+         * @member {proto.ConversationDraft.$Properties|null|undefined} draft
+         * @memberof proto.Conversation
+         * @instance
+         */
+        Conversation.prototype.draft = null;
+
         // OneOf field names bound to virtual getters and setters
         let $oneOfFields;
 
@@ -72782,6 +72816,12 @@ export const proto = $root.proto = (() => {
             set: $util.oneOfSetter($oneOfFields)
         });
 
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(Conversation.prototype, "_draft", {
+            get: $util.oneOfGetter($oneOfFields = ["draft"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
         /**
          * Creates a new Conversation instance using the specified properties.
          * @function create
@@ -72957,6 +72997,8 @@ export const proto = $root.proto = (() => {
                 writer.uint32(/* id 69, wireType 0 =*/552).int32(message.contactAccountEncryptionAttestationType);
             if (message.unreadReplyToMyMessageCount != null && $Object.hasOwnProperty.call(message, "unreadReplyToMyMessageCount"))
                 writer.uint32(/* id 70, wireType 0 =*/560).uint32(message.unreadReplyToMyMessageCount);
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft"))
+                $root.proto.ConversationDraft.encode(message.draft, writer.uint32(/* id 71, wireType 2 =*/570).fork(), _depth + 1).ldelim();
             if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                 for (let i = 0; i < message.$unknowns.length; ++i)
                     writer.raw(message.$unknowns[i]);
@@ -73507,6 +73549,13 @@ export const proto = $root.proto = (() => {
                         message._unreadReplyToMyMessageCount = "unreadReplyToMyMessageCount";
                         continue;
                     }
+                case 71: {
+                        if (wireType !== 2)
+                            break;
+                        message.draft = $root.proto.ConversationDraft.decode(reader, reader.size(), $undefined, _depth + 1, message.draft);
+                        message._draft = "draft";
+                        continue;
+                    }
                 }
                 reader.skipType(wireType, _depth, tag);
                 if (!reader.discardUnknown) {
@@ -73930,6 +73979,14 @@ export const proto = $root.proto = (() => {
                 if (!$util.isInteger(message.unreadReplyToMyMessageCount))
                     return "unreadReplyToMyMessageCount: integer expected";
             }
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft")) {
+                properties._draft = 1;
+                {
+                    let error = $root.proto.ConversationDraft.verify(message.draft, _depth + 1);
+                    if (error)
+                        return "draft." + error;
+                }
+            }
             return null;
         };
 
@@ -74298,6 +74355,11 @@ export const proto = $root.proto = (() => {
             }
             if (object.unreadReplyToMyMessageCount != null)
                 message.unreadReplyToMyMessageCount = object.unreadReplyToMyMessageCount >>> 0;
+            if (object.draft != null) {
+                if (!$util.isObject(object.draft))
+                    throw $TypeError(".proto.Conversation.draft: object expected");
+                message.draft = $root.proto.ConversationDraft.fromObject(object.draft, _depth + 1);
+            }
             return message;
         };
 
@@ -74517,6 +74579,8 @@ export const proto = $root.proto = (() => {
                 object.contactAccountEncryptionAttestationType = options.enums === $String ? $root.proto.NonE2EEAttestation.AccountType[message.contactAccountEncryptionAttestationType] === $undefined ? message.contactAccountEncryptionAttestationType : $root.proto.NonE2EEAttestation.AccountType[message.contactAccountEncryptionAttestationType] : message.contactAccountEncryptionAttestationType;
             if (message.unreadReplyToMyMessageCount != null && $Object.hasOwnProperty.call(message, "unreadReplyToMyMessageCount"))
                 object.unreadReplyToMyMessageCount = message.unreadReplyToMyMessageCount;
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft"))
+                object.draft = $root.proto.ConversationDraft.toObject(message.draft, options, _depth + 1);
             return object;
         };
 
@@ -74582,6 +74646,377 @@ export const proto = $root.proto = (() => {
         })();
 
         return Conversation;
+    })();
+
+    proto.ConversationDraft = (function() {
+
+        /**
+         * Properties of a ConversationDraft.
+         * @typedef {Object} proto.ConversationDraft.$Properties
+         * @property {proto.Message.$Properties|null} [content] ConversationDraft content
+         * @property {number|Long|null} [editTimestampMs] ConversationDraft editTimestampMs
+         * @property {number|null} [editorDeviceId] ConversationDraft editorDeviceId
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a ConversationDraft.
+         * @memberof proto
+         * @interface IConversationDraft
+         * @augments proto.ConversationDraft.$Properties
+         * @deprecated Use proto.ConversationDraft.$Properties instead.
+         */
+
+        /**
+         * Shape of a ConversationDraft.
+         * @typedef {{
+         *   content?: proto.Message.$Shape|null;
+         *   editTimestampMs?: number|Long|null;
+         *   editorDeviceId?: number|null;
+         *   $unknowns?: Array.<Uint8Array>;
+         * }} proto.ConversationDraft.$Shape
+         */
+
+        /**
+         * Constructs a new ConversationDraft.
+         * @memberof proto
+         * @classdesc Represents a ConversationDraft.
+         * @constructor
+         * @param {proto.ConversationDraft.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+        const ConversationDraft = function (properties) {
+            if (properties)
+                for (let keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                        this[keys[i]] = properties[keys[i]];
+        };
+
+        /**
+         * ConversationDraft content.
+         * @member {proto.Message.$Properties|null|undefined} content
+         * @memberof proto.ConversationDraft
+         * @instance
+         */
+        ConversationDraft.prototype.content = null;
+
+        /**
+         * ConversationDraft editTimestampMs.
+         * @member {number|Long|null|undefined} editTimestampMs
+         * @memberof proto.ConversationDraft
+         * @instance
+         */
+        ConversationDraft.prototype.editTimestampMs = null;
+
+        /**
+         * ConversationDraft editorDeviceId.
+         * @member {number|null|undefined} editorDeviceId
+         * @memberof proto.ConversationDraft
+         * @instance
+         */
+        ConversationDraft.prototype.editorDeviceId = null;
+
+        // OneOf field names bound to virtual getters and setters
+        let $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(ConversationDraft.prototype, "_content", {
+            get: $util.oneOfGetter($oneOfFields = ["content"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(ConversationDraft.prototype, "_editTimestampMs", {
+            get: $util.oneOfGetter($oneOfFields = ["editTimestampMs"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(ConversationDraft.prototype, "_editorDeviceId", {
+            get: $util.oneOfGetter($oneOfFields = ["editorDeviceId"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new ConversationDraft instance using the specified properties.
+         * @function create
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {proto.ConversationDraft.$Properties=} [properties] Properties to set
+         * @returns {proto.ConversationDraft} ConversationDraft instance
+         * @type {{
+         *   (properties: proto.ConversationDraft.$Shape): proto.ConversationDraft & proto.ConversationDraft.$Shape;
+         *   (properties?: proto.ConversationDraft.$Properties): proto.ConversationDraft;
+         * }}
+         */
+        ConversationDraft.create = function(properties) {
+            return new ConversationDraft(properties);
+        };
+
+        /**
+         * Encodes the specified ConversationDraft message. Does not implicitly {@link proto.ConversationDraft.verify|verify} messages.
+         * @function encode
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {proto.ConversationDraft.$Properties} message ConversationDraft message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ConversationDraft.encode = function (message, writer, _depth) {
+            if (!writer)
+                writer = $Writer.create();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.content != null && $Object.hasOwnProperty.call(message, "content"))
+                $root.proto.Message.encode(message.content, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs"))
+                writer.uint32(/* id 2, wireType 0 =*/16).int64(message.editTimestampMs);
+            if (message.editorDeviceId != null && $Object.hasOwnProperty.call(message, "editorDeviceId"))
+                writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.editorDeviceId);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (let i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ConversationDraft message, length delimited. Does not implicitly {@link proto.ConversationDraft.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {proto.ConversationDraft.$Properties} message ConversationDraft message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ConversationDraft.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
+        };
+
+        /**
+         * Decodes a ConversationDraft message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.ConversationDraft & proto.ConversationDraft.$Shape} ConversationDraft
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ConversationDraft.decode = function (reader, length, _end, _depth, _target) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            let end, message;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.proto.ConversationDraft();
+            while (reader.pos < end) {
+                let start = reader.pos;
+                let tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
+                    break;
+                }
+                let wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.content = $root.proto.Message.decode(reader, reader.size(), $undefined, _depth + 1, message.content);
+                        message._content = "content";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 0)
+                            break;
+                        message.editTimestampMs = reader.int64();
+                        message._editTimestampMs = "editTimestampMs";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 0)
+                            break;
+                        message.editorDeviceId = reader.uint32();
+                        message._editorDeviceId = "editorDeviceId";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
+            }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
+            return message;
+        };
+
+        /**
+         * Decodes a ConversationDraft message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.ConversationDraft & proto.ConversationDraft.$Shape} ConversationDraft
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ConversationDraft.decodeDelimited = function(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.size());
+        };
+
+        /**
+         * Verifies a ConversationDraft message.
+         * @function verify
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ConversationDraft.verify = function (message, _depth) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
+            let properties = {};
+            if (message.content != null && $Object.hasOwnProperty.call(message, "content")) {
+                properties._content = 1;
+                {
+                    let error = $root.proto.Message.verify(message.content, _depth + 1);
+                    if (error)
+                        return "content." + error;
+                }
+            }
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs")) {
+                properties._editTimestampMs = 1;
+                if (!$util.isInteger(message.editTimestampMs) && !(message.editTimestampMs && $util.isInteger(message.editTimestampMs.low) && $util.isInteger(message.editTimestampMs.high)))
+                    return "editTimestampMs: integer|Long expected";
+            }
+            if (message.editorDeviceId != null && $Object.hasOwnProperty.call(message, "editorDeviceId")) {
+                properties._editorDeviceId = 1;
+                if (!$util.isInteger(message.editorDeviceId))
+                    return "editorDeviceId: integer expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a ConversationDraft message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.ConversationDraft} ConversationDraft
+         */
+        ConversationDraft.fromObject = function (object, _depth) {
+            if (object instanceof $root.proto.ConversationDraft)
+                return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".proto.ConversationDraft: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            let message = new $root.proto.ConversationDraft();
+            if (object.content != null) {
+                if (!$util.isObject(object.content))
+                    throw $TypeError(".proto.ConversationDraft.content: object expected");
+                message.content = $root.proto.Message.fromObject(object.content, _depth + 1);
+            }
+            if (object.editTimestampMs != null)
+                if ($util.Long)
+                    message.editTimestampMs = $util.Long.fromValue(object.editTimestampMs, false);
+                else if (typeof object.editTimestampMs === "string")
+                    message.editTimestampMs = $parseInt(object.editTimestampMs, 10);
+                else if (typeof object.editTimestampMs === "number")
+                    message.editTimestampMs = object.editTimestampMs;
+                else if (typeof object.editTimestampMs === "object")
+                    message.editTimestampMs = new $util.LongBits(object.editTimestampMs.low >>> 0, object.editTimestampMs.high >>> 0).toNumber();
+            if (object.editorDeviceId != null)
+                message.editorDeviceId = object.editorDeviceId >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a ConversationDraft message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {proto.ConversationDraft} message ConversationDraft
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ConversationDraft.toObject = function (message, options, _depth) {
+            if (!options)
+                options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            let object = {};
+            if (message.content != null && $Object.hasOwnProperty.call(message, "content"))
+                object.content = $root.proto.Message.toObject(message.content, options, _depth + 1);
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.editTimestampMs = typeof message.editTimestampMs === "number" ? $BigInt(message.editTimestampMs) : $util.Long.fromBits(message.editTimestampMs.low >>> 0, message.editTimestampMs.high >>> 0, false).toBigInt();
+                else if (typeof message.editTimestampMs === "number")
+                    object.editTimestampMs = options.longs === $String ? $String(message.editTimestampMs) : message.editTimestampMs;
+                else
+                    object.editTimestampMs = options.longs === $String ? $util.Long.prototype.toString.call(message.editTimestampMs) : options.longs === $Number ? new $util.LongBits(message.editTimestampMs.low >>> 0, message.editTimestampMs.high >>> 0).toNumber() : message.editTimestampMs;
+            if (message.editorDeviceId != null && $Object.hasOwnProperty.call(message, "editorDeviceId"))
+                object.editorDeviceId = message.editorDeviceId;
+            return object;
+        };
+
+        /**
+         * Converts this ConversationDraft to JSON.
+         * @function toJSON
+         * @memberof proto.ConversationDraft
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ConversationDraft.prototype.toJSON = function() {
+            return ConversationDraft.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the type url for ConversationDraft
+         * @function getTypeUrl
+         * @memberof proto.ConversationDraft
+         * @static
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
+         */
+        ConversationDraft.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/proto.ConversationDraft";
+        };
+
+        return ConversationDraft;
     })();
 
     proto.CreateBackupInput = (function() {
@@ -79633,6 +80068,7 @@ export const proto = $root.proto = (() => {
          * @property {proto.DeviceCapabilities.PhoneNumberSharing.$Properties|null} [phoneNumberSharing] DeviceCapabilities phoneNumberSharing
          * @property {proto.DeviceCapabilities.RecentConversationsOnDemand.$Properties|null} [recentConversationsOnDemand] DeviceCapabilities recentConversationsOnDemand
          * @property {proto.DeviceCapabilities.AiMuseJarvisGzip.$Properties|null} [aiMuseJarvisGzip] DeviceCapabilities aiMuseJarvisGzip
+         * @property {proto.DeviceCapabilities.DraftSync.$Properties|null} [draftSync] DeviceCapabilities draftSync
          * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
          */
 
@@ -79792,6 +80228,14 @@ export const proto = $root.proto = (() => {
          */
         DeviceCapabilities.prototype.aiMuseJarvisGzip = null;
 
+        /**
+         * DeviceCapabilities draftSync.
+         * @member {proto.DeviceCapabilities.DraftSync.$Properties|null|undefined} draftSync
+         * @memberof proto.DeviceCapabilities
+         * @instance
+         */
+        DeviceCapabilities.prototype.draftSync = null;
+
         // OneOf field names bound to virtual getters and setters
         let $oneOfFields;
 
@@ -79891,6 +80335,12 @@ export const proto = $root.proto = (() => {
             set: $util.oneOfSetter($oneOfFields)
         });
 
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DeviceCapabilities.prototype, "_draftSync", {
+            get: $util.oneOfGetter($oneOfFields = ["draftSync"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
         /**
          * Creates a new DeviceCapabilities instance using the specified properties.
          * @function create
@@ -79955,6 +80405,8 @@ export const proto = $root.proto = (() => {
                 $root.proto.DeviceCapabilities.RecentConversationsOnDemand.encode(message.recentConversationsOnDemand, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
             if (message.aiMuseJarvisGzip != null && $Object.hasOwnProperty.call(message, "aiMuseJarvisGzip"))
                 $root.proto.DeviceCapabilities.AiMuseJarvisGzip.encode(message.aiMuseJarvisGzip, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
+            if (message.draftSync != null && $Object.hasOwnProperty.call(message, "draftSync"))
+                $root.proto.DeviceCapabilities.DraftSync.encode(message.draftSync, writer.uint32(/* id 17, wireType 2 =*/138).fork(), _depth + 1).ldelim();
             if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                 for (let i = 0; i < message.$unknowns.length; ++i)
                     writer.raw(message.$unknowns[i]);
@@ -80122,6 +80574,13 @@ export const proto = $root.proto = (() => {
                             break;
                         message.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.decode(reader, reader.size(), $undefined, _depth + 1, message.aiMuseJarvisGzip);
                         message._aiMuseJarvisGzip = "aiMuseJarvisGzip";
+                        continue;
+                    }
+                case 17: {
+                        if (wireType !== 2)
+                            break;
+                        message.draftSync = $root.proto.DeviceCapabilities.DraftSync.decode(reader, reader.size(), $undefined, _depth + 1, message.draftSync);
+                        message._draftSync = "draftSync";
                         continue;
                     }
                 }
@@ -80295,6 +80754,14 @@ export const proto = $root.proto = (() => {
                         return "aiMuseJarvisGzip." + error;
                 }
             }
+            if (message.draftSync != null && $Object.hasOwnProperty.call(message, "draftSync")) {
+                properties._draftSync = 1;
+                {
+                    let error = $root.proto.DeviceCapabilities.DraftSync.verify(message.draftSync, _depth + 1);
+                    if (error)
+                        return "draftSync." + error;
+                }
+            }
             return null;
         };
 
@@ -80420,6 +80887,11 @@ export const proto = $root.proto = (() => {
                     throw $TypeError(".proto.DeviceCapabilities.aiMuseJarvisGzip: object expected");
                 message.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.fromObject(object.aiMuseJarvisGzip, _depth + 1);
             }
+            if (object.draftSync != null) {
+                if (!$util.isObject(object.draftSync))
+                    throw $TypeError(".proto.DeviceCapabilities.draftSync: object expected");
+                message.draftSync = $root.proto.DeviceCapabilities.DraftSync.fromObject(object.draftSync, _depth + 1);
+            }
             return message;
         };
 
@@ -80472,6 +80944,8 @@ export const proto = $root.proto = (() => {
                 object.recentConversationsOnDemand = $root.proto.DeviceCapabilities.RecentConversationsOnDemand.toObject(message.recentConversationsOnDemand, options, _depth + 1);
             if (message.aiMuseJarvisGzip != null && $Object.hasOwnProperty.call(message, "aiMuseJarvisGzip"))
                 object.aiMuseJarvisGzip = $root.proto.DeviceCapabilities.AiMuseJarvisGzip.toObject(message.aiMuseJarvisGzip, options, _depth + 1);
+            if (message.draftSync != null && $Object.hasOwnProperty.call(message, "draftSync"))
+                object.draftSync = $root.proto.DeviceCapabilities.DraftSync.toObject(message.draftSync, options, _depth + 1);
             return object;
         };
 
@@ -82729,6 +83203,288 @@ export const proto = $root.proto = (() => {
             };
 
             return ContactRefresh;
+        })();
+
+        DeviceCapabilities.DraftSync = (function() {
+
+            /**
+             * Properties of a DraftSync.
+             * @typedef {Object} proto.DeviceCapabilities.DraftSync.$Properties
+             * @property {number|null} [version] DraftSync version
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a DraftSync.
+             * @memberof proto.DeviceCapabilities
+             * @interface IDraftSync
+             * @augments proto.DeviceCapabilities.DraftSync.$Properties
+             * @deprecated Use proto.DeviceCapabilities.DraftSync.$Properties instead.
+             */
+
+            /**
+             * Shape of a DraftSync.
+             * @typedef {proto.DeviceCapabilities.DraftSync.$Properties} proto.DeviceCapabilities.DraftSync.$Shape
+             */
+
+            /**
+             * Constructs a new DraftSync.
+             * @memberof proto.DeviceCapabilities
+             * @classdesc Represents a DraftSync.
+             * @constructor
+             * @param {proto.DeviceCapabilities.DraftSync.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+            const DraftSync = function (properties) {
+                if (properties)
+                    for (let keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                            this[keys[i]] = properties[keys[i]];
+            };
+
+            /**
+             * DraftSync version.
+             * @member {number|null|undefined} version
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @instance
+             */
+            DraftSync.prototype.version = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(DraftSync.prototype, "_version", {
+                get: $util.oneOfGetter($oneOfFields = ["version"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new DraftSync instance using the specified properties.
+             * @function create
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {proto.DeviceCapabilities.DraftSync.$Properties=} [properties] Properties to set
+             * @returns {proto.DeviceCapabilities.DraftSync} DraftSync instance
+             * @type {{
+             *   (properties: proto.DeviceCapabilities.DraftSync.$Shape): proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape;
+             *   (properties?: proto.DeviceCapabilities.DraftSync.$Properties): proto.DeviceCapabilities.DraftSync;
+             * }}
+             */
+            DraftSync.create = function(properties) {
+                return new DraftSync(properties);
+            };
+
+            /**
+             * Encodes the specified DraftSync message. Does not implicitly {@link proto.DeviceCapabilities.DraftSync.verify|verify} messages.
+             * @function encode
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {proto.DeviceCapabilities.DraftSync.$Properties} message DraftSync message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DraftSync.encode = function (message, writer, _depth) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.version);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (let i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified DraftSync message, length delimited. Does not implicitly {@link proto.DeviceCapabilities.DraftSync.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {proto.DeviceCapabilities.DraftSync.$Properties} message DraftSync message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DraftSync.encodeDelimited = function(message, writer) {
+                return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
+            };
+
+            /**
+             * Decodes a DraftSync message from the specified reader or buffer.
+             * @function decode
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape} DraftSync
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DraftSync.decode = function (reader, length, _end, _depth, _target) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.proto.DeviceCapabilities.DraftSync();
+                while (reader.pos < end) {
+                    let start = reader.pos;
+                    let tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
+                        break;
+                    }
+                    let wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 0)
+                                break;
+                            message.version = reader.uint32();
+                            message._version = "version";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
+                }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
+                return message;
+            };
+
+            /**
+             * Decodes a DraftSync message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {proto.DeviceCapabilities.DraftSync & proto.DeviceCapabilities.DraftSync.$Shape} DraftSync
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DraftSync.decodeDelimited = function(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.size());
+            };
+
+            /**
+             * Verifies a DraftSync message.
+             * @function verify
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DraftSync.verify = function (message, _depth) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
+                let properties = {};
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
+                    properties._version = 1;
+                    if (!$util.isInteger(message.version))
+                        return "version: integer expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a DraftSync message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {proto.DeviceCapabilities.DraftSync} DraftSync
+             */
+            DraftSync.fromObject = function (object, _depth) {
+                if (object instanceof $root.proto.DeviceCapabilities.DraftSync)
+                    return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".proto.DeviceCapabilities.DraftSync: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let message = new $root.proto.DeviceCapabilities.DraftSync();
+                if (object.version != null)
+                    message.version = object.version >>> 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a DraftSync message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {proto.DeviceCapabilities.DraftSync} message DraftSync
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DraftSync.toObject = function (message, options, _depth) {
+                if (!options)
+                    options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let object = {};
+                if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
+                    object.version = message.version;
+                return object;
+            };
+
+            /**
+             * Converts this DraftSync to JSON.
+             * @function toJSON
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DraftSync.prototype.toJSON = function() {
+                return DraftSync.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the type url for DraftSync
+             * @function getTypeUrl
+             * @memberof proto.DeviceCapabilities.DraftSync
+             * @static
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
+             */
+            DraftSync.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/proto.DeviceCapabilities.DraftSync";
+            };
+
+            return DraftSync;
         })();
 
         DeviceCapabilities.HostWriteMutationSupport = (function() {
@@ -87492,6 +88248,7 @@ export const proto = $root.proto = (() => {
              * @property {boolean|null} [supportNewsletter] HistorySyncConfig supportNewsletter
              * @property {boolean|null} [supportUniversalReachChat] HistorySyncConfig supportUniversalReachChat
              * @property {boolean|null} [supportOmittedConversationMetadata] HistorySyncConfig supportOmittedConversationMetadata
+             * @property {boolean|null} [supportDraftSync] HistorySyncConfig supportDraftSync
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -87740,6 +88497,14 @@ export const proto = $root.proto = (() => {
              */
             HistorySyncConfig.prototype.supportOmittedConversationMetadata = null;
 
+            /**
+             * HistorySyncConfig supportDraftSync.
+             * @member {boolean|null|undefined} supportDraftSync
+             * @memberof proto.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            HistorySyncConfig.prototype.supportDraftSync = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -87899,6 +88664,12 @@ export const proto = $root.proto = (() => {
                 set: $util.oneOfSetter($oneOfFields)
             });
 
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(HistorySyncConfig.prototype, "_supportDraftSync", {
+                get: $util.oneOfGetter($oneOfFields = ["supportDraftSync"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
             /**
              * Creates a new HistorySyncConfig instance using the specified properties.
              * @function create
@@ -87986,6 +88757,8 @@ export const proto = $root.proto = (() => {
                     writer.uint32(/* id 26, wireType 0 =*/208).bool(message.supportUniversalReachChat);
                 if (message.supportOmittedConversationMetadata != null && $Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata"))
                     writer.uint32(/* id 28, wireType 0 =*/224).bool(message.supportOmittedConversationMetadata);
+                if (message.supportDraftSync != null && $Object.hasOwnProperty.call(message, "supportDraftSync"))
+                    writer.uint32(/* id 29, wireType 0 =*/232).bool(message.supportDraftSync);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -88233,6 +89006,13 @@ export const proto = $root.proto = (() => {
                             message._supportOmittedConversationMetadata = "supportOmittedConversationMetadata";
                             continue;
                         }
+                    case 29: {
+                            if (wireType !== 0)
+                                break;
+                            message.supportDraftSync = reader.bool();
+                            message._supportDraftSync = "supportDraftSync";
+                            continue;
+                        }
                     }
                     reader.skipType(wireType, _depth, tag);
                     if (!reader.discardUnknown) {
@@ -88419,6 +89199,11 @@ export const proto = $root.proto = (() => {
                     if (typeof message.supportOmittedConversationMetadata !== "boolean")
                         return "supportOmittedConversationMetadata: boolean expected";
                 }
+                if (message.supportDraftSync != null && $Object.hasOwnProperty.call(message, "supportDraftSync")) {
+                    properties._supportDraftSync = 1;
+                    if (typeof message.supportDraftSync !== "boolean")
+                        return "supportDraftSync: boolean expected";
+                }
                 return null;
             };
 
@@ -88499,6 +89284,8 @@ export const proto = $root.proto = (() => {
                     message.supportUniversalReachChat = $Boolean(object.supportUniversalReachChat);
                 if (object.supportOmittedConversationMetadata != null)
                     message.supportOmittedConversationMetadata = $Boolean(object.supportOmittedConversationMetadata);
+                if (object.supportDraftSync != null)
+                    message.supportDraftSync = $Boolean(object.supportDraftSync);
                 return message;
             };
 
@@ -88578,6 +89365,8 @@ export const proto = $root.proto = (() => {
                     object.supportUniversalReachChat = message.supportUniversalReachChat;
                 if (message.supportOmittedConversationMetadata != null && $Object.hasOwnProperty.call(message, "supportOmittedConversationMetadata"))
                     object.supportOmittedConversationMetadata = message.supportOmittedConversationMetadata;
+                if (message.supportDraftSync != null && $Object.hasOwnProperty.call(message, "supportDraftSync"))
+                    object.supportDraftSync = message.supportDraftSync;
                 return object;
             };
 
@@ -89149,6 +89938,553 @@ export const proto = $root.proto = (() => {
         })();
 
         return DisappearingMode;
+    })();
+
+    proto.DraftMessageSync = (function() {
+
+        /**
+         * Properties of a DraftMessageSync.
+         * @typedef {Object} proto.DraftMessageSync.$Properties
+         * @property {string|null} [chatJid] DraftMessageSync chatJid
+         * @property {string|null} [altChatJid] DraftMessageSync altChatJid
+         * @property {proto.DraftMessageSync.Action|null} [action] DraftMessageSync action
+         * @property {number|Long|null} [editTimestampMs] DraftMessageSync editTimestampMs
+         * @property {proto.Message.$Properties|null} [draft] DraftMessageSync draft
+         * @property {proto.DraftMessageSync.ClearReason|null} [clearReason] DraftMessageSync clearReason
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+
+        /**
+         * Properties of a DraftMessageSync.
+         * @memberof proto
+         * @interface IDraftMessageSync
+         * @augments proto.DraftMessageSync.$Properties
+         * @deprecated Use proto.DraftMessageSync.$Properties instead.
+         */
+
+        /**
+         * Shape of a DraftMessageSync.
+         * @typedef {{
+         *   chatJid?: string|null;
+         *   altChatJid?: string|null;
+         *   action?: proto.DraftMessageSync.Action|null;
+         *   editTimestampMs?: number|Long|null;
+         *   draft?: proto.Message.$Shape|null;
+         *   clearReason?: proto.DraftMessageSync.ClearReason|null;
+         *   $unknowns?: Array.<Uint8Array>;
+         * }} proto.DraftMessageSync.$Shape
+         */
+
+        /**
+         * Constructs a new DraftMessageSync.
+         * @memberof proto
+         * @classdesc Represents a DraftMessageSync.
+         * @constructor
+         * @param {proto.DraftMessageSync.$Properties=} [properties] Properties to set
+         * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+         */
+        const DraftMessageSync = function (properties) {
+            if (properties)
+                for (let keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                        this[keys[i]] = properties[keys[i]];
+        };
+
+        /**
+         * DraftMessageSync chatJid.
+         * @member {string|null|undefined} chatJid
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.chatJid = null;
+
+        /**
+         * DraftMessageSync altChatJid.
+         * @member {string|null|undefined} altChatJid
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.altChatJid = null;
+
+        /**
+         * DraftMessageSync action.
+         * @member {proto.DraftMessageSync.Action|null|undefined} action
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.action = null;
+
+        /**
+         * DraftMessageSync editTimestampMs.
+         * @member {number|Long|null|undefined} editTimestampMs
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.editTimestampMs = null;
+
+        /**
+         * DraftMessageSync draft.
+         * @member {proto.Message.$Properties|null|undefined} draft
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.draft = null;
+
+        /**
+         * DraftMessageSync clearReason.
+         * @member {proto.DraftMessageSync.ClearReason|null|undefined} clearReason
+         * @memberof proto.DraftMessageSync
+         * @instance
+         */
+        DraftMessageSync.prototype.clearReason = null;
+
+        // OneOf field names bound to virtual getters and setters
+        let $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_chatJid", {
+            get: $util.oneOfGetter($oneOfFields = ["chatJid"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_altChatJid", {
+            get: $util.oneOfGetter($oneOfFields = ["altChatJid"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_action", {
+            get: $util.oneOfGetter($oneOfFields = ["action"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_editTimestampMs", {
+            get: $util.oneOfGetter($oneOfFields = ["editTimestampMs"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_draft", {
+            get: $util.oneOfGetter($oneOfFields = ["draft"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        $Object.defineProperty(DraftMessageSync.prototype, "_clearReason", {
+            get: $util.oneOfGetter($oneOfFields = ["clearReason"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new DraftMessageSync instance using the specified properties.
+         * @function create
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {proto.DraftMessageSync.$Properties=} [properties] Properties to set
+         * @returns {proto.DraftMessageSync} DraftMessageSync instance
+         * @type {{
+         *   (properties: proto.DraftMessageSync.$Shape): proto.DraftMessageSync & proto.DraftMessageSync.$Shape;
+         *   (properties?: proto.DraftMessageSync.$Properties): proto.DraftMessageSync;
+         * }}
+         */
+        DraftMessageSync.create = function(properties) {
+            return new DraftMessageSync(properties);
+        };
+
+        /**
+         * Encodes the specified DraftMessageSync message. Does not implicitly {@link proto.DraftMessageSync.verify|verify} messages.
+         * @function encode
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {proto.DraftMessageSync.$Properties} message DraftMessageSync message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        DraftMessageSync.encode = function (message, writer, _depth) {
+            if (!writer)
+                writer = $Writer.create();
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            if (message.chatJid != null && $Object.hasOwnProperty.call(message, "chatJid"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.chatJid);
+            if (message.altChatJid != null && $Object.hasOwnProperty.call(message, "altChatJid"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.altChatJid);
+            if (message.action != null && $Object.hasOwnProperty.call(message, "action"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.action);
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs"))
+                writer.uint32(/* id 4, wireType 0 =*/32).int64(message.editTimestampMs);
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft"))
+                $root.proto.Message.encode(message.draft, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+            if (message.clearReason != null && $Object.hasOwnProperty.call(message, "clearReason"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.clearReason);
+            if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                for (let i = 0; i < message.$unknowns.length; ++i)
+                    writer.raw(message.$unknowns[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified DraftMessageSync message, length delimited. Does not implicitly {@link proto.DraftMessageSync.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {proto.DraftMessageSync.$Properties} message DraftMessageSync message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        DraftMessageSync.encodeDelimited = function(message, writer) {
+            return this.encode(message, (writer || $Writer.create()).fork()).ldelim();
+        };
+
+        /**
+         * Decodes a DraftMessageSync message from the specified reader or buffer.
+         * @function decode
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {proto.DraftMessageSync & proto.DraftMessageSync.$Shape} DraftMessageSync
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        DraftMessageSync.decode = function (reader, length, _end, _depth, _target) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $Reader.recursionLimit)
+                throw $Error("max depth exceeded");
+            let end, message, value;
+            if (length === $undefined)
+                end = reader.len;
+            else {
+                end = reader.pos + length;
+                if (end > reader.len)
+                    throw $RangeError("index out of range");
+                length = reader.len;
+                reader.len = end;
+            }
+            message = _target || new $root.proto.DraftMessageSync();
+            while (reader.pos < end) {
+                let start = reader.pos;
+                let tag = reader.tag();
+                if (tag === _end) {
+                    _end = $undefined;
+                    break;
+                }
+                let wireType = tag & 7;
+                switch (tag >>>= 3) {
+                case 1: {
+                        if (wireType !== 2)
+                            break;
+                        message.chatJid = reader.stringVerify();
+                        message._chatJid = "chatJid";
+                        continue;
+                    }
+                case 2: {
+                        if (wireType !== 2)
+                            break;
+                        message.altChatJid = reader.stringVerify();
+                        message._altChatJid = "altChatJid";
+                        continue;
+                    }
+                case 3: {
+                        if (wireType !== 0)
+                            break;
+                        message.action = reader.int32();
+                        message._action = "action";
+                        continue;
+                    }
+                case 4: {
+                        if (wireType !== 0)
+                            break;
+                        message.editTimestampMs = reader.int64();
+                        message._editTimestampMs = "editTimestampMs";
+                        continue;
+                    }
+                case 5: {
+                        if (wireType !== 2)
+                            break;
+                        message.draft = $root.proto.Message.decode(reader, reader.size(), $undefined, _depth + 1, message.draft);
+                        message._draft = "draft";
+                        continue;
+                    }
+                case 6: {
+                        if (wireType !== 0)
+                            break;
+                        message.clearReason = reader.int32();
+                        message._clearReason = "clearReason";
+                        continue;
+                    }
+                }
+                reader.skipType(wireType, _depth, tag);
+                if (!reader.discardUnknown) {
+                    $util.makeProp(message, "$unknowns", false);
+                    (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                }
+            }
+            if (length !== $undefined) {
+                if (reader.pos !== end)
+                    throw $RangeError("index out of range");
+                reader.len = length;
+            }
+            if (_end !== $undefined)
+                throw $Error("missing end group");
+            return message;
+        };
+
+        /**
+         * Decodes a DraftMessageSync message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {proto.DraftMessageSync & proto.DraftMessageSync.$Shape} DraftMessageSync
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        DraftMessageSync.decodeDelimited = function(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.size());
+        };
+
+        /**
+         * Verifies a DraftMessageSync message.
+         * @function verify
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        DraftMessageSync.verify = function (message, _depth) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                return "max depth exceeded";
+            let properties = {};
+            if (message.chatJid != null && $Object.hasOwnProperty.call(message, "chatJid")) {
+                properties._chatJid = 1;
+                if (!$util.isString(message.chatJid))
+                    return "chatJid: string expected";
+            }
+            if (message.altChatJid != null && $Object.hasOwnProperty.call(message, "altChatJid")) {
+                properties._altChatJid = 1;
+                if (!$util.isString(message.altChatJid))
+                    return "altChatJid: string expected";
+            }
+            if (message.action != null && $Object.hasOwnProperty.call(message, "action")) {
+                properties._action = 1;
+                if (typeof message.action !== "number" || (message.action | 0) !== message.action)
+                    return "action: enum value expected";
+            }
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs")) {
+                properties._editTimestampMs = 1;
+                if (!$util.isInteger(message.editTimestampMs) && !(message.editTimestampMs && $util.isInteger(message.editTimestampMs.low) && $util.isInteger(message.editTimestampMs.high)))
+                    return "editTimestampMs: integer|Long expected";
+            }
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft")) {
+                properties._draft = 1;
+                {
+                    let error = $root.proto.Message.verify(message.draft, _depth + 1);
+                    if (error)
+                        return "draft." + error;
+                }
+            }
+            if (message.clearReason != null && $Object.hasOwnProperty.call(message, "clearReason")) {
+                properties._clearReason = 1;
+                if (typeof message.clearReason !== "number" || (message.clearReason | 0) !== message.clearReason)
+                    return "clearReason: enum value expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a DraftMessageSync message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {proto.DraftMessageSync} DraftMessageSync
+         */
+        DraftMessageSync.fromObject = function (object, _depth) {
+            if (object instanceof $root.proto.DraftMessageSync)
+                return object;
+            if (!$util.isObject(object))
+                throw $TypeError(".proto.DraftMessageSync: object expected");
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            let message = new $root.proto.DraftMessageSync();
+            if (object.chatJid != null)
+                message.chatJid = $String(object.chatJid);
+            if (object.altChatJid != null)
+                message.altChatJid = $String(object.altChatJid);
+            switch (object.action) {
+            case "ACTION_UNKNOWN":
+            case 0:
+                message.action = 0;
+                break;
+            case "SET":
+            case 1:
+                message.action = 1;
+                break;
+            case "CLEAR":
+            case 2:
+                message.action = 2;
+                break;
+            default:
+                if (typeof object.action === "number" && (object.action | 0) === object.action)
+                    message.action = object.action;
+            }
+            if (object.editTimestampMs != null)
+                if ($util.Long)
+                    message.editTimestampMs = $util.Long.fromValue(object.editTimestampMs, false);
+                else if (typeof object.editTimestampMs === "string")
+                    message.editTimestampMs = $parseInt(object.editTimestampMs, 10);
+                else if (typeof object.editTimestampMs === "number")
+                    message.editTimestampMs = object.editTimestampMs;
+                else if (typeof object.editTimestampMs === "object")
+                    message.editTimestampMs = new $util.LongBits(object.editTimestampMs.low >>> 0, object.editTimestampMs.high >>> 0).toNumber();
+            if (object.draft != null) {
+                if (!$util.isObject(object.draft))
+                    throw $TypeError(".proto.DraftMessageSync.draft: object expected");
+                message.draft = $root.proto.Message.fromObject(object.draft, _depth + 1);
+            }
+            switch (object.clearReason) {
+            case "CLEAR_REASON_UNKNOWN":
+            case 0:
+                message.clearReason = 0;
+                break;
+            case "USER_CLEARED":
+            case 1:
+                message.clearReason = 1;
+                break;
+            case "SENT":
+            case 2:
+                message.clearReason = 2;
+                break;
+            case "CHAT_LOCKED":
+            case 3:
+                message.clearReason = 3;
+                break;
+            case "REPLACED_BY_NON_TEXT":
+            case 4:
+                message.clearReason = 4;
+                break;
+            default:
+                if (typeof object.clearReason === "number" && (object.clearReason | 0) === object.clearReason)
+                    message.clearReason = object.clearReason;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a DraftMessageSync message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {proto.DraftMessageSync} message DraftMessageSync
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        DraftMessageSync.toObject = function (message, options, _depth) {
+            if (!options)
+                options = {};
+            if (_depth === $undefined)
+                _depth = 0;
+            if (_depth > $util.recursionLimit)
+                throw $Error("max depth exceeded");
+            let object = {};
+            if (message.chatJid != null && $Object.hasOwnProperty.call(message, "chatJid"))
+                object.chatJid = message.chatJid;
+            if (message.altChatJid != null && $Object.hasOwnProperty.call(message, "altChatJid"))
+                object.altChatJid = message.altChatJid;
+            if (message.action != null && $Object.hasOwnProperty.call(message, "action"))
+                object.action = options.enums === $String ? $root.proto.DraftMessageSync.Action[message.action] === $undefined ? message.action : $root.proto.DraftMessageSync.Action[message.action] : message.action;
+            if (message.editTimestampMs != null && $Object.hasOwnProperty.call(message, "editTimestampMs"))
+                if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
+                    object.editTimestampMs = typeof message.editTimestampMs === "number" ? $BigInt(message.editTimestampMs) : $util.Long.fromBits(message.editTimestampMs.low >>> 0, message.editTimestampMs.high >>> 0, false).toBigInt();
+                else if (typeof message.editTimestampMs === "number")
+                    object.editTimestampMs = options.longs === $String ? $String(message.editTimestampMs) : message.editTimestampMs;
+                else
+                    object.editTimestampMs = options.longs === $String ? $util.Long.prototype.toString.call(message.editTimestampMs) : options.longs === $Number ? new $util.LongBits(message.editTimestampMs.low >>> 0, message.editTimestampMs.high >>> 0).toNumber() : message.editTimestampMs;
+            if (message.draft != null && $Object.hasOwnProperty.call(message, "draft"))
+                object.draft = $root.proto.Message.toObject(message.draft, options, _depth + 1);
+            if (message.clearReason != null && $Object.hasOwnProperty.call(message, "clearReason"))
+                object.clearReason = options.enums === $String ? $root.proto.DraftMessageSync.ClearReason[message.clearReason] === $undefined ? message.clearReason : $root.proto.DraftMessageSync.ClearReason[message.clearReason] : message.clearReason;
+            return object;
+        };
+
+        /**
+         * Converts this DraftMessageSync to JSON.
+         * @function toJSON
+         * @memberof proto.DraftMessageSync
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        DraftMessageSync.prototype.toJSON = function() {
+            return DraftMessageSync.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the type url for DraftMessageSync
+         * @function getTypeUrl
+         * @memberof proto.DraftMessageSync
+         * @static
+         * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+         * @returns {string} The type url
+         */
+        DraftMessageSync.getTypeUrl = function(prefix) {
+            if (prefix === $undefined)
+                prefix = "type.googleapis.com";
+            return prefix + "/proto.DraftMessageSync";
+        };
+
+        /**
+         * Action enum.
+         * @name proto.DraftMessageSync.Action
+         * @enum {number}
+         * @property {number} ACTION_UNKNOWN=0 ACTION_UNKNOWN value
+         * @property {number} SET=1 SET value
+         * @property {number} CLEAR=2 CLEAR value
+         */
+        DraftMessageSync.Action = (function() {
+            const valuesById = $Object.create(null), values = $Object.create(valuesById);
+            values[valuesById[0] = "ACTION_UNKNOWN"] = 0;
+            values[valuesById[1] = "SET"] = 1;
+            values[valuesById[2] = "CLEAR"] = 2;
+            return values;
+        })();
+
+        /**
+         * ClearReason enum.
+         * @name proto.DraftMessageSync.ClearReason
+         * @enum {number}
+         * @property {number} CLEAR_REASON_UNKNOWN=0 CLEAR_REASON_UNKNOWN value
+         * @property {number} USER_CLEARED=1 USER_CLEARED value
+         * @property {number} SENT=2 SENT value
+         * @property {number} CHAT_LOCKED=3 CHAT_LOCKED value
+         * @property {number} REPLACED_BY_NON_TEXT=4 REPLACED_BY_NON_TEXT value
+         */
+        DraftMessageSync.ClearReason = (function() {
+            const valuesById = $Object.create(null), values = $Object.create(valuesById);
+            values[valuesById[0] = "CLEAR_REASON_UNKNOWN"] = 0;
+            values[valuesById[1] = "USER_CLEARED"] = 1;
+            values[valuesById[2] = "SENT"] = 2;
+            values[valuesById[3] = "CHAT_LOCKED"] = 3;
+            values[valuesById[4] = "REPLACED_BY_NON_TEXT"] = 4;
+            return values;
+        })();
+
+        return DraftMessageSync;
     })();
 
     proto.EmbeddedContent = (function() {
@@ -191847,6 +193183,7 @@ export const proto = $root.proto = (() => {
              * @property {proto.MembershipFormKeyFingerprintVerification.$Properties|null} [membershipFormKeyFingerprintVerification] ProtocolMessage membershipFormKeyFingerprintVerification
              * @property {proto.GroupRootKeyShare.$Properties|null} [groupRootKeyShare] ProtocolMessage groupRootKeyShare
              * @property {proto.Message.ProtocolMessage.MessageEditDisplayType|null} [messageEditDisplayType] ProtocolMessage messageEditDisplayType
+             * @property {proto.DraftMessageSync.$Properties|null} [draftMessageSync] ProtocolMessage draftMessageSync
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -191899,6 +193236,7 @@ export const proto = $root.proto = (() => {
              *   membershipFormKeyFingerprintVerification?: proto.MembershipFormKeyFingerprintVerification.$Shape|null;
              *   groupRootKeyShare?: proto.GroupRootKeyShare.$Shape|null;
              *   messageEditDisplayType?: proto.Message.ProtocolMessage.MessageEditDisplayType|null;
+             *   draftMessageSync?: proto.DraftMessageSync.$Shape|null;
              *   $unknowns?: Array.<Uint8Array>;
              * }} proto.Message.ProtocolMessage.$Shape
              */
@@ -192223,6 +193561,14 @@ export const proto = $root.proto = (() => {
              */
             ProtocolMessage.prototype.messageEditDisplayType = null;
 
+            /**
+             * ProtocolMessage draftMessageSync.
+             * @member {proto.DraftMessageSync.$Properties|null|undefined} draftMessageSync
+             * @memberof proto.Message.ProtocolMessage
+             * @instance
+             */
+            ProtocolMessage.prototype.draftMessageSync = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -192448,6 +193794,12 @@ export const proto = $root.proto = (() => {
                 set: $util.oneOfSetter($oneOfFields)
             });
 
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(ProtocolMessage.prototype, "_draftMessageSync", {
+                get: $util.oneOfGetter($oneOfFields = ["draftMessageSync"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
             /**
              * Creates a new ProtocolMessage instance using the specified properties.
              * @function create
@@ -192557,6 +193909,8 @@ export const proto = $root.proto = (() => {
                     $root.proto.GroupRootKeyShare.encode(message.groupRootKeyShare, writer.uint32(/* id 41, wireType 2 =*/330).fork(), _depth + 1).ldelim();
                 if (message.messageEditDisplayType != null && $Object.hasOwnProperty.call(message, "messageEditDisplayType"))
                     writer.uint32(/* id 42, wireType 0 =*/336).int32(message.messageEditDisplayType);
+                if (message.draftMessageSync != null && $Object.hasOwnProperty.call(message, "draftMessageSync"))
+                    $root.proto.DraftMessageSync.encode(message.draftMessageSync, writer.uint32(/* id 43, wireType 2 =*/346).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -192879,6 +194233,13 @@ export const proto = $root.proto = (() => {
                                 break;
                             message.messageEditDisplayType = reader.int32();
                             message._messageEditDisplayType = "messageEditDisplayType";
+                            continue;
+                        }
+                    case 43: {
+                            if (wireType !== 2)
+                                break;
+                            message.draftMessageSync = $root.proto.DraftMessageSync.decode(reader, reader.size(), $undefined, _depth + 1, message.draftMessageSync);
+                            message._draftMessageSync = "draftMessageSync";
                             continue;
                         }
                     }
@@ -193209,6 +194570,14 @@ export const proto = $root.proto = (() => {
                     if (typeof message.messageEditDisplayType !== "number" || (message.messageEditDisplayType | 0) !== message.messageEditDisplayType)
                         return "messageEditDisplayType: enum value expected";
                 }
+                if (message.draftMessageSync != null && $Object.hasOwnProperty.call(message, "draftMessageSync")) {
+                    properties._draftMessageSync = 1;
+                    {
+                        let error = $root.proto.DraftMessageSync.verify(message.draftMessageSync, _depth + 1);
+                        if (error)
+                            return "draftMessageSync." + error;
+                    }
+                }
                 return null;
             };
 
@@ -193387,6 +194756,10 @@ export const proto = $root.proto = (() => {
                 case "GROUP_ROOT_KEY_SHARE":
                 case 44:
                     message.type = 44;
+                    break;
+                case "DRAFT_MESSAGE_SYNC":
+                case 45:
+                    message.type = 45;
                     break;
                 default:
                     if (typeof object.type === "number" && (object.type | 0) === object.type)
@@ -193581,6 +194954,11 @@ export const proto = $root.proto = (() => {
                     if (typeof object.messageEditDisplayType === "number" && (object.messageEditDisplayType | 0) === object.messageEditDisplayType)
                         message.messageEditDisplayType = object.messageEditDisplayType;
                 }
+                if (object.draftMessageSync != null) {
+                    if (!$util.isObject(object.draftMessageSync))
+                        throw $TypeError(".proto.Message.ProtocolMessage.draftMessageSync: object expected");
+                    message.draftMessageSync = $root.proto.DraftMessageSync.fromObject(object.draftMessageSync, _depth + 1);
+                }
                 return message;
             };
 
@@ -193692,6 +195070,8 @@ export const proto = $root.proto = (() => {
                     object.groupRootKeyShare = $root.proto.GroupRootKeyShare.toObject(message.groupRootKeyShare, options, _depth + 1);
                 if (message.messageEditDisplayType != null && $Object.hasOwnProperty.call(message, "messageEditDisplayType"))
                     object.messageEditDisplayType = options.enums === $String ? $root.proto.Message.ProtocolMessage.MessageEditDisplayType[message.messageEditDisplayType] === $undefined ? message.messageEditDisplayType : $root.proto.Message.ProtocolMessage.MessageEditDisplayType[message.messageEditDisplayType] : message.messageEditDisplayType;
+                if (message.draftMessageSync != null && $Object.hasOwnProperty.call(message, "draftMessageSync"))
+                    object.draftMessageSync = $root.proto.DraftMessageSync.toObject(message.draftMessageSync, options, _depth + 1);
                 return object;
             };
 
@@ -193776,6 +195156,7 @@ export const proto = $root.proto = (() => {
              * @property {number} GROUP_ROOT_KEY_REQUEST=42 GROUP_ROOT_KEY_REQUEST value
              * @property {number} MEMBERSHIP_FORM_KEY_FINGERPRINT_VERIFICATION=43 MEMBERSHIP_FORM_KEY_FINGERPRINT_VERIFICATION value
              * @property {number} GROUP_ROOT_KEY_SHARE=44 GROUP_ROOT_KEY_SHARE value
+             * @property {number} DRAFT_MESSAGE_SYNC=45 DRAFT_MESSAGE_SYNC value
              */
             ProtocolMessage.Type = (function() {
                 const valuesById = $Object.create(null), values = $Object.create(valuesById);
@@ -193817,6 +195198,7 @@ export const proto = $root.proto = (() => {
                 values[valuesById[42] = "GROUP_ROOT_KEY_REQUEST"] = 42;
                 values[valuesById[43] = "MEMBERSHIP_FORM_KEY_FINGERPRINT_VERIFICATION"] = 43;
                 values[valuesById[44] = "GROUP_ROOT_KEY_SHARE"] = 44;
+                values[valuesById[45] = "DRAFT_MESSAGE_SYNC"] = 45;
                 return values;
             })();
 
