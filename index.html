@@ -1,1 +1,748 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>waproto — WAProto for Baileys</title>
+<meta name="description" content="Latest WhatsApp protobuf definitions, built automatically for Baileys and installed with two commands.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#141111">
+<meta property="og:title" content="waproto — WAProto for Baileys">
+<meta property="og:description" content="Latest WhatsApp protobuf definitions, built automatically for Baileys and installed with two commands.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23201d1d'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%23fdfcfc'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<script>
+/* Pick the language before first paint so Indonesian visitors do not see a flash of English. */
+(function () {
+  var lang = 'en';
+  try {
+    var q = new URLSearchParams(location.search).get('lang');
+    var s = null;
+    try { s = localStorage.getItem('waproto-lang'); } catch (e) {}
+    var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+    if (q === 'id' || q === 'en') lang = q;
+    else if (s === 'id' || s === 'en') lang = s;
+    else if (/^(id|in)(-|$)/i.test(nav)) lang = 'id';
+  } catch (e) {}
+  document.documentElement.lang = lang;
 
+  /* Theme: dark by default; a saved choice or ?theme= overrides it. */
+  var theme = 'dark';
+  try {
+    var qt = new URLSearchParams(location.search).get('theme');
+    var st = null;
+    try { st = localStorage.getItem('waproto-theme'); } catch (e) {}
+    if (qt === 'light' || qt === 'dark') theme = qt;
+    else if (st === 'light' || st === 'dark') theme = st;
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<style>
+/* Dark is the default theme; :root[data-theme="light"] below overrides every token. */
+:root {
+  color-scheme: dark;
+  --canvas: #141111;
+  --soft: #1b1818;
+  --card: #242020;
+  --ink: #fdfcfc;
+  --ink-deep: #ffffff;
+  --body: #cfcccc;
+  --mute: #9a9898;
+  --hair: rgba(253, 252, 252, 0.14);
+  --hair-strong: #9a9898;
+  --btn-bg: #fdfcfc;
+  --btn-fg: #201d1d;
+  --btn-hover: #e6e3e3;
+  --btn-active: #ffffff;
+  --badge-bg: #fdfcfc;
+  --badge-fg: #201d1d;
+  --tui-bg: #201d1d;
+  --tui-row: #302c2c;
+  --tui-fg: #fdfcfc;
+  --tui-mute: #9a9898;
+  --tui-border: rgba(253, 252, 252, 0.14);
+  --success: #30d158;
+  --mono: "IBM Plex Mono", "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --section: 96px;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #fdfcfc;
+  --soft: #f8f7f7;
+  --card: #f1eeee;
+  --ink: #201d1d;
+  --ink-deep: #0f0000;
+  --body: #424245;
+  --mute: #646262;
+  --hair: rgba(15, 0, 0, 0.12);
+  --hair-strong: #646262;
+  --btn-bg: #201d1d;
+  --btn-fg: #fdfcfc;
+  --btn-hover: #302c2c;
+  --btn-active: #0f0000;
+  --badge-bg: #201d1d;
+  --badge-fg: #fdfcfc;
+  --tui-border: transparent;
+}
+
+/* Language switching: English is the default, so the page also works without JavaScript. */
+:root:not([lang="id"]) [lang="id"] { display: none; }
+:root[lang="id"] [lang="en"] { display: none; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--body);
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink-deep); text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--btn-bg); color: var(--btn-fg); padding: 4px 12px; border-radius: 4px; z-index: 20; }
+.skip:focus { left: 8px; }
+
+.wrap { width: 100%; max-width: 992px; margin: 0 auto; padding: 0 16px; }
+
+/* ── Navigation ─────────────────────────────── */
+.nav { position: sticky; top: 0; z-index: 10; background: var(--canvas); border-bottom: 1px solid var(--hair); }
+.nav .wrap { display: flex; align-items: center; gap: 16px; height: 56px; }
+.brand { color: var(--ink); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.brand:hover { text-decoration: none; }
+.brand .caret { color: var(--mute); font-weight: 400; }
+.links { display: flex; gap: 0; margin-left: 8px; }
+.links a { color: var(--mute); text-decoration: none; padding: 8px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.links a:hover { color: var(--ink); text-decoration: none; }
+.links .only-m { display: none; }
+.spacer { flex: 1; }
+.langs { display: flex; }
+.langs button {
+  font: inherit; font-weight: 500; background: transparent; color: var(--mute); border: 0; border-radius: 0;
+  padding: 8px 12px; cursor: pointer; border-bottom: 2px solid transparent; min-height: 40px;
+}
+.langs button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.langs button:hover { color: var(--ink); }
+.theme {
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--mute); background: transparent;
+  border: 1px solid var(--hair-strong); border-radius: 4px; height: 32px; padding: 0 10px; cursor: pointer; white-space: nowrap;
+}
+.theme:hover { color: var(--ink); }
+.theme::before { content: "["; }
+.theme::after { content: "]"; }
+:root:not([data-theme="light"]) .theme .to-dark { display: none; }
+:root[data-theme="light"] .theme .to-light { display: none; }
+.menu-btn {
+  display: none; font: inherit; font-weight: 500; color: var(--ink); background: var(--canvas);
+  border: 1px solid var(--hair-strong); border-radius: 4px; height: 36px; padding: 4px 12px; cursor: pointer;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: inherit; font-weight: 500; line-height: 2; text-decoration: none; cursor: pointer;
+  height: 36px; padding: 4px 20px; border-radius: 4px; border: 1px solid transparent; white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--btn-bg); color: var(--btn-fg); }
+.btn-primary:hover { background: var(--btn-hover); color: var(--btn-fg); }
+.btn-primary:active { background: var(--btn-active); }
+.btn-secondary { background: var(--canvas); color: var(--ink); border-color: var(--hair-strong); }
+.btn-secondary:hover { background: var(--soft); color: var(--ink); }
+
+/* ── Hero ───────────────────────────────────── */
+.hero { padding: 64px 0 var(--section); }
+.badge { display: inline-block; background: var(--badge-bg); color: var(--badge-fg); font-size: 14px; line-height: 2; padding: 2px 8px; border-radius: 4px; }
+h1 { margin: 24px 0 16px; color: var(--ink); font-size: 38px; line-height: 1.5; font-weight: 700; letter-spacing: 0; }
+.lead { margin: 0 0 16px; max-width: 64ch; color: var(--body); }
+.fine { margin: 0 0 32px; color: var(--mute); font-size: 14px; line-height: 2; max-width: 72ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 64px; }
+
+.tui { background: var(--tui-bg); color: var(--tui-fg); padding: 64px 32px; border-radius: 0; border: 1px solid var(--tui-border); }
+.tui .row { background: var(--tui-row); padding: 8px 12px; border-radius: 4px; overflow-x: auto; white-space: pre; margin: 0 0 12px; }
+.tui .row .prompt { color: var(--tui-mute); }
+.tui .out { margin: 0 0 32px; padding: 0 12px; color: var(--tui-mute); font-size: 14px; line-height: 2; white-space: pre; overflow-x: auto; }
+.tui .out:last-child { margin-bottom: 0; }
+.tui .out b { color: var(--success); font-weight: 500; }
+
+/* ── Sections ───────────────────────────────── */
+section.sec { padding: var(--section) 0; border-top: 1px solid var(--hair); }
+h2 { margin: 0 0 16px; color: var(--ink); font-size: 16px; line-height: 1.5; font-weight: 700; }
+h2 .idx { color: var(--mute); font-weight: 400; margin-right: 8px; }
+h3 { margin: 32px 0 8px; color: var(--ink); font-size: 16px; line-height: 1.5; font-weight: 500; }
+p { margin: 0 0 16px; max-width: 72ch; }
+strong { color: var(--ink); font-weight: 700; }
+
+code { background: var(--card); color: var(--ink); padding: 1px 6px; border-radius: 4px; font-size: 0.92em; overflow-wrap: anywhere; }
+.snippet { display: flex; align-items: flex-start; gap: 12px; background: var(--card); color: var(--ink); padding: 12px 16px; border-radius: 4px; margin: 0 0 16px; }
+.snippet pre { flex: 1; min-width: 0; margin: 0; overflow-x: auto; font: inherit; white-space: pre; padding-bottom: 2px; }
+.snippet code { background: transparent; padding: 0; font-size: 14px; line-height: 1.7; overflow-wrap: normal; }
+.copy {
+  flex: none; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink); background: var(--canvas);
+  border: 1px solid var(--hair-strong); border-radius: 4px; padding: 2px 8px; cursor: pointer; line-height: 1.7;
+}
+.copy:hover { background: var(--soft); }
+.copy .ok { display: none; }
+.copy[data-state="ok"] .lbl { display: none; }
+.copy[data-state="ok"] .ok { display: inline; }
+
+ul.br, ol.br { list-style: none; margin: 0 0 16px; padding: 0; max-width: 72ch; counter-reset: n; }
+ul.br li, ol.br li { position: relative; padding: 2px 0 2px 40px; }
+ul.br li::before { content: "[+]"; position: absolute; left: 0; color: var(--mute); }
+ol.br li { counter-increment: n; }
+ol.br li::before { content: "[" counter(n) "]"; position: absolute; left: 0; color: var(--mute); }
+ul.br ul.br { margin: 4px 0 4px; }
+
+.note { background: var(--soft); border-radius: 4px; padding: 12px 16px; margin: 0 0 16px; max-width: 72ch; color: var(--body); }
+.note::before { content: "[!] "; color: var(--ink); font-weight: 700; }
+.note p { display: inline; margin: 0; }
+
+.step { margin: 32px 0 8px; color: var(--ink); font-weight: 700; }
+.step .n { color: var(--mute); font-weight: 400; margin-right: 8px; }
+
+.vars { margin: 0 0 16px; border-top: 1px solid var(--hair); }
+.var { padding: 12px 0; border-bottom: 1px solid var(--hair); }
+.var-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 4px; }
+.var-h code { background: transparent; padding: 0; color: var(--ink); font-weight: 700; font-size: 1em; }
+.var p { margin: 0; font-size: 14px; line-height: 1.7; }
+.def { color: var(--mute); font-size: 14px; }
+.def::before { content: "default: "; }
+.def.unset::before { content: "unset"; }
+:root[lang="id"] .def.unset::before { content: "tidak diset"; }
+
+details { border-bottom: 1px solid var(--hair); padding: 12px 0; }
+.faq { border-top: 1px solid var(--hair); margin-bottom: 16px; }
+summary { cursor: pointer; list-style: none; color: var(--ink); font-weight: 500; display: flex; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "[+]"; color: var(--mute); flex: none; }
+details[open] > summary::before { content: "[-]"; }
+summary > span { min-width: 0; }
+details p { margin: 8px 0 0 48px; font-size: 14px; line-height: 1.7; max-width: 64ch; }
+
+footer { border-top: 1px solid var(--hair); padding: 32px 0; color: var(--body); font-size: 14px; line-height: 2; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; }
+footer .util { color: var(--mute); }
+footer nav { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --section: 64px; }
+}
+@media (max-width: 960px) {
+  .links { display: none; margin: 0; }
+  .menu-btn { display: inline-block; }
+  .nav .wrap { gap: 8px; }
+  .nav.open .links {
+    display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 56px;
+    background: var(--canvas); border-bottom: 1px solid var(--hair); padding: 8px 16px 16px;
+  }
+  .nav.open .links a { padding: 12px 0; font-size: 16px; border-bottom: 1px solid var(--hair); }
+  .nav.open .links a:last-child { border-bottom: 0; }
+  .langs button { padding: 8px; }
+}
+@media (max-width: 640px) {
+  :root { --section: 48px; }
+  h1 { font-size: 28px; }
+  .hero { padding-top: 48px; }
+  .tui { padding: 32px 16px; }
+  .tui .out { white-space: pre-wrap; overflow-wrap: anywhere; padding: 0 4px; }
+  .cta { margin-bottom: 48px; }
+  .btn { height: 40px; }
+  .snippet { flex-direction: column; gap: 8px; }
+  .snippet pre { width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .snippet code { overflow-wrap: anywhere; }
+  .copy { padding: 4px 8px; align-self: flex-end; }
+  details p { margin-left: 0; }
+  .nav .btn { display: none; }
+  .nav.open .links .only-m { display: block; }
+  .brand { font-size: 14px; }
+}
+@media (max-width: 380px) {
+  .nav .wrap { gap: 4px; }
+  .langs button { padding: 8px 6px; }
+  .theme { padding: 0 6px; }
+  .menu-btn { padding: 4px 8px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="id">Lewati ke konten</span></a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="caret">&gt;</span> waproto</a>
+    <nav class="links" id="links" aria-label="Sections">
+      <a href="#quick"><span lang="en">Quick start</span><span lang="id">Mulai cepat</span></a>
+      <a href="#how"><span lang="en">How it works</span><span lang="id">Cara kerja</span></a>
+      <a href="#reference"><span lang="en">Reference</span><span lang="id">Referensi</span></a>
+      <a href="#trouble"><span lang="en">Troubleshooting</span><span lang="id">Masalah umum</span></a>
+      <a class="only-m" href="https://github.com/andhikagg/waproto">GitHub</a>
+    </nav>
+    <span class="spacer"></span>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="id" aria-pressed="false">ID</button>
+    </div>
+    <button class="theme" type="button" id="theme-btn"><span class="to-light"><span lang="en">light</span><span lang="id">terang</span></span><span class="to-dark"><span lang="en">dark</span><span lang="id">gelap</span></span></button>
+    <a class="btn btn-primary" href="https://github.com/andhikagg/waproto">GitHub</a>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="links" aria-label="Menu">[=]</button>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap" id="top">
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <span class="badge"><span lang="en">Unofficial</span><span lang="id">Tidak resmi</span></span>
+    <h1>waproto</h1>
+    <p class="lead" lang="en">The latest WhatsApp protobuf definitions, built automatically for Baileys and installed with two commands.</p>
+    <p class="lead" lang="id">Definisi protobuf WhatsApp terbaru, dibuild otomatis untuk Baileys dan dipasang dengan dua perintah.</p>
+    <p class="fine" lang="en">Built from <a href="https://github.com/wppconnect-team/wa-proto">wppconnect-team/wa-proto</a> every time upstream changes. Not affiliated with or endorsed by WhatsApp or Meta.</p>
+    <p class="fine" lang="id">Dibuild dari <a href="https://github.com/wppconnect-team/wa-proto">wppconnect-team/wa-proto</a> setiap kali upstream berubah. Tidak ada hubungannya dengan WhatsApp maupun Meta.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#quick"><span lang="en">Quick start</span><span lang="id">Mulai cepat</span></a>
+      <a class="btn btn-secondary" href="https://github.com/andhikagg/waproto"><span lang="en">View on GitHub</span><span lang="id">Lihat di GitHub</span></a>
+    </div>
+
+    <div class="tui" role="img" aria-label="Example terminal output of the two install commands">
+      <div class="row"><span class="prompt">$</span> curl -fsSL https://andhikagg.github.io/waproto/fix.js | TARGET="baileys" node -</div>
+<div class="out">3. npm install protobufjs@latest ...
+4. protobufjs 8.8.1 copied to node_modules/baileys/node_modules/protobufjs
+5. baileys/package.json protobufjs: latest -&gt; ^8.8.1
+<b>Done.</b> Check the version with: npm ls protobufjs</div>
+      <div class="row"><span class="prompt">$</span> curl -fsSL https://andhikagg.github.io/waproto/patch.js | TARGET="baileys" node -</div>
+<div class="out">==&gt; Syntax OK
+==&gt; protobufjs runtime check OK
+==&gt; <b>Done.</b> Updated: index.js, index.d.ts, WAProto.proto</div>
+    </div>
+  </div>
+
+  <!-- ── 01 Quick start ── -->
+  <section class="sec" id="quick">
+    <h2><span class="idx">[01]</span><span lang="en">Quick start</span><span lang="id">Mulai cepat</span></h2>
+    <p lang="en">Run both commands in your Baileys project root, <strong>in this order</strong>. Requires Node.js 18 or newer.</p>
+    <p lang="id">Jalankan kedua perintah ini di root proyek Baileys-mu, <strong>berurutan</strong>. Butuh Node.js 18 atau lebih baru.</p>
+
+    <div class="step"><span class="n">[1]</span><span lang="en">Update protobufjs (required)</span><span lang="id">Update protobufjs (wajib)</span></div>
+    <div class="snippet"><pre><code>curl -fsSL https://andhikagg.github.io/waproto/fix.js | TARGET="baileys" node -</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+
+    <div class="step"><span class="n">[2]</span><span lang="en">Patch WAProto</span><span lang="id">Patch WAProto</span></div>
+    <div class="snippet"><pre><code>curl -fsSL https://andhikagg.github.io/waproto/patch.js | TARGET="baileys" node -</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+
+    <p lang="en"><code>TARGET</code> is the package folder name inside <code>node_modules</code>, for example:</p>
+    <p lang="id"><code>TARGET</code> adalah nama folder paket di dalam <code>node_modules</code>, contohnya:</p>
+    <div class="snippet"><pre><code>TARGET="baileys"
+TARGET="@whiskeysockets/baileys"</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+
+    <div class="note" lang="en"><p>Pairing again is usually not required. If you get connection or decryption errors after patching, delete your Baileys auth/session folder and pair again (scan the QR code).</p></div>
+    <div class="note" lang="id"><p>Biasanya kamu tidak perlu pairing ulang. Tapi kalau setelah patch muncul error koneksi atau dekripsi, hapus folder auth/session Baileys lalu pairing lagi (scan QR code).</p></div>
+    <div class="note" lang="en"><p>These commands run a script from this repository with your permissions. Read them first, or use a URL pinned to a commit hash. See <a href="#notes">Notes</a>.</p></div>
+    <div class="note" lang="id"><p>Perintah ini menjalankan skrip dari repo ini dengan izinmu. Baca dulu isinya, atau pakai URL yang dikunci ke hash commit. Lihat <a href="#notes">Catatan</a>.</p></div>
+  </section>
+
+  <!-- ── 02 How it works ── -->
+  <section class="sec" id="how">
+    <h2><span class="idx">[02]</span><span lang="en">How it works</span><span lang="id">Cara kerja</span></h2>
+    <ol class="br" lang="en">
+      <li>A GitHub Actions workflow checks the upstream repo every hour.</li>
+      <li>If there is a new upstream commit, it runs <code>update.sh</code> on the <code>WAProto.proto</code> from exactly that commit:
+        <ul class="br">
+          <li>downloads the file and checks that it really is a <code>.proto</code></li>
+          <li>replaces proto3-illegal <code>required</code> with <code>optional</code> (field declarations only)</li>
+          <li>compiles it with <code>pbjs</code> (ES module output) and makes typings with <code>pbts</code></li>
+          <li>renames the <code>waproto</code> namespace to <code>proto</code> in both <code>index.js</code> and <code>index.d.ts</code>, and applies known Baileys quirks</li>
+          <li>validates the syntax and zips the output</li>
+        </ul>
+      </li>
+      <li>The result is committed to <code>WAProto/</code> and the zip is uploaded as a workflow artifact.</li>
+      <li>On your machine, two small scripts install everything into <code>node_modules</code>: <code>fix.js</code> updates the <code>protobufjs</code> runtime inside the Baileys module, and <code>patch.js</code> installs the built <code>WAProto</code> files.</li>
+    </ol>
+    <ol class="br" lang="id">
+      <li>Workflow GitHub Actions mengecek repo upstream setiap jam.</li>
+      <li>Kalau ada commit baru, workflow menjalankan <code>update.sh</code> untuk <code>WAProto.proto</code> dari commit itu:
+        <ul class="br">
+          <li>mengunduh file dan memastikan isinya memang <code>.proto</code></li>
+          <li>mengganti <code>required</code> (tidak valid di proto3) jadi <code>optional</code>, hanya di deklarasi field</li>
+          <li>mengompilasinya dengan <code>pbjs</code> (output ES module) dan membuat typings dengan <code>pbts</code></li>
+          <li>mengganti namespace <code>waproto</code> jadi <code>proto</code> di <code>index.js</code> dan <code>index.d.ts</code>, plus penyesuaian khusus Baileys</li>
+          <li>mengecek sintaks dan membuat zip dari hasilnya</li>
+        </ul>
+      </li>
+      <li>Hasilnya di-commit ke <code>WAProto/</code>, dan zip-nya diunggah sebagai artifact workflow.</li>
+      <li>Di komputermu, dua skrip kecil memasang semuanya ke <code>node_modules</code>: <code>fix.js</code> memperbarui runtime <code>protobufjs</code> di dalam modul Baileys, dan <code>patch.js</code> memasang file <code>WAProto</code> hasil build.</li>
+    </ol>
+  </section>
+
+  <!-- ── 03 Reference ── -->
+  <section class="sec" id="reference">
+    <h2><span class="idx">[03]</span><span lang="en">Reference</span><span lang="id">Referensi</span></h2>
+
+    <h3 id="protobufjs"><code>fix.js</code> — <span lang="en">use the latest protobufjs</span><span lang="id">pakai protobufjs terbaru</span></h3>
+    <p lang="en">The generated <code>index.js</code> is compiled with a recent <code>protobufjs-cli</code> and imports <code>protobufjs/minimal</code>. The runtime that Baileys resolves must be recent too. An old runtime causes missing methods, decode failures, or import errors, for example <code>reader.size is not a function</code>.</p>
+    <p lang="id"><code>index.js</code> hasil build dikompilasi dengan <code>protobufjs-cli</code> yang baru dan mengimpor <code>protobufjs/minimal</code>. Runtime yang dipakai Baileys juga harus baru. Runtime lama menyebabkan method tidak ketemu, gagal decode, atau error import, misalnya <code>reader.size is not a function</code>.</p>
+    <ol class="br" lang="en">
+      <li>Leaves <code>package-lock.json</code> alone (set <code>RESET_LOCK=1</code> to delete it).</li>
+      <li>Rewrites <code>node_modules/&lt;TARGET&gt;/package.json</code> so <code>protobufjs</code> uses the wanted version. The original is saved once as <code>package.json.bak</code>.</li>
+      <li>Runs <code>npm install protobufjs@&lt;version&gt;</code> in the project root.</li>
+      <li>Copies <code>node_modules/protobufjs</code> into <code>node_modules/&lt;TARGET&gt;/node_modules/protobufjs</code> (skipped if it is already the same version).</li>
+      <li>Replaces <code>latest</code> in <code>package.json</code> with a real range such as <code>^8.8.1</code>, so <code>npm ls</code> does not report it as <code>invalid</code>.</li>
+    </ol>
+    <ol class="br" lang="id">
+      <li>Tidak menyentuh <code>package-lock.json</code> (kalau mau dihapus, pakai <code>RESET_LOCK=1</code>).</li>
+      <li>Mengubah <code>node_modules/&lt;TARGET&gt;/package.json</code> supaya <code>protobufjs</code> memakai versi yang kamu mau. File aslinya disimpan sekali sebagai <code>package.json.bak</code>.</li>
+      <li>Menjalankan <code>npm install protobufjs@&lt;versi&gt;</code> di root proyek.</li>
+      <li>Menyalin <code>node_modules/protobufjs</code> ke <code>node_modules/&lt;TARGET&gt;/node_modules/protobufjs</code> (dilewati kalau sudah versi yang sama).</li>
+      <li>Mengganti <code>latest</code> di <code>package.json</code> dengan rentang versi asli seperti <code>^8.8.1</code>, supaya <code>npm ls</code> tidak menandainya <code>invalid</code>.</li>
+    </ol>
+
+    <div class="vars">
+      <div class="var"><div class="var-h"><code>TARGET</code><span class="def">baileys</span></div>
+        <p lang="en">Package name in <code>node_modules</code>. Run from the project root.</p>
+        <p lang="id">Nama paket di <code>node_modules</code>. Jalankan dari root proyek.</p></div>
+      <div class="var"><div class="var-h"><code>SKIP_INSTALL</code><span class="def unset"></span></div>
+        <p lang="en">Set to <code>1</code> to skip <code>npm install</code> (use if protobufjs is already installed in the project root).</p>
+        <p lang="id">Isi <code>1</code> untuk melewati <code>npm install</code> (kalau protobufjs sudah terpasang di root proyek).</p></div>
+      <div class="var"><div class="var-h"><code>PROTOBUFJS_VERSION</code><span class="def">latest</span></div>
+        <p lang="en">protobufjs version or range, for example <code>^7</code>. Avoids surprises from new major releases.</p>
+        <p lang="id">Versi atau rentang versi protobufjs, misalnya <code>^7</code>. Supaya tidak kaget kalau ada rilis mayor baru.</p></div>
+      <div class="var"><div class="var-h"><code>RESET_LOCK</code><span class="def unset"></span></div>
+        <p lang="en">Set to <code>1</code> to delete <code>package-lock.json</code> in the project root.</p>
+        <p lang="id">Isi <code>1</code> untuk menghapus <code>package-lock.json</code> di root proyek.</p></div>
+    </div>
+
+    <p lang="en">Check which version is actually resolved:</p>
+    <p lang="id">Untuk cek versi yang benar-benar terpakai:</p>
+    <div class="snippet"><pre><code>npm ls protobufjs
+node -e "console.log(require('protobufjs/package.json').version)"</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+
+    <p lang="en"><code>npm install</code> or <code>npm ci</code> rebuilds <code>node_modules</code> and removes the copied module. Run both scripts again afterwards, or add them to the <code>postinstall</code> script of your own <code>package.json</code>. <code>SKIP_INSTALL=1</code> keeps the script from calling <code>npm install</code> inside an install. Make sure <code>protobufjs</code> is listed in your own dependencies. Both scripts are safe to run repeatedly.</p>
+    <p lang="id">Setiap kali kamu menjalankan <code>npm install</code> atau <code>npm ci</code>, <code>node_modules</code> dibangun ulang dan modul hasil salinan ikut hilang. Jalankan kedua skrip lagi setelahnya, atau masukkan ke <code>postinstall</code> di <code>package.json</code>-mu. <code>SKIP_INSTALL=1</code> mencegah skrip memanggil <code>npm install</code> di tengah proses install. Pastikan <code>protobufjs</code> sudah ada di dependensi proyekmu. Kedua skrip aman dijalankan berkali-kali.</p>
+    <div class="snippet"><pre><code>{
+  "scripts": {
+    "postinstall": "curl -fsSL https://andhikagg.github.io/waproto/fix.js | TARGET=baileys SKIP_INSTALL=1 node - &amp;&amp; curl -fsSL https://andhikagg.github.io/waproto/patch.js | TARGET=baileys node -"
+  }
+}</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+
+    <h3 id="patch"><code>patch.js</code> — <span lang="en">options</span><span lang="id">opsi</span></h3>
+    <div class="vars">
+      <div class="var"><div class="var-h"><code>TARGET</code><span class="def">baileys</span></div>
+        <p lang="en">Package name in <code>node_modules</code> (searched upward from the current directory).</p>
+        <p lang="id">Nama paket di <code>node_modules</code> (dicari naik ke folder induk dari folder saat ini).</p></div>
+      <div class="var"><div class="var-h"><code>SOURCE</code><span class="def">…/andhikagg/waproto/main/WAProto</span></div>
+        <p lang="en">Base URL that serves <code>index.js</code>, <code>index.d.ts</code> and <code>WAProto.proto</code>. Must be <code>https://</code>.</p>
+        <p lang="id">URL dasar tempat <code>index.js</code>, <code>index.d.ts</code>, dan <code>WAProto.proto</code> diambil. Harus <code>https://</code>.</p></div>
+      <div class="var"><div class="var-h"><code>DRY_RUN</code><span class="def unset"></span></div>
+        <p lang="en">Set to <code>1</code> to download and validate only, without writing anything.</p>
+        <p lang="id">Isi <code>1</code> untuk hanya mengunduh dan memvalidasi, tanpa menulis apa pun.</p></div>
+      <div class="var"><div class="var-h"><code>FORCE</code><span class="def unset"></span></div>
+        <p lang="en">Set to <code>1</code> to install even if the protobufjs runtime check fails.</p>
+        <p lang="id">Isi <code>1</code> untuk tetap memasang walau cek runtime protobufjs gagal.</p></div>
+    </div>
+    <ul class="br" lang="en">
+      <li>Downloads everything into memory first. Empty or tiny files are rejected and <code>index.js</code> is syntax-checked before <code>node_modules</code> is touched.</li>
+      <li>Checks that the protobufjs runtime has what the new <code>index.js</code> needs (for example <code>Reader.size()</code>) and stops before writing anything if it does not.</li>
+      <li>If your <code>protobufjs</code> has no <code>exports</code> map, adds <code>.js</code> to the <code>protobufjs/minimal</code> import so Node ESM can resolve it.</li>
+      <li>If <code>index.d.ts</code> still uses the <code>waproto</code> namespace, renames it to <code>proto</code>.</li>
+      <li>Only writes files that changed, backs each one up as <code>*.bak</code>, writes through a temporary file, and rolls back automatically if a write fails.</li>
+      <li>Warns if the module format differs (ESM vs CommonJS) between the installed and new file.</li>
+    </ul>
+    <ul class="br" lang="id">
+      <li>Mengunduh semuanya ke memori dulu. File kosong atau terlalu kecil ditolak dan sintaks <code>index.js</code> dicek sebelum <code>node_modules</code> disentuh.</li>
+      <li>Mengecek apakah runtime protobufjs punya yang dibutuhkan <code>index.js</code> baru (misalnya <code>Reader.size()</code>), dan berhenti sebelum menulis apa pun kalau tidak.</li>
+      <li>Kalau <code>protobufjs</code>-mu tidak punya <code>exports</code> map, menambahkan <code>.js</code> di import <code>protobufjs/minimal</code> supaya bisa dibaca Node ESM.</li>
+      <li>Kalau <code>index.d.ts</code> masih memakai namespace <code>waproto</code>, otomatis diganti jadi <code>proto</code>.</li>
+      <li>Hanya menulis file yang berubah, mencadangkan tiap file sebagai <code>*.bak</code>, menulis lewat file sementara, dan otomatis rollback kalau ada penulisan yang gagal.</li>
+      <li>Memberi peringatan kalau format modul (ESM vs CommonJS) file lama dan baru berbeda.</li>
+    </ul>
+
+    <h3 id="build"><span lang="en">Set up the workflow and build manually</span><span lang="id">Siapkan workflow dan build manual</span></h3>
+    <ol class="br" lang="en">
+      <li>Put <code>update.sh</code> in the repo root and the workflow at <code>.github/workflows/update-waproto.yml</code> on the default branch.</li>
+      <li>Go to <strong>Settings → Actions → General → Workflow permissions</strong> and select <strong>Read and write permissions</strong>. Without this the commit step fails.</li>
+      <li>Open the <strong>Actions</strong> tab, select <strong>update-waproto</strong>, and press <strong>Run workflow</strong> (enable <code>force</code> for the first run).</li>
+    </ol>
+    <ol class="br" lang="id">
+      <li>Taruh <code>update.sh</code> di root repo, dan file workflow di <code>.github/workflows/update-waproto.yml</code> pada branch default.</li>
+      <li>Buka <strong>Settings → Actions → General → Workflow permissions</strong>, lalu pilih <strong>Read and write permissions</strong>. Tanpa ini langkah commit gagal.</li>
+      <li>Buka tab <strong>Actions</strong>, pilih <strong>update-waproto</strong>, lalu klik <strong>Run workflow</strong> (aktifkan <code>force</code> untuk run pertama).</li>
+    </ol>
+    <p lang="en">The zip is not committed to the repo. Download it from the <strong>Artifacts</strong> section of a finished workflow run. To build by hand:</p>
+    <p lang="id">Zip-nya tidak di-commit ke repo. Unduh dari bagian <strong>Artifacts</strong> di run workflow yang sudah selesai. Untuk build manual:</p>
+    <div class="snippet"><pre><code>OUT_DIR=WAProto ZIP_NAME=waproto-build.zip bash update.sh</code></pre><button class="copy" type="button" data-copy>[<span class="lbl"><span lang="en">copy</span><span lang="id">salin</span></span><span class="ok"><span lang="en">copied</span><span lang="id">tersalin</span></span>]</button></div>
+    <div class="vars">
+      <div class="var"><div class="var-h"><code>OUT_DIR</code><span class="def">./</span></div>
+        <p lang="en">Where <code>index.js</code>, <code>index.d.ts</code>, <code>WAProto.proto</code> and the zip are written.</p>
+        <p lang="id">Tempat <code>index.js</code>, <code>index.d.ts</code>, <code>WAProto.proto</code>, dan zip ditulis.</p></div>
+      <div class="var"><div class="var-h"><code>ZIP_NAME</code><span class="def">waproto-build.zip</span></div>
+        <p lang="en">Name of the generated zip.</p>
+        <p lang="id">Nama file zip hasil build.</p></div>
+      <div class="var"><div class="var-h"><code>PROTO_URL</code><span class="def">wa-proto main</span></div>
+        <p lang="en">Source <code>.proto</code>. Can be pinned to a commit, or a <code>file://</code> path.</p>
+        <p lang="id">Sumber <code>.proto</code>. Bisa dikunci ke satu commit, atau pakai path <code>file://</code>.</p></div>
+      <div class="var"><div class="var-h"><code>MODULE_FORMAT</code><span class="def">es6</span></div>
+        <p lang="en"><code>pbjs</code> wrapper: <code>es6</code> or <code>commonjs</code>.</p>
+        <p lang="id">Format output <code>pbjs</code>: <code>es6</code> atau <code>commonjs</code>.</p></div>
+    </div>
+    <p lang="en">If <code>pbjs</code> and <code>pbts</code> are not in <code>./node_modules/.bin</code>, the script installs <code>protobufjs-cli</code> into a temporary folder, so your own <code>package.json</code> and <code>node_modules</code> stay untouched.</p>
+    <p lang="id">Kalau <code>pbjs</code> dan <code>pbts</code> belum ada di <code>./node_modules/.bin</code>, skrip memasang <code>protobufjs-cli</code> ke folder sementara, jadi <code>package.json</code> dan <code>node_modules</code>-mu tidak berubah.</p>
+  </section>
+
+  <!-- ── 04 Notes ── -->
+  <section class="sec" id="notes">
+    <h2><span class="idx">[04]</span><span lang="en">Notes</span><span lang="id">Catatan</span></h2>
+    <ul class="br" lang="en">
+      <li>The build uses ES module output (<code>pbjs -w es6</code>). Your Baileys version must use ES modules too, otherwise build with <code>MODULE_FORMAT=commonjs</code>.</li>
+      <li>Upstream changes can remove or rename message types. Review the diff before deploying to production.</li>
+      <li>To roll back WAProto, copy the <code>*.bak</code> files over their originals in <code>node_modules/&lt;package&gt;/WAProto</code>, or reinstall the package.</li>
+      <li>The workflow installs <code>protobufjs</code> and <code>protobufjs-cli</code> without pinning a version, so a new release can change the build output.</li>
+      <li>Piping a script from <code>curl</code> into <code>node</code> runs it with your permissions. Only use URLs from a repository you control or have reviewed. The short <code>andhikagg.github.io</code> URLs always serve the latest version. To avoid surprises from new commits, use <code>https://raw.githubusercontent.com/andhikagg/waproto/&lt;commit-hash&gt;/fix.js</code> instead (same for <code>patch.js</code>), and put the same hash in <code>SOURCE</code>.</li>
+      <li>GitHub may disable scheduled workflows after 60 days without repository activity. This workflow only commits when upstream changes, so do not rely on it to keep itself alive. If it gets disabled, re-enable it from the Actions tab.</li>
+    </ul>
+    <ul class="br" lang="id">
+      <li>Build memakai output ES module (<code>pbjs -w es6</code>). Versi Baileys yang kamu pakai juga harus ES module, kalau tidak, build dengan <code>MODULE_FORMAT=commonjs</code>.</li>
+      <li>Perubahan di upstream bisa menghapus atau mengganti nama tipe pesan. Cek dulu diff-nya sebelum dipakai di produksi.</li>
+      <li>Untuk rollback WAProto, salin file <code>*.bak</code> menimpa file aslinya di <code>node_modules/&lt;paket&gt;/WAProto</code>, atau pasang ulang paketnya.</li>
+      <li>Workflow memasang <code>protobufjs</code> dan <code>protobufjs-cli</code> tanpa mengunci versi, jadi rilis baru bisa mengubah hasil build.</li>
+      <li>Menjalankan skrip dari <code>curl</code> langsung ke <code>node</code> berarti skrip itu jalan dengan izinmu. Pakai hanya URL dari repo yang kamu kelola atau sudah kamu baca isinya. URL pendek <code>andhikagg.github.io</code> selalu menyajikan versi terbaru. Biar tidak kena dampak commit baru, pakai <code>https://raw.githubusercontent.com/andhikagg/waproto/&lt;hash-commit&gt;/fix.js</code> (begitu juga <code>patch.js</code>), dan isi <code>SOURCE</code> dengan hash yang sama.</li>
+      <li>GitHub bisa menonaktifkan workflow terjadwal setelah 60 hari tanpa aktivitas di repo. Workflow ini hanya commit saat upstream berubah, jadi jangan berharap ia menjaga dirinya tetap aktif. Kalau sampai nonaktif, nyalakan lagi dari tab Actions.</li>
+    </ul>
+  </section>
+
+  <!-- ── 05 Troubleshooting ── -->
+  <section class="sec" id="trouble">
+    <h2><span class="idx">[05]</span><span lang="en">Troubleshooting</span><span lang="id">Masalah umum</span></h2>
+    <div class="faq">
+      <details>
+        <summary><code>TypeError: reader.size is not a function</code></summary>
+        <p lang="en">The protobufjs runtime is older than the one the build was compiled for. Run <code>fix.js</code> to update it, then run <code>patch.js</code> again. This is not a session problem, so do not delete your auth/session folder.</p>
+        <p lang="id">Runtime protobufjs lebih lama daripada yang dipakai saat build dibuat. Jalankan <code>fix.js</code> untuk memperbaruinya, lalu jalankan <code>patch.js</code> lagi. Ini bukan masalah sesi, jadi jangan hapus folder auth/session.</p>
+      </details>
+      <details>
+        <summary><span lang="en">Decode errors or <code>protobufjs/minimal</code> import errors</span><span lang="id">Error decode atau error import <code>protobufjs/minimal</code></span></summary>
+        <p lang="en">Run <code>fix.js</code>, then check <code>npm ls protobufjs</code> for older nested copies.</p>
+        <p lang="id">Jalankan <code>fix.js</code>, lalu cek <code>npm ls protobufjs</code> kalau-kalau ada salinan bersarang yang lebih lama.</p>
+      </details>
+      <details>
+        <summary><span lang="en"><code>npm ls</code> says <code>invalid</code> for protobufjs</span><span lang="id"><code>npm ls</code> menulis <code>invalid</code> untuk protobufjs</span></summary>
+        <p lang="en">An older <code>fix.js</code> wrote <code>"latest"</code> into the package's <code>package.json</code>. Run the current <code>fix.js</code> again; it replaces it with a real version range.</p>
+        <p lang="id"><code>fix.js</code> versi lama menulis <code>"latest"</code> ke <code>package.json</code> paketnya. Jalankan <code>fix.js</code> yang sekarang lagi, ia menggantinya dengan rentang versi asli.</p>
+      </details>
+      <details>
+        <summary><span lang="en">Import errors after patching</span><span lang="id">Error import setelah patch</span></summary>
+        <p lang="en">Module format mismatch. Rebuild with the matching <code>MODULE_FORMAT</code>.</p>
+        <p lang="id">Format modul tidak cocok. Build ulang dengan <code>MODULE_FORMAT</code> yang sesuai.</p>
+      </details>
+      <details>
+        <summary><span lang="en">Type errors about <code>proto</code> or <code>waproto</code></span><span lang="id">Error tipe soal <code>proto</code> atau <code>waproto</code></span></summary>
+        <p lang="en">Run <code>patch.js</code> again; it renames <code>waproto</code> to <code>proto</code> in <code>index.d.ts</code>.</p>
+        <p lang="id">Jalankan <code>patch.js</code> lagi, skrip ini mengganti <code>waproto</code> jadi <code>proto</code> di <code>index.d.ts</code>.</p>
+      </details>
+      <details>
+        <summary><span lang="en"><code>"x" not found in …/node_modules</code> or <code>package "x" not found</code></span><span lang="id"><code>"x" not found in …/node_modules</code> atau <code>package "x" not found</code></span></summary>
+        <p lang="en">Run the command from your project root and check the <code>TARGET</code> name.</p>
+        <p lang="id">Jalankan perintah dari root proyek dan cek lagi nama <code>TARGET</code>.</p>
+      </details>
+      <details>
+        <summary><code>SOURCE must be https://</code></summary>
+        <p lang="en">Use an <code>https://</code> URL. <code>http://localhost</code> is only allowed for testing.</p>
+        <p lang="id">Pakai URL <code>https://</code>. <code>http://localhost</code> hanya boleh untuk pengujian.</p>
+      </details>
+      <details>
+        <summary><span lang="en">Fix disappears after <code>npm install</code></span><span lang="id">Perbaikan hilang setelah <code>npm install</code></span></summary>
+        <p lang="en"><code>node_modules</code> was rebuilt. Run <code>fix.js</code> and <code>patch.js</code> again, or use the <code>postinstall</code> example above.</p>
+        <p lang="id"><code>node_modules</code> dibangun ulang. Jalankan <code>fix.js</code> dan <code>patch.js</code> lagi, atau pakai contoh <code>postinstall</code> di atas.</p>
+      </details>
+      <details>
+        <summary><span lang="en">WhatsApp disconnects or errors after patching</span><span lang="id">WhatsApp terputus atau error setelah patch</span></summary>
+        <p lang="en">If none of the entries above match, delete the auth/session folder and pair again.</p>
+        <p lang="id">Kalau tidak ada yang cocok di atas, hapus folder auth/session lalu pairing ulang.</p>
+      </details>
+      <details>
+        <summary><span lang="en">Workflow does not appear in the Actions tab</span><span lang="id">Workflow tidak muncul di tab Actions</span></summary>
+        <p lang="en">Check the path is exactly <code>.github/workflows/update-waproto.yml</code>, it is on the default branch, and the YAML indentation is valid.</p>
+        <p lang="id">Pastikan path-nya persis <code>.github/workflows/update-waproto.yml</code>, ada di branch default, dan indentasi YAML-nya benar.</p>
+      </details>
+      <details>
+        <summary><span lang="en"><code>git push</code> is denied in the workflow</span><span lang="id"><code>git push</code> ditolak di workflow</span></summary>
+        <p lang="en">Enable <strong>Read and write permissions</strong> (see the workflow setup above).</p>
+        <p lang="id">Aktifkan <strong>Read and write permissions</strong> (lihat bagian menyiapkan workflow di atas).</p>
+      </details>
+      <details>
+        <summary><span lang="en">Workflow fails with <code>Invalid upstream SHA</code></span><span lang="id">Workflow gagal dengan <code>Invalid upstream SHA</code></span></summary>
+        <p lang="en">The GitHub API returned an error or hit a rate limit. Run the workflow again later.</p>
+        <p lang="id">API GitHub mengembalikan error atau kena rate limit. Coba jalankan lagi nanti.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── 06 Report ── -->
+  <section class="sec" id="report">
+    <h2><span class="idx">[06]</span><span lang="en">Reporting problems</span><span lang="id">Lapor masalah</span></h2>
+    <p lang="en">If a build fails, the generated <code>WAProto/</code> looks broken, or a script errors out and the entries above do not help, please open an issue. If a workflow build fails, <code>WAProto/</code> keeps the last successful build and the workflow tries again on its next run, so your existing install is not affected.</p>
+    <p lang="id">Kalau build gagal, isi <code>WAProto/</code> kelihatan rusak, atau skrip error dan daftar di atas tidak membantu, silakan buka issue. Kalau build di workflow gagal, <code>WAProto/</code> tetap berisi hasil build terakhir yang sukses dan workflow akan mencoba lagi di run berikutnya, jadi instalasimu yang sudah ada tidak terpengaruh.</p>
+    <p lang="en">Please include:</p>
+    <p lang="id">Tolong sertakan:</p>
+    <ul class="br" lang="en">
+      <li>the command you ran (with <code>TARGET</code>) and the full output</li>
+      <li>your Node.js version (<code>node -v</code>) and the output of <code>npm ls protobufjs</code></li>
+      <li>your Baileys version, and whether it uses ESM or CommonJS</li>
+      <li>for a failed build: the link to the run in the <strong>Actions</strong> tab</li>
+    </ul>
+    <ul class="br" lang="id">
+      <li>perintah yang kamu jalankan (beserta <code>TARGET</code>) dan output lengkapnya</li>
+      <li>versi Node.js (<code>node -v</code>) dan hasil <code>npm ls protobufjs</code></li>
+      <li>versi Baileys yang dipakai, dan apakah memakai ESM atau CommonJS</li>
+      <li>kalau build yang gagal: link run-nya di tab <strong>Actions</strong></li>
+    </ul>
+    <p lang="en">Do not paste auth/session files, tokens, or other secrets.</p>
+    <p lang="id">Jangan tempel file auth/session, token, atau rahasia lainnya.</p>
+    <p><a class="btn btn-primary" href="https://github.com/andhikagg/waproto/issues"><span lang="en">Open an issue</span><span lang="id">Buka issue</span></a></p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div>waproto</div>
+      <div class="util" lang="en">Unofficial. Not affiliated with or endorsed by WhatsApp or Meta.</div>
+      <div class="util" lang="id">Tidak resmi. Tidak ada hubungannya dengan WhatsApp maupun Meta.</div>
+    </div>
+    <nav aria-label="Links">
+      <a href="https://github.com/andhikagg/waproto">GitHub</a>
+      <a href="https://github.com/andhikagg/waproto/issues">Issues</a>
+      <a href="https://github.com/andhikagg/waproto/blob/main/README.md">README</a>
+      <a href="https://github.com/andhikagg/waproto/blob/main/README-id.md">README (ID)</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var TEXT = {
+    en: {
+      title: 'waproto — WAProto for Baileys',
+      desc: 'Latest WhatsApp protobuf definitions, built automatically for Baileys and installed with two commands.'
+    },
+    id: {
+      title: 'waproto — WAProto untuk Baileys',
+      desc: 'Definisi protobuf WhatsApp terbaru, dibuild otomatis untuk Baileys dan dipasang dengan dua perintah.'
+    }
+  };
+
+  function setMeta(sel, attr, val) {
+    var el = document.querySelector(sel);
+    if (el) el.setAttribute(attr, val);
+  }
+
+  function apply(lang) {
+    root.lang = lang;
+    document.title = TEXT[lang].title;
+    setMeta('meta[name="description"]', 'content', TEXT[lang].desc);
+    setMeta('meta[property="og:title"]', 'content', TEXT[lang].title);
+    setMeta('meta[property="og:description"]', 'content', TEXT[lang].desc);
+    var btns = document.querySelectorAll('[data-set-lang]');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    }
+    labelTheme();
+  }
+
+  var THEME_LABEL = {
+    en: { light: 'Switch to light theme', dark: 'Switch to dark theme' },
+    id: { light: 'Ganti ke tema terang', dark: 'Ganti ke tema gelap' }
+  };
+  function labelTheme() {
+    var b = document.getElementById('theme-btn');
+    if (!b) return;
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    var l = THEME_LABEL[root.lang === 'id' ? 'id' : 'en'][next];
+    b.setAttribute('aria-label', l);
+    b.setAttribute('title', l);
+  }
+
+  apply(root.lang === 'id' ? 'id' : 'en');
+
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+
+    var lb = t.closest('[data-set-lang]');
+    if (lb) {
+      var lang = lb.getAttribute('data-set-lang');
+      apply(lang);
+      try { localStorage.setItem('waproto-lang', lang); } catch (err) {}
+      try {
+        var u = new URL(location.href);
+        u.searchParams.set('lang', lang);
+        history.replaceState(null, '', u.toString());
+      } catch (err) {}
+      return;
+    }
+
+    if (t.closest('#theme-btn')) {
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('waproto-theme', next); } catch (err) {}
+      try {
+        var tu = new URL(location.href);
+        tu.searchParams.set('theme', next);
+        history.replaceState(null, '', tu.toString());
+      } catch (err) {}
+      labelTheme();
+      return;
+    }
+
+    var cb = t.closest('[data-copy]');
+    if (cb) {
+      var pre = cb.parentNode.querySelector('pre');
+      var text = pre ? pre.textContent.replace(/\n$/, '') : '';
+      var done = function () {
+        cb.setAttribute('data-state', 'ok');
+        setTimeout(function () { cb.removeAttribute('data-state'); }, 1600);
+      };
+      var fallback = function () {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { if (document.execCommand('copy')) done(); } catch (err) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+      return;
+    }
+
+    var nav = document.getElementById('nav');
+    var mb = t.closest('#menu-btn');
+    if (mb) {
+      var open = nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      return;
+    }
+    if (nav.classList.contains('open') && t.closest('#links a')) {
+      nav.classList.remove('open');
+      document.getElementById('menu-btn').setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
