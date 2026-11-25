@@ -190,8 +190,10 @@ The script uses `zip` if available and falls back to `python3`.
 - The workflow installs `protobufjs` and `protobufjs-cli` without pinning a version,
   so a new release can change the build output.
 - Piping a script from `curl` into `node` runs it with your permissions. Only use
-  URLs from a repository you control or have reviewed. To avoid surprises from new
-  commits, replace `main` in the URLs (and in `SOURCE`) with a specific commit hash.
+  URLs from a repository you control or have reviewed. The short
+  `andhikagg.github.io` URLs always serve the latest version. To avoid surprises from
+  new commits, use `https://raw.githubusercontent.com/andhikagg/waproto/<commit-hash>/fix.js`
+  instead (same for `patch.js`), and put the same hash in `SOURCE`.
 
 ## Troubleshooting
 
