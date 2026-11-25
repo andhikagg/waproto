@@ -28,7 +28,11 @@ WORK_DIR="$(mktemp -d)"
 echo "==> Work dir: $WORK_DIR"
 trap 'rm -rf "$WORK_DIR"' EXIT
 
-die() { echo "!! $*" >&2; exit 1; }
+die() {
+  echo "!! $*" >&2
+  echo "   If you think this is a bug, please open an issue: https://github.com/andhikagg/waproto/issues" >&2
+  exit 1
+}
 
 # ── 1. Sanity checks ──────────────────────────────────────────────────────
 command -v node >/dev/null || die "node not found in PATH"
